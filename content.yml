@@ -1,0 +1,25 @@
+book:
+    title: "API HTTP"
+    module: "Document de travail"
+    version: "4"
+    author: "Labs &lt;labs@anakeen.com&gt;"
+    edition: "1"
+    chapters: 
+#
+# ---------------------- PRESENTATION -------------------------
+#
+
+        - level:  "1"
+          content: "intro.md"
+        - level:  "1"
+          content: "createdoc.md"
+        - level:  "1"
+          content: "savedoc.md"
+        - level:  "1"
+          content: "getdoc.md"
+        - level:  "1"
+          content: "deletedoc.md"
+
+
+
+
