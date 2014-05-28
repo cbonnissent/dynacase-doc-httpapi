@@ -5,60 +5,119 @@
 
 L'API HTTP a pour but d'offrir un accès standard aux données de Dynacase.
 
-
-L'architecture de cette api s'appuie sur une architecture REST.
-
-De part cette architecture, l'api permet de manipuler des **ressources**.
+L'architecture de cette api s'appuie sur une architecture REST et permet de manipuler les **ressources** Dynacase :
 
 Les ressources manipulables par l'api sont :
 
-*   Le document (document unitaire et collection de document)
-*   Les utilisateurs
-*   Les familles (structure et configuration)
-*   La poubelle
-*   Les fichiers
+* Les documents 
+* Les collections <span class="flag rfi"></span>
+* Les utilisateurs <span class="flag rfi"></span>
+* Les familles (structure et configuration) <span class="flag rfi"></span>
+* La poubelle <span class="flag rfi"></span>
+* Les fichiers <span class="flag rfi"></span>
+* Les cycles <span class="flag rfi"></span>
+* Les profils <span class="flag rfi"></span>
+* ...
 
 
 ## Structure de l'URL
 
-L'url d'accès à l'api de Dynacase comment par `/api/`. Cela permet d'identifier
+Tout les accès à l'API HTTP Dynacase se font par L'url `//url.access.dynacase.votre.domaine/api/`. 
+
+Cela permet d'identifier
 explicitement l'usage de l'api et permet de contrôler et de paramétrer plus
 simplement l'accès à l'api.
+<span class="flag fixme"> controle et parametre : comment ? je pense que soit on explique comment (c'est specifique à notre API) soit on supprime cette phrase (c'est comme toutes les API HTTP)</span>
 
-Il est alors possible de créer un domaine virtuel pour accéder à l'api
+
+<span class="flag inline fixme">à déplacer dans un § spécifique</span>Il est alors possible de créer un domaine virtuel pour accéder à l'api
 "http://api.mydomain.org" par exemple.
 
+Lecture
+:   
 
-|                   url                    |                                                        signification                                                        |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `GET /api/<ressource>/ `                 | Liste des éléments de la ressource                                                                                          |
-| `POST /api/<ressource>/`                 | Création d'un nouvel élément de la ressource                                                                                |
-| `PUT /api/<ressource>/`                  | Modification en masse des éléments de la ressource                                                                          |
-| `DELETE /api/<ressource>/`               | Suppression de tous les éléments de la ressource                                                                            |
-|                                          |                                                                                                                             |
-| `GET /api/<ressource>/<id>[.<type>]?`    | Information sur l'élément identifié par "id". Le type de retour est donnée par l'extension. L'extension par défaut est JSON |
-| `POST /api/<ressource>/<id>[.<type>]? `  | **NON SIGNIFICATIF**                                                                                                        |
-| `PUT /api/<ressource>/<id>[.<type>]?`    | Mise à jour de l'élément identifié par "id".                                                                                |
-| `DELETE /api/<ressource>/<id>[.<type>]?` | Suppression  de l'élément identifié par "id".                                                                               |
-|                                          |                                                                                                                             |
-|                                          |                                                                                                                             |
+    [http]
+    GET /api/<ressource>
+
+Obtention des éléments d'une ressource
+
+Création
+:   
+
+    [http]
+    POST /api/<ressource>
+
+Création d'un nouvel élément de la ressource
+
+Modification
+:   
+
+    [http]
+    PUT /api/<ressource>
+
+Modification des éléments de la ressources
+
+Suppression
+:   
+
+    [http]
+    DELETE /api/<ressource>
+
+Suppression des éléments de la ressources
+
+Lecture d'un élément
+:   
+
+    [http]
+    GET /api/<ressource>/<identifier>
+
+Obtention de l'élément désigné par `<indentifier>`.
+
+Modification d'un élément
+:   
+
+    [http]
+    PUT /api/<ressource>/<identifier>
+
+Modification de l'élément désigné par `<indentifier>`.
 
 
+Suppression d'un élément
+:   
+
+    [http]
+    PUT /api/<ressource>/<identifier>
+
+## Encodage
+
+Toutes les échanges, entrées et retours de l'API, sont encodés en **UTF-8**.
 
 ## Les entrées
 
-Toutes les entrées doivent être encodé en **UTF-8**.
+
+### Type de retour attendu
+
+Le type de retour attendu (format) est précisé soit :
+
+* dans l'URL
+
+        [http]
+        PUT /api/<ressource>/<identifier>.<type>
+
+* dans l'entête HTTP : `accept`.
+
+Actuellement, seul le type `json` est géré.
+
+Le type de l'url est prioritaire au header.
 
 ### PUT (Mise à jour), POST (Création)
-
-Un ordre "POST" indique une création de ressource.
 
 Les données à enregistrer dans la ressource peuvent être envoyées sous 2 formes :
 
 1.  Sous la forme d'un objet JSON (application/json)
 2.  Sous la forme de variable encodée (x-www-form-urlencoded)
 
-Les options de mise à jour sont envoyées dans l'url à l'aide variable "GET".
+Les options de mise à jour sont envoyées via des variables sur l'URL.
 
 ### GET (Consultation), DELETE (Suppression)
 
@@ -72,38 +131,35 @@ Dans le cas d'un retour JSON la structure retournée contient les éléments sui
 
     [php]
     {
-        "success" : true, // false ou true
+        "success" : true,       // false ou true
         "messages" : [{
-            "type" : "warning", // niveau du message
+            "type" : "warning", // type de message error, userMessage, warning, notice, notification
             "contentText" : "once upon a time",
             "contentHtml" : "",
-            "code" : "", // code identifiant la catégorie du message
-            "uri" : "", // url d'accès à la page web correspondant à l'erreur
-            "data" : {}  // données supplémentaires
+            "code" : "",        // code identifiant la catégorie du message
+            "uri" : "",         // url d'accès à la page web correspondant à l'erreur
+            "data" : { }        // données supplémentaires
             }],
-        "data" : {} // données demandées par la requête
+        "data" : {}             // données demandées par la requête
         
     }
-
-Ce retour est envoyé quelque soit le résultat de la requête.
+    
+Ce retour est envoyé quelque soit le résultat de la requête, y compris en cas d'erreur.
 
 ## Les retours sans erreur
 
-Si l'action demandée a été exécutée le code HTTP 200 est retourné.
+Si l'action demandée a été exécutée le code HTTP 2xx est retourné.
 
-| Http Statut |   Signification   |
-| ----------- | ----------------- |
-|         200 | Ressource trouvée |
-|         201 | Ressource créée   |
-|             |                   |
+**200**
+:  Ressource trouvée
+  
+**201**
+:  Ressource créé
 
-
-Le type de retour est soit précisé dans l'url soit dans le header HTTP ("accept").
-Le type de l'url est prioritaire au header.
 
 Exemple de retour :
 
-    [php]
+    [json]
     {
         "success" : true, // false ou true
         "messages" : [],
@@ -127,26 +183,25 @@ Exemple de retour :
 
 Si l'action demandée n'a pas pu aboutir un code HTTP 4xx est retourné.
 
-| Http Statut |               Cause                |
-| ----------- | ---------------------------------- |
-|         404 | Ressource non trouvée              |
-|         403 | Ressource protégé (accès interdit) |
-|         400 | Données d'entrées invalides        |
-|             |                                    |
+**400**
+:  Données en entrée invalides
+
+**403**
+:  Ressource protégée (accès interdit)
+
+**404**
+:  Ressource non trouvée
+
+**501**
+:  La méthode demandée n'est pas disponible sur cette ressource
+
+**507**
+:  Espace de stockage insuffisant sur le serveur
 
 
-Si l'action n'est pas implémenté le code 501 est retourné
+Exemple de retour, cas d'un 404 :
 
-| Http Statut |      Cause      |
-| ----------- | --------------- |
-|         501 | Not implemented |
-|             |                 |
-
-Exemple de retour :
-
-Cas d'un 404.
-
-    [php]
+    [json]
     {
         "success" : false, 
         "messages" : [{
@@ -162,18 +217,16 @@ Cas d'un 404.
 
 ## Version de l'API
 
-L'API peut varier suivant les différentes versions.
-
 Il est possible de préciser la version de l'API pour s'assurer de l'immuabilité
 des retours et des entrées. 
 
-S'il n'y a pas de version définie, la dernière version sera appliquée.
+S'il n'y a pas de version définie, la dernière version est utilisée.
 
 La version est indiquée dans le header HTTP de l'envoi de la requête :
 
-    X-Api-Version: 1.0
+    X-DCP-Api-Version: 1
 
-La réponse envoi aussi systématiquement la version dans le header HTTP.
+La réponse envoie systématiquement la version dans le header HTTP.
 
 
 *Variante* : la version de l'api peut être indiqué dans l'url :
@@ -194,7 +247,7 @@ L'api accédée de façon externe peut utiliser l'authentification HTTP Basic.
 
     $ curl -u "username" https://www.example.net/api/
 
-L'api supporte aussi l'authentification par "OAuth2" à l'aide d'un jeton. 
+L'api supporte aussi l'authentification par "OAuth2" à l'aide d'un jeton. <span class="flag rfi"></span>
 
     $ curl -H "Authorization: token OAUTH-TOKEN" https://www.example.net/api/
 
@@ -204,15 +257,15 @@ ou
 
 ## Droit d'accès
 
-L'accès au ressource est contrôlé par la ressource elle-même mais l'utilisation
+L'accès aux ressources est contrôlé par les ressources elles-même mais l'utilisation
 de l'api est aussi contrôlé de manière générale par l'application "HTTPAPI".
 
-Cette application définie 4 droits qui autorisent l'accès aux ressources :
+Cette application définit 4 droits qui autorisent l'utilisation des méthodes sur les ressources :
 
-*   `PUT` : Droit de lancer des requêtes de modification de ressources
-*   `POST` : Droit de lancer des requêtes de création de ressources
-*   `GET` : Droit de lancer des requêtes de consultation de ressources
-*   `DELETE` :Droit de lancer des requêtes de suppression de ressources
+*   `PUT` : modification de ressources
+*   `POST` : création de ressources
+*   `GET` : consultation de ressources
+*   `DELETE` : suppression de ressources
 
 ## Url ROOT
 

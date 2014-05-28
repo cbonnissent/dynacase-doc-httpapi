@@ -1,8 +1,8 @@
 book:
     title: "API HTTP"
-    module: "Document de travail"
+    module: "Core"
     version: "4"
-    author: "Labs &lt;labs@anakeen.com&gt;"
+    author: "Anakeen Labs &lt;labs@anakeen.com&gt;"
     edition: "1"
     chapters: 
 #
