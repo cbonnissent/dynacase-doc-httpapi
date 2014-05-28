@@ -1,2 +1,4 @@
+# API HTTP
 
-Document de travail pour la réalisation d'une API HTTP orienté REST
+Ce document décrit l'API HTTP Dynacase.
+Cette API, orientée REST, fournit les ressources de manipulation et d'accès aux objets Dynacase.
