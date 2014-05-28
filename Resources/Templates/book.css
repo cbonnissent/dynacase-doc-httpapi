@@ -46,3 +46,10 @@ span.apiTodo {
    font-weight: bold;
    text-align: center;
 }
+
+TD:empty {
+  background-color: rgba(138, 226, 52, 0.3);
+  line-height: 1px;
+  height: 5px;
+  border:none;
+}
