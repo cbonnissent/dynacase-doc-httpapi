@@ -67,7 +67,7 @@ Les raisons d'échecs spécifiques à cette requête sont
 
 |                      Raison                      | Status HTTP | Error Code |
 | ------------------------------------------------ | ----------- | ---------- |
-| Privilège insuffisant pour supprimer au document |         403 | API0011    |
+| Privilège insuffisant pour supprimer le document |         403 | API0011    |
 | Document déjà supprimé                           |         403 | API0108    |
 
 Exemple : 

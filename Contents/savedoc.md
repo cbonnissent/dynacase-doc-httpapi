@@ -4,7 +4,7 @@
 
     PUT /api/families/<famName>/<id>
 
-Modification d'un document de la famille <famName>
+Modification d'un document de la famille `<famName>`
 
 ou
 

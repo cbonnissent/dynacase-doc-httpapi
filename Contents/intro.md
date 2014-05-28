@@ -135,6 +135,13 @@ Si l'action demandée n'a pas pu aboutir un code HTTP 4xx est retourné.
 |             |                                    |
 
 
+Si l'action n'est pas implémenté le code 501 est retourné
+
+| Http Statut |      Cause      |
+| ----------- | --------------- |
+|         501 | Not implemented |
+|             |                 |
+
 Exemple de retour :
 
 Cas d'un 404.

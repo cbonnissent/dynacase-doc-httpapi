@@ -1,3 +1,2 @@
 
-Document de travail pour préparation de la nouvelle représentation de 
-document dans Dynacase 4.
+Document de travail pour la réalisation d'une API HTTP orienté REST

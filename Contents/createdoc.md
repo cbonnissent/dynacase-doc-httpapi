@@ -5,7 +5,7 @@
     POST /api/families/<famName>
 
 
-Création d'un document de la famille <famName>
+Création d'un document de la famille `<famName>`
 
 Exemple :
 
