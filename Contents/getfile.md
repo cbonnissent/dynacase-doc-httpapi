@@ -4,15 +4,16 @@
 
     GET /api/documents/<docid>/file/<attrid>
 
-Récupération des informations du fichier de l'attribut `<attrid` du document `<docid`.
+Récupération des informations du fichier de l'attribut `<attrid` du document
+`<docid`.
 
 Si l'attribut est multivalué un index est nécessaire.
 
 
     GET /api/documents/<docid>/file/<attrid>/<index>
 
-Récupération des informations du  fichier de l'attribut `<attrid` du document `<docid` à l'index
-`<index>`.
+Récupération des informations du  fichier de l'attribut `<attrid` du document
+`<docid` à l'index `<index>`.
 
     GET /api/documents/<docid>/file/<fileid>
 
@@ -103,25 +104,3 @@ Cas d'erreur de privilège
     }
 
 
-## Résultat partiel {#core-ref:e2151d05-1c57-4b46-84f9-df6bcc6bba2d}
-
-Le document peut être retourné avec plus ou moins d'information.
-
-* GET /documents/1234.json?fields=properties
-* GET /documents/1234.json?fields=property.id,property.title,attributes
-* GET /documents/1234.json?fields=property.id,property.title,attributes.values
-* GET /documents/1234.json?fields=property.id,property.title,attribute.my_exemple
-* GET /documents/1234.json?fields=property.id,property.title,attributes,family.structure
-
-
-Par défaut : `fields=properties,attributes`
-
-|           fields          |                        Signification                         |                                                           Remarques                                                           |
-| ------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| `properties`              | Récupère l'ensemble des propriétés "visible"                 | "state", "fromname", "id", "postitid", "initid", "locked", "revision", "wid", "cvid", "profid", "fromid", "owner", "domainid" |
-| `property.<prop>`         | Récupère la propriété indiqué                                |                                                                                                                               |
-| `attributes`              | Récupère les valeurs et les valeurs affichable des attributs |                                                                                                                               |
-| `attributes.value`        | Récupère les valeurs brutes                                  |                                                                                                                               |
-| `attributes.displayValue` | Récupère les valeurs affichables                             | Les données nécessaires à l'affichage (variant suivent le type d'attribut)                                                    |
-| `attribute.<id>`          | Récupère la valeur d'un attribut particulier                 | Utilise le champs  `attributes.value` et `attributes.displayValue` pour restreindre à la valeur affiché                       |
-| `family.structure`        | Récupère la structure de la famille                          |                                                                                                                               |
