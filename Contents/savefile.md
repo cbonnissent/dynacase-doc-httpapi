@@ -1,30 +1,30 @@
-# Création d'un fichier 
+# Modification d'un fichier 
 
 ## Url
 
 
 
-    POST /api/file
+    PUT /api/file/<fileid>
 
-Création d'un fichier temporaire. Ce fichier n'est pas dans le vault. Il est
-stocké dans le répertoire temporaire et est supprimé lors du nettoyage des
-fichiers temporaires.
+Modification d'un fichier temporaire. Le fichier temporaire est remplacé.
 
 La référence retournée peut être insérée comme valeur dans un attribut de type
 file ou  image. Dans ce cas lors de l'enregistrement du document, le fichier
 temporaire sera déplacé dans le vault.
 
+    PUT /api/documents/<docid>/file/<attrid>
 
-    POST /api/documents/<docid>/file/<attrid>
+Modification d'un fichier du vault. La référence au fichier dans l'attribut
+reste inchangé.
 
-Création d'un fichier dans le vault et insertion de celui-ci dans l'attribut.
+Note : l'attribut doit être mono-valué.
 
 Note : Le hook `postStore` du document est appelé.
 
-    POST /api/documents/<docid>/file/<attrid>/<index>
+    PUT /api/documents/<docid>/file/<attrid>/<index>
 
-Création d'un fichier dans le vault  et insertion de celui-ci dans l'attribut à
-l'index indiqué pour les attributs multivalués.
+Modification d'un fichier du vault. La référence au fichier dans l'attribut
+reste inchangé.
 
 Note : la ressource `families` peut aussi être utilisée à la place de
 `documents`.
@@ -60,7 +60,6 @@ Le retour est une donnée JSON.
 
 La partie `data` contient un champ `file` qui inclut les champs suivants :
 
-
 1.  `file.uri` : uri d'accès à la nouvelle ressource
 1.  `file.reference` : référence pouvant être utilisant comme valeur
      dans un attribut de type file ou  image. 
@@ -74,7 +73,7 @@ La partie `data` contient un champ `file` qui inclut les champs suivants :
 Exemple :
 
 
-Insertion dans un document
+Modification dans un document
 
     [php]
     {
@@ -86,7 +85,7 @@ Insertion dans un document
           "mime" : "image/jpeg",
           "size" : 567538,
           "cdate" : "2014-07-23T23:43:23",
-          "mdate" : "2014-07-23T23:43:23",
+          "mdate" : "2014-07-24T06:13:02",
           "fileName" : "monimage.jpeg"
           "reference" : "image/jpeg|1256|monimage.jpg",
           "downloadUrl" : "http;//www.example.org/file/1234/1256/-1/fi_file/monimage.jpeg"
@@ -95,28 +94,8 @@ Insertion dans un document
     }
 
 
-Création d'un fichier temporaire :
 
 
-    [php]
-    {
-      success :true,
-      messages : [],
-      data : {
-        "file" : {
-          "uri" : "http;//www.example.org/api/files/yduiehidezhi",
-          "mime" : "image/jpeg",
-          "size" : 567538,
-          "cdate" : "2014-07-23T23:43:23",
-          "mdate" : "2014-07-23T23:43:23",
-          "fileName" : "monimage.jpeg"
-          "reference" : "file://tmp/yduiehidezhi",
-          "downloadUrl" : null
-        }
-      }
-    }
-
-Le fichier temporaire ne peut pas être téléchargé.
 
 
 ### En cas d'échec

@@ -4,3 +4,33 @@ span.myLine {
 background: linear-gradient(to right, rgba(157,213,58,1) 0%,rgba(10,86,24,1) 50%,rgba(124,188,10,1) 100%); 
    display:inline-block;
 }
+
+span.greyLine {
+    width:100%;
+    /*height:4px;*/
+    background: linear-gradient(to right, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+    
+    display:inline-block;
+}
+
+span.apiNo {
+    background-color: orange;
+    width:100%;
+   display:inline-block;
+   font-weight: bold;
+   text-align: center;
+}
+span.apiNever {
+    background-color: rgb(224, 146, 146);
+    width:100%;
+   display:inline-block;
+   font-weight: bold;
+   text-align: center;
+}
+span.apiTodo {
+    background-color: lightblue;
+    width:100%;
+   display:inline-block;
+   font-weight: bold;
+   text-align: center;
+}

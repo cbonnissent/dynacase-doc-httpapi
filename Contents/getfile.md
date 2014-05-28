@@ -1,20 +1,23 @@
-# Téléchargment d'un fichier
+# Consultation d'un fichier
 
 ## Url
 
-    POST /api/documents/<docid>/file/<attrid>
+    GET /api/documents/<docid>/file/<attrid>
 
-Récupération d'un document de la famille `<famName>` ayant l'identifiant `<id>`
+Récupération des informations du fichier de l'attribut `<attrid` du document `<docid`.
 
-ou
+Si l'attribut est multivalué un index est nécessaire.
 
-Création d'un fichier dans le vault et insertion de celui-ci dans l'attribut.
 
-    POST /api/documents/<docid>/file/<attrid>?index=<index>
+    GET /api/documents/<docid>/file/<attrid>/<index>
 
-Récupération du document `<id>`
+Récupération des informations du  fichier de l'attribut `<attrid` du document `<docid` à l'index
+`<index>`.
 
-L'extension ".json" peut être ajoutée pour expliciter le format de sortie.
+    GET /api/documents/<docid>/file/<fileid>
+
+Récupération des informations du  fichier `<fileid` du document `<docid`
+
 
 Exemple :
 
@@ -22,9 +25,8 @@ Exemple :
 
 
 
-
-
-Note : Un fichier qui a été "supprimé" ne peut pas être récupéré.
+Note : Un fichier qui a été "enlevé" d'un document ne peut plus être téléchargé
+depuis ce document.
 
 ## Content
 
@@ -36,11 +38,18 @@ Le retour est une donnée JSON.
 
 ### En cas de réussite :
 
-La partie `data` contient 2 champs :
+La partie `data` contient un champ `file` qui inclut les champs suivants :
 
-1.  `document.uri` : uri d'accès à la ressource modifiée
-1.  `document.properties` : liste des valeurs des propriétés
-2.  `document.attributes` : liste des valeurs des attributs
+1.  `file.uri` : uri d'accès à la nouvelle ressource
+1.  `file.reference` : référence pouvant être utilisant comme valeur
+     dans un attribut de type file ou  image. 
+1.  `file.size` : Taille du fichier en octets
+1.  `file.fileName` : Nom du fichier (basename)
+1.  `file.mime` : Type mime (système)
+1.  `file.cdate` : Date de création
+1.  `file.mdate` : Date de modification
+1.  `file.downloadUrl` : Url de téléchargement du fichier
+
 
 
 Les attributs en visibilité "I" ne sont pas retournés. Leur existence n'est pas
@@ -50,28 +59,19 @@ Exemple :
 
     [php]
     {
-      "success" :true,
-      "messages" : [],
-      "data" : {
-        "document" : {
-            "uri" : "http;//www.example.org/api/documents/1256",
-            "properties" : { 
-               "id" : 1256,
-               "title" : "Hello world",
-               "locked" : 0,
-               ....
-             }
-            "attributes" : { 
-              "ba_title" : {
-                  "value" : "Hello world"
-                  "displayValue" : "Hello world"
-              },
-              "ba_cost" : {
-                  "value" : 234
-                  "displayValue" : "234.00 €"
-              }
-            }
-          }
+      success :true,
+      messages : [],
+      data : {
+        "file" : {
+          "uri" : "http;//www.example.org/api/documents/1234/files/1256",
+          "mime" : "image/jpeg",
+          "size" : 567538,
+          "cdate" : "2014-07-23T23:43:23",
+          "mdate" : "2014-07-24T06:13:02",
+          "fileName" : "monimage.jpeg"
+          "reference" : "image/jpeg|1256|monimage.jpg",
+          "downloadUrl" : "http;//www.example.org/file/1234/1256/-1/fi_file/monimage.jpeg"
+        }
       }
     }
 
@@ -83,7 +83,6 @@ Les raisons d'échecs spécifiques à cette requête sont
 | ---------------------------------------------- | ----------- | ---------- |
 | Privilège insuffisant pour accéder au document |         403 | API0010    |
 | Document supprimé                              |         404 | API0108    |
-| Propriété demandé inexistante                  |         400 |            |
 | Attribut demandé inexistant                    |         400 |            |
 
 Exemple : 

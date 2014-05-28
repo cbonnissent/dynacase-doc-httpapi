@@ -12,6 +12,8 @@ book:
         - level:  "1"
           content: "intro.md"
         - level:  "1"
+          content: "resume.md"
+        - level:  "1"
           content: "createdoc.md"
         - level:  "1"
           content: "savedoc.md"
@@ -21,6 +23,12 @@ book:
           content: "deletedoc.md"
         - level:  "1"
           content: "createfile.md"
+        - level:  "1"
+          content: "savefile.md"
+        - level:  "1"
+          content: "getfile.md"
+        - level:  "1"
+          content: "deletefile.md"
 
 
 
