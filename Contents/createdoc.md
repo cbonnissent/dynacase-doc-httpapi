@@ -1,6 +1,6 @@
-# Création d'un document 
+# Création d'un document  {#core-ref:97b6c23a-e527-48b8-ab52-b5e869dadce7}
 
-## Url
+## Url {#core-ref:425df2c9-43bb-4abc-ab8f-a6a21f8f9978}
 
     POST /api/families/<famName>
 
@@ -15,9 +15,9 @@ Exemple :
 Note : le nom de la famille est insensible à la casse.
 
 
-## Content
+## Content {#core-ref:9b0a3c4e-aef6-40cc-9592-9c443ee9d4eb}
 
-### Format JSON
+### Format JSON {#core-ref:f1ee92a8-0654-44ce-934a-0688e070b922}
 
 Le contenu de la requête doit contenir une donnée JSON avec la liste des attributs modifiés.
 
@@ -49,7 +49,7 @@ Pour enregistrer le fichier, il sera nécessaire de passer par la ressource
 d'attribut de type fichier.
 
 
-### Format urlEncoded
+### Format urlEncoded {#core-ref:d41e3675-c282-41c7-af91-beb057e942de}
 
 Le contenu de la requête contient la liste des valeurs d'attributs à enregistrer.
 Chaque variable (POST) est le nom de l'attribut (casse insensible).
@@ -60,11 +60,11 @@ Note : Ce format peut être utilisé directement depuis un formulaire HTML.
 
 Cette forme permet aussi d'enregistrer des fichiers dans le document.
 
-## Structure de retour
+## Structure de retour {#core-ref:807b6da9-dda2-4ab8-bcb9-7acd530f9e39}
 
 Le retour est une donnée JSON.
 
-### En cas de réussite :
+### En cas de réussite : {#core-ref:8e1bb239-6ed2-4ad0-992b-db803e68bd00}
 
 La partie `data` contient un champ `document` qui inclut 3 champs :
 
@@ -101,7 +101,7 @@ Exemple :
       }
     }
 
-### En cas d'échec
+### En cas d'échec {#core-ref:02aa0d5a-53e7-4ade-a378-0c2492f27df3}
 
 Les raisons d'échecs spécifiques à cette requête sont 
 

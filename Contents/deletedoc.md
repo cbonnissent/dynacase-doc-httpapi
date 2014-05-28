@@ -1,6 +1,6 @@
-# Suppression d'un document 
+# Suppression d'un document  {#core-ref:85b9c9f2-cb76-4d07-9525-ec90af2561e2}
 
-## Url
+## Url {#core-ref:99be046e-1858-4ffe-85a0-ab749c731265}
 
     DELETE /api/families/<famName>/<id>
 
@@ -26,15 +26,15 @@ Toute la lignée documentaire du document est mis à la poubelle.
 
 La suppression "physique" n'est pas possible.
 
-## Content
+## Content {#core-ref:38a48a16-04f5-46ee-9d1d-20084cc5e680}
 
 Le contenu de la requête est vide.
 
-## Structure de retour
+## Structure de retour {#core-ref:e093814e-4a9b-47c2-a8fe-190d5c25a4ae}
 
 Le retour est une donnée JSON.
 
-### En cas de réussite :
+### En cas de réussite : {#core-ref:75978575-35f5-4417-8895-83ba287e0286}
 
 La partie `data` contient 1 champ :
 
@@ -61,7 +61,7 @@ Exemple :
       }
     }
 
-### En cas d'échec
+### En cas d'échec {#core-ref:d37dbd6c-bf8b-4430-985b-cbe86e8263c5}
 
 Les raisons d'échecs spécifiques à cette requête sont 
 

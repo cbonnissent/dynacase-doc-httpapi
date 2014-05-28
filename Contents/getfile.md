@@ -1,6 +1,6 @@
-# Consultation d'un fichier
+# Consultation d'un fichier {#core-ref:fa90f9f7-0f35-46b3-a09a-b49e6a75ab5d}
 
-## Url
+## Url {#core-ref:0e06d077-db21-4a00-99bf-f7348acc0205}
 
     GET /api/documents/<docid>/file/<attrid>
 
@@ -28,15 +28,15 @@ Exemple :
 Note : Un fichier qui a été "enlevé" d'un document ne peut plus être téléchargé
 depuis ce document.
 
-## Content
+## Content {#core-ref:f066ebc6-fa25-4a2c-8a7a-e05aa0e8124a}
 
 Le contenu de la requête est vide.
 
-## Structure de retour
+## Structure de retour {#core-ref:258dffeb-97f7-432a-8322-f4dbb1e688eb}
 
 Le retour est une donnée JSON.
 
-### En cas de réussite :
+### En cas de réussite : {#core-ref:c6e25941-e31f-450e-957e-117d7d60cde4}
 
 La partie `data` contient un champ `file` qui inclut les champs suivants :
 
@@ -75,7 +75,7 @@ Exemple :
       }
     }
 
-### En cas d'échec
+### En cas d'échec {#core-ref:752b6ed1-bda0-4ddb-b8cf-d5e9f57250bb}
 
 Les raisons d'échecs spécifiques à cette requête sont 
 
@@ -103,7 +103,7 @@ Cas d'erreur de privilège
     }
 
 
-## Résultat partiel
+## Résultat partiel {#core-ref:e2151d05-1c57-4b46-84f9-df6bcc6bba2d}
 
 Le document peut être retourné avec plus ou moins d'information.
 

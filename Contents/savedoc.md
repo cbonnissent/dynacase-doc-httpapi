@@ -1,6 +1,6 @@
-# Modification d'un document 
+# Modification d'un document  {#core-ref:2d248523-ddf4-4654-bd5d-6e5af3b5056d}
 
-## Url
+## Url {#core-ref:d8e16308-ddc2-4847-bbf7-6195abb4ba6d}
 
     PUT /api/families/<famName>/<id>
 
@@ -27,9 +27,9 @@ L'identifiant du document peut être son nom logique, son identifiant numérique
 L'identifiant numérique peut référencer n'importe quelle révision du document. 
 Dans tous les cas, la modification porte sur la dernière révision du document.
 
-## Content
+## Content {#core-ref:c215cb73-d27f-4044-9385-68d21f35c7b3}
 
-### Format JSON
+### Format JSON {#core-ref:6a3a0d32-caea-4cc1-aeb0-f3fba2923e89}
 
 Le contenu de la requête doit contenir une donnée JSON avec la liste des attributs modifiés.
 
@@ -57,7 +57,7 @@ Exemple :
 
 Note : Toute donnée additionnelle sera ignorée.
 
-### Format urlEncoded
+### Format urlEncoded {#core-ref:e9dd728c-1737-4694-a326-842edfd80187}
 
 Le contenu de la requête contient la liste des valeurs d'attributs à enregistrer.
 Chaque variable (PUT) est le nom de l'attribut (casse insensible).
@@ -68,11 +68,11 @@ Note : Ce format peut être utilisé directement depuis un formulaire HTML.
 
 Cette forme permet aussi d'enregistrer des fichiers dans le document.
 
-## Structure de retour
+## Structure de retour {#core-ref:e98d49ba-4bb2-4b82-9ae2-6c778a2cf8c9}
 
 Le retour est une donnée JSON.
 
-### En cas de réussite :
+### En cas de réussite : {#core-ref:764f8c44-20bb-4b92-a407-6cbaf2bc8652}
 
 La partie `data` contient 3 champs :
 
@@ -114,7 +114,7 @@ Exemple :
         }
     }
 
-### En cas d'échec
+### En cas d'échec {#core-ref:1439da9e-919c-4b32-9242-bd18ad2a487a}
 
 Les raisons d'échecs spécifiques à cette requête sont 
 

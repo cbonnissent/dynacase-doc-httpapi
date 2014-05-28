@@ -1,6 +1,6 @@
-# Modification d'un fichier 
+# Modification d'un fichier  {#core-ref:4bd2f27b-8457-403e-be9b-8ff036f15b0f}
 
-## Url
+## Url {#core-ref:0d6666fa-77fd-4299-9205-c7a7659ee4b5}
 
 
 
@@ -30,15 +30,15 @@ Note : la ressource `families` peut aussi être utilisée à la place de
 `documents`.
 
 
-## Content
+## Content {#core-ref:5ef1a224-5b25-4ffd-92c1-00af7f570de7}
 
-### Format RAW
+### Format RAW {#core-ref:b5153f49-e840-4b31-8ee8-afedf31f84ad}
 
 Le contenu de la requête doit contenir le contenu du fichier.
 
 Le type de la requête est fonction du type de fichier envoyé
 
-### Format urlEncoded
+### Format urlEncoded {#core-ref:38978d61-6a1b-455e-b1d3-dc5a6ce0c38a}
 
 Le contenu de la requête contient une variable (type file) contenant le contenu
 du fichier
@@ -52,11 +52,11 @@ Le type de la requête est `application/x-www-form-urlencoded`.
 Note : Ce format peut être utilisé directement depuis un formulaire HTML.
 
 
-## Structure de retour
+## Structure de retour {#core-ref:1d64b9e5-fbc6-4f29-99d1-accfa9fe90cb}
 
 Le retour est une donnée JSON.
 
-### En cas de réussite :
+### En cas de réussite : {#core-ref:128a888e-a46f-430c-9276-6fa62402d600}
 
 La partie `data` contient un champ `file` qui inclut les champs suivants :
 
@@ -98,7 +98,7 @@ Modification dans un document
 
 
 
-### En cas d'échec
+### En cas d'échec {#core-ref:42ceb481-6692-4afb-b2e7-54a19f5731a4}
 
 Les raisons d'échecs spécifiques à cette requête sont 
 

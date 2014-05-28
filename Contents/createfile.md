@@ -1,6 +1,6 @@
-# Création d'un fichier 
+# Création d'un fichier  {#core-ref:5797255d-128d-4aa4-9c11-2c8195cca63d}
 
-## Url
+## Url {#core-ref:a1848339-b8df-412e-8cdb-9497d33dff42}
 
 
 
@@ -30,15 +30,15 @@ Note : la ressource `families` peut aussi être utilisée à la place de
 `documents`.
 
 
-## Content
+## Content {#core-ref:10b0d2f6-4475-4ed9-99af-226f3955f4c7}
 
-### Format RAW
+### Format RAW {#core-ref:5f1e437e-5696-4d71-bde1-71a57511933b}
 
 Le contenu de la requête doit contenir le contenu du fichier.
 
 Le type de la requête est fonction du type de fichier envoyé
 
-### Format urlEncoded
+### Format urlEncoded {#core-ref:e6ab017f-713b-4642-8073-136abcddcb77}
 
 Le contenu de la requête contient une variable (type file) contenant le contenu
 du fichier
@@ -52,11 +52,11 @@ Le type de la requête est `application/x-www-form-urlencoded`.
 Note : Ce format peut être utilisé directement depuis un formulaire HTML.
 
 
-## Structure de retour
+## Structure de retour {#core-ref:f7ffab19-822b-4e69-b1d9-02901f9f5ead}
 
 Le retour est une donnée JSON.
 
-### En cas de réussite :
+### En cas de réussite : {#core-ref:1532452f-7bfb-4e88-be80-4b00524b1d4d}
 
 La partie `data` contient un champ `file` qui inclut les champs suivants :
 
@@ -119,7 +119,7 @@ Création d'un fichier temporaire :
 Le fichier temporaire ne peut pas être téléchargé.
 
 
-### En cas d'échec
+### En cas d'échec {#core-ref:c97d3fb9-aefb-46a1-ac11-0d8646a0c7ac}
 
 Les raisons d'échecs spécifiques à cette requête sont 
 
