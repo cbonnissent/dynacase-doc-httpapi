@@ -2,34 +2,29 @@
 
 ## Url {#core-ref:f837fece-9f4e-4314-8668-64371a1c8d48}
 
-    GET /api/families/<famName>/<id>
+Récupération du document l'identifiant `<id>`
 
-Récupération d'un document de la famille `<famName>` ayant l'identifiant `<id>`
+    GET /api/families/<famName>/<id>
 
 ou
 
     GET /api/documents/<id>
-
-Récupération du document `<id>`
-
-L'extension ".json" peut être ajoutée pour expliciter le format de sortie.
 
 Exemple :
 
     GET /api/documents/1234.json
 
 
-Note : la différence entre la ressources `families` et `documents` est que
-l'identifiant doit être dans la famille indiquée pour être modifié sinon une
-erreur 404 (ressource non trouvée) sera retournée.
+La différence entre la ressources `families` et `documents` est que
+l'identifiant doit être de la famille indiquée sinon une erreur 404
+(ressource non trouvée) est retournée.
 
 L'identifiant du document peut être son nom logique, son identifiant numérique.
 
 L'identifiant numérique permet de référencer une révision précise du document.
 Le nom logique fait toujours référence à la dernière révision du document.
 
-
-Note : Un document "supprimé" ne peut pas être récupéré.
+Note : Un document «supprimé» ne peut pas être récupéré.
 
 ## Content {#core-ref:fb4fe4a5-500f-4aef-8a12-5e2ef58fad23}
 
@@ -43,9 +38,14 @@ Le retour est une donnée JSON.
 
 La partie `data` contient 2 champs :
 
-1.  `document.uri` : uri d'accès à la ressource modifiée
-1.  `document.properties` : liste des valeurs des propriétés
-2.  `document.attributes` : liste des valeurs des attributs
+`document.uri`
+:  uri d'accès à la ressource consulté
+
+`document.properties`
+: liste des propriétés
+
+`document.attributes`
+: liste des attributs
 
 
 Les attributs en visibilité "I" ne sont pas retournés. Leur existence n'est pas
@@ -55,34 +55,37 @@ Exemple :
 
     [php]
     {
-      "success" :true,
-      "messages" : [],
-      "data" : {
-        "document" : {
-            "uri" : "http;//www.example.org/api/documents/1256",
-            "properties" : { 
-               "id" : 1256,
-               "title" : "Hello world",
-               "locked" : 0,
-               ....
+       "success"  : "true",
+       "messages" : [ ],
+       "data" : {
+          "document" : {
+             "uri"        : "http;//www.example.org/api/documents/1256",
+             "properties" : { 
+                "id"     : 1256,
+                "title"  : "Hello world",
+                "locked" : 0,
+                ....
              }
-            "attributes" : { 
-              "ba_title" : {
-                  "value" : "Hello world"
+             "attributes" : { 
+                "ba_title" : {
+                  "value"        : "Hello world",
                   "displayValue" : "Hello world"
-              },
-              "ba_cost" : {
-                  "value" : 234
+                },
+                "ba_cost" : {
+                  "value"        : "234",
                   "displayValue" : "234.00 €"
-              }
-            }
+                }
+             }
           }
-      }
+       }
     }
 
 ### En cas d'échec {#core-ref:e73420e8-b6d1-4b71-849f-5316cb38e2d5}
 
 Les raisons d'échecs spécifiques à cette requête sont 
+<span class="fixme flag">À reprendre en précisant les retours selon la cas d'erreur.
+Si cela fait doublon avec les pages [Error API0106](http://api.dynacase.org/code/API0106.html) pourquoi ne pas mettre simplement un lien ?</span>
+
 
 |                     Raison                     | Status HTTP | Error Code |
 | ---------------------------------------------- | ----------- | ---------- |
