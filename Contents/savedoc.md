@@ -2,9 +2,9 @@
 
 ## Url {#core-ref:d8e16308-ddc2-4847-bbf7-6195abb4ba6d}
 
-    PUT /api/families/<famName>/<id>
-
 Modification d'un document de la famille `<famName>`
+
+    PUT /api/families/<famName>/<id>
 
 ou
 
@@ -12,14 +12,12 @@ ou
 
 Modification du document <id>
 
-L'extension ".json" peut être ajoutée pour expliciter le format de sortie.
-
 Exemple :
 
     PUT /api/documents/1234.json
 
 
-Note : la différence entre la ressources `families` et `docoments` est que
+Note : la différence entre la ressources `families` et `documents` est que
 l'identifiant doit être dans la famille indiqué pour être modifié sinon une
 erreur 404 (ressource non trouvée) sera retournée.
 
@@ -35,29 +33,30 @@ Le contenu de la requête doit contenir une donnée JSON avec la liste des attri
 
     [php]
     {
-      "attributes" : {
-          <attrName> : {
-            value : <newValue>
+       "attributes" : {
+          "<attrName>" : {
+             "value" : "<newValue>"
           }
-      }
+       }
     }
-
-Le type de la requête est `application/json`.
+Le type de la requête est `application/json`.<span class="flag fixme">Est-ce utile ?</span>
 
 Exemple :
 
     [php]
     {
-          "attributes" : {
-              "ba_title" : {"value" : "Hello world"},
-              "ba_desc" : {"value" : "Nice Day"}
-          }
+       "attributes" : {
+          "ba_title" : { "value" : "Hello world" },
+          "ba_desc"  : { "value" : "Nice Day" }
+       }
     }
 
 
 Note : Toute donnée additionnelle sera ignorée.
 
 ### Format urlEncoded {#core-ref:e9dd728c-1737-4694-a326-842edfd80187}
+
+<span class="flag fixme">Déjà dit lors de la création. C'est a priori un fonctionnement général, à remonter au chapitre de présentation de l'API</span>
 
 Le contenu de la requête contient la liste des valeurs d'attributs à enregistrer.
 Chaque variable (PUT) est le nom de l'attribut (casse insensible).
@@ -77,44 +76,55 @@ Le retour est une donnée JSON.
 La partie `data` contient 3 champs :
 
 
-1.  `document.uri` : uri d'accès à la ressource modifiée
-1.  `document.properties` : liste des valeurs des propriétés
-1.  `document.attributes` : liste des valeurs des attributs
-1.  `changes` : liste des valeurs modifiées
+`document.uri`
+:  uri d'accès à la ressource modifiée
+
+`document.properties`
+:  liste des valeurs des propriétés
+
+`document.attributes`
+:  liste des valeurs des attributs
+
+`changes`
+:  liste des attributs modifiés, avec les anciennes et nouvelles valeurs<span class="flag fixme">Ça sert à quoi ?</span>
 
 Exemple :
 
     [php]
     {
-      "success" :true,
-      "messages" : [],
-      "data" : {
-          "document" : {
-                "uri" : "http;//www.example.org/api/documents/1256",
-                "properties" : { 
-                   "id" : 1256,
-                   "title" : "Hello world",
-                   "locked" : 0,
+       "success"  : "true",
+       "messages" : [ ],
+       "data"     : {
+          "document"   : {
+             "uri"        : "http;//www.example.org/api/documents/1256",
+             "properties" : { 
+                "id"     : "1256",
+                "title"  : "Hello world",
+                "locked" : "0",
                    ....
-                 },
-                "attributes" : { 
-                    "ba_title" : {
-                        "value" : "Hello world"
-                        "displayValue" : "Hello world"
-                    },
-                    "ba_cost" : {
-                        "value" : 234
-                        "displayValue" : "234.00 €"
-                    }
+             },
+             "attributes" : { 
+                "ba_title" : {
+                   "value"        : "Hello world",
+                   "displayValue" : "Hello world"
+                },
+                "ba_cost" : {
+                   "value"        : "234",
+                   "displayValue" : "234.00 €"
                 }
+             }
           },
           "changes" : {
-              "my_name" : {"before" : "Dupont", "after" : "Dupond"}, 
-              "my_date" : {"before" : "", "after" : "2012-02-22"}},
-        }
+              "my_name" : { "before" : "Dupont", "after" : "Dupond" }, 
+              "my_date" : { "before" : "",       "after" : "2012-02-22" }
+          }
+       }
     }
 
 ### En cas d'échec {#core-ref:1439da9e-919c-4b32-9242-bd18ad2a487a}
+
+<span class="fixme flag">À reprendre en précisant les retours selon la cas d'erreur.
+Si cela fait doublon avec les pages [Error API0106](http://api.dynacase.org/code/API0106.html) pourquoi ne pas mettre simplement un lien ?</span>
 
 Les raisons d'échecs spécifiques à cette requête sont 
 
@@ -135,17 +145,16 @@ Cas d'erreur de privilège
 
     [php]
     {
-      "success" :false,
-      "messages" : [{
-            "type" : "error", 
-            "contentText" : "Need acl \"edit\" to modify the document",
-            "contentHtml" : "",
-            "code" : "API0106", 
-            "uri" : "http://api.dynacase.org/code/API0106.html",
-            "data" : null
-            }],
+       "success"  : "false",
+       "messages" : [
+       {
+             "type"        : "error", 
+             "contentText" : "Need acl \"edit\" to modify the document",
+             "contentHtml" : "",
+             "code"        : "API0106", 
+             "uri"         : "http://api.dynacase.org/code/API0106.html",
+             "data"        : null
+          }
+       ]
     }
-
-
-
 
