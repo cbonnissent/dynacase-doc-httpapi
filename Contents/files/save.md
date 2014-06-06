@@ -3,12 +3,13 @@
 ## Url {#core-ref:0d6666fa-77fd-4299-9205-c7a7659ee4b5}
 
 
+Modification d'un fichier temporaire. <span class="flag fixme">Et si je veux modifier un fichier Vault ? </span>
 
     PUT /api/file/<fileid>
 
-Modification d'un fichier temporaire. Le fichier temporaire est remplacé.
+Le fichier temporaire est remplacé.
 
-La référence retournée peut être insérée comme valeur dans un attribut de type
+<span class="flag fixme">Idem création</span>La référence retournée peut être insérée comme valeur dans un attribut de type
 file ou  image. Dans ce cas lors de l'enregistrement du document, le fichier
 temporaire sera déplacé dans le vault.
 
@@ -17,7 +18,7 @@ temporaire sera déplacé dans le vault.
 Modification d'un fichier du vault. La référence au fichier dans l'attribut
 reste inchangé.
 
-Note : l'attribut doit être mono-valué.
+Note : l'attribut doit être mono-valué.<span class="flag fixme">Pourquoi est-ce différent de la création ?</span>
 
 Note : Le hook `postStore` du document est appelé.
 
@@ -46,6 +47,7 @@ du fichier
     -----------------------------70122309720638098951066485136 
     Content-Disposition: form-data; name="fi_file"; filename="drakkar.jpeg" 
     Content-Type: image/jpeg
+    ...
 
 Le type de la requête est `application/x-www-form-urlencoded`.
 
