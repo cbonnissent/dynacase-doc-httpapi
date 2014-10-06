@@ -19,6 +19,11 @@ Récupération des informations du  fichier de l'attribut `<attrid` du document
 
 Récupération des informations du  fichier `<fileid` du document `<docid`
 
+<span class="flag fixme">Il manque :</span>
+
+    GET /api/files/<fileid>
+
+<span class="flag fixme">Si j'ai bien lu il peut y avoir des / dans les fileid (ou reference dans l'objet file) => ca ne pose pas de probleme pour l'URL ? </span>
 
 Exemple :
 
@@ -60,47 +65,51 @@ Exemple :
 
     [php]
     {
-      success :true,
-      messages : [],
-      data : {
-        "file" : {
-          "uri" : "http;//www.example.org/api/documents/1234/files/1256",
-          "mime" : "image/jpeg",
-          "size" : 567538,
-          "cdate" : "2014-07-23T23:43:23",
-          "mdate" : "2014-07-24T06:13:02",
-          "fileName" : "monimage.jpeg"
-          "reference" : "image/jpeg|1256|monimage.jpg",
-          "downloadUrl" : "http;//www.example.org/file/1234/1256/-1/fi_file/monimage.jpeg"
-        }
-      }
+       "success"  : "true",
+       "messages" : [ ],
+       "data"     : {
+          "file" : {
+             "uri"         : "http;//www.example.org/api/documents/1234/files/1256",
+             "mime"        : "image/jpeg",
+             "size"        : 567538,
+             "cdate"       : "2014-07-23T23:43:23",
+             "mdate"       : "2014-07-24T06:13:02",
+             "fileName"    : "monimage.jpeg"
+             "reference"   : "image/jpeg|1256|monimage.jpg",
+             "downloadUrl" : "http;//www.example.org/file/1234/1256/-1/fi_file/monimage.jpeg"
+          }
+       }
     }
 
 ### En cas d'échec {#core-ref:752b6ed1-bda0-4ddb-b8cf-d5e9f57250bb}
 
-Les raisons d'échecs spécifiques à cette requête sont 
+Les erreur spécifiques à cette requête sont :
 
-|                     Raison                     | Status HTTP | Error Code |
-| ---------------------------------------------- | ----------- | ---------- |
-| Privilège insuffisant pour accéder au document |         403 | API0010    |
-| Document supprimé                              |         404 | API0108    |
-| Attribut demandé inexistant                    |         400 |            |
+Dynacase **API0010** / HTTP **403** <span class="flag fixme"> API0100 Non ?</span>
+:  Privilège insuffisant pour accéder au document
 
-Exemple : 
+Dynacase **API0108** / HTTP **404** 
+:  Document supprimé
 
-Cas d'erreur de privilège
+Dynacase **APIxxx** / HTTP **404** <span class="flag fixme"> APIxxxx </span>
+:  Attribut inexistant
+
+
+Exemple, cas d'erreur de privilège
 
     [php]
     {
-      "success" :false,
-      "messages" : [{
-            "type" : "error", 
-            "contentText" : "Need acl \"view\" to access to the document",
-            "contentHtml" : "",
-            "code" : "API0106", 
-            "uri" : "http://api.dynacase.org/code/API0106.html",
-            "data" : null
-            }],
+       "success"  : "false",
+       "messages" : [
+          {
+             "type"        : "error", 
+             "contentText" : "Need acl \"view\" to access to the document",
+             "contentHtml" : "",
+             "code"        : "API0106", 
+             "uri"         : "http://api.dynacase.org/code/API0106.html",
+             "data"        : null
+          }
+       ]
     }
 
 

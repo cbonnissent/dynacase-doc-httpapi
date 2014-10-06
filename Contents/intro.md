@@ -1,5 +1,13 @@
 # API HTTP {#core-ref:1cc1c29f-7f57-40ce-898a-5e985a0b4926}
 
+## Version courante
+
+Le version courante de l'API est la **v1**.
+
+Par défaut, les requêtes sont traitées conformément à cette version.
+
+Nous recommandons [d'utiliser les mécanismes dédiés pour spécifier explicitement la version](#core-ref:43b99c6d-f6d8-4de1-b638-95de4f4e2cd7) de l'API utilisée.
+
 ## Présentation {#core-ref:fd6f9376-204c-4e66-84b9-477f32db1472}
 
 
@@ -88,9 +96,11 @@ Suppression d'un élément
     [http]
     PUT /api/<ressource>/<identifier>
 
-## Encodage {#core-ref:970cb8c1-1177-4818-8b1f-0bb446285df2}
+## Format & encodage {#core-ref:970cb8c1-1177-4818-8b1f-0bb446285df2}
 
 Toutes les échanges, entrées et retours de l'API, sont encodés en **UTF-8**.
+
+Les dates sont manipulées au format **ISO 8601**.
 
 ## Les entrées {#core-ref:f58492d8-cb75-40a6-8a69-33ac728fd099}
 
@@ -99,16 +109,13 @@ Toutes les échanges, entrées et retours de l'API, sont encodés en **UTF-8**.
 
 Le type de retour attendu (format) est précisé soit :
 
-* dans l'URL
+* dans l'URL : `PUT /api/<ressource>/<identifier>.<type>`
 
-        [http]
-        PUT /api/<ressource>/<identifier>.<type>
-
-* dans l'entête HTTP : `accept`.
+* dans l'entête HTTP : `accept`.<span class="flag fixme">comment ? exemple ?</span>
 
 Actuellement, seul le type `json` est géré.
 
-Le type de l'url est prioritaire au header.
+Le type exprimé dans l'URL est prioritaire sur celui de l'entête HTTP.
 
 ### PUT (Mise à jour), POST (Création) {#core-ref:1940c6ca-2776-48fb-b75c-854ac61b3307}
 
@@ -131,17 +138,18 @@ Dans le cas d'un retour JSON la structure retournée contient les éléments sui
 
     [php]
     {
-        "success" : true,       // false ou true
-        "messages" : [{
-            "type" : "warning", // type de message error, userMessage, warning, notice, notification
-            "contentText" : "once upon a time",
-            "contentHtml" : "",
-            "code" : "",        // code identifiant la catégorie du message
-            "uri" : "",         // url d'accès à la page web correspondant à l'erreur
-            "data" : { }        // données supplémentaires
-            }],
-        "data" : {}             // données demandées par la requête
-        
+       "success"  : true,                          // false ou true
+       "messages" : [
+          {
+             "type"        : "warning",            // type de message error, userMessage, warning, notice, notification
+             "contentText" : "once upon a time",
+             "contentHtml" : "",
+             "code"        : "",                   // code identifiant la catégorie du message
+             "uri"         : "",                   // url d'accès à la page web correspondant à l'erreur
+             "data"        : { }                   // données supplémentaires
+          }
+       ],
+       "data" : { }                                // données demandées par la requête 
     }
     
 Ce retour est envoyé quelque soit le résultat de la requête, y compris en cas d'erreur.
@@ -159,7 +167,7 @@ Si l'action demandée a été exécutée le code HTTP 2xx est retourné.
 
 Exemple de retour :
 
-    [json]
+    [php]
     {
         "success" : true, // false ou true
         "messages" : [],
@@ -201,18 +209,20 @@ Si l'action demandée n'a pas pu aboutir un code HTTP 4xx est retourné.
 
 Exemple de retour, cas d'un 404 :
 
-    [json]
+    [php]
     {
-        "success" : false, 
-        "messages" : [{
-            "type" : "error", 
-            "contentText" : "Document \"1234\" not found",
-            "contentHtml" : "",
-            "code" : "API0010", 
-            "uri" : "http://api.dynacase.org/code/API0010.html",
-            "data" : null
-            }],
-        "data" : null
+       "success" : false, 
+       "messages" : [
+          {
+             "type"        : "error", 
+             "contentText" : "Document \"1234\" not found",
+             "contentHtml" : "",
+             "code"        : "API0010", 
+             "uri"         : "http://api.dynacase.org/code/API0010.html",
+             "data"        : null
+          }
+       ],
+       "data" : null
     }
 
 ## Version de l'API {#core-ref:43b99c6d-f6d8-4de1-b638-95de4f4e2cd7}
