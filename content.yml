@@ -7,6 +7,8 @@ book:
     chapters:
       - level:  1
         content: "intro.md"
+      - level:  1
+        content: "resume.md"
       - level:   1
         content:  "families/introduction.md"
         subtoc : 2
@@ -23,3 +25,23 @@ book:
         content: "documents/savedoc.md"
       - level:  2
         content: "documents/deletedoc.md"
+      - level:   1
+        content:  "files/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "files/create.md"
+      - level:   1
+        content:  "trash/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "trash/getTrash.md"
+      - level:   1
+        content:  "enum/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "enum/get_enum.md"
+      - level:   1
+        content:  "extension/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "extension/modif.md"

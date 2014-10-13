@@ -2,7 +2,7 @@
 
 ## URL {#rest:bf50f601-f8ba-432d-91b1-e39f53fcf977}
 
-    PUT /api/v1/families/<famName>/<id>
+    PUT /api/v1/families/<famName>/documents/<id>
 
 Modification d'un document de la famille `<famName>` ayant l'identifiant `<id>`.
 

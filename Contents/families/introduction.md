@@ -21,13 +21,30 @@ La collection familles implémentent les méthodes suivantes :
 
 * Entité :
 
-| Action   | URL                         | Action effectuée                            |
-| :-     : | :                          :| :                                   :       |
+| Action   | URL                         | Action effectuée                                          |
+| :-     : | :                          :| :                                                 :       |
 | `GET`    | `/api/v1/families/<famid>`  | [Retourne les propriétés de la famille famid][get_family] |
-| `POST`   | `/api/v1/families/<famid>`  | [Créé un document de la famille famid][create_document]        |
-| `PUT`    | `/api/v1/families/<famid>`  | N/A                                         |
-| `DELETE` | `/api/v1/families/<famid>`  | N/A                                         |
+| `POST`   | `/api/v1/families/<famid>`  | N/A                                                       |
+| `PUT`    | `/api/v1/families/<famid>`  | N/A                                                       |
+| `DELETE` | `/api/v1/families/<famid>`  | N/A                                                       |
 
+* Sous-entité /documents/ :
+
+| Action   | URL                                    | Action effectuée                                          |
+| :-     : | :                                     :| :                                                 :       |
+| `GET`    | `/api/v1/families/<famid>/documents/`  |                                                           |
+| `POST`   | `/api/v1/families/<famid>/documents/`  | [Créé un document de la famille famid][create_document]   |
+| `PUT`    | `/api/v1/families/<famid>/documents/`  | N/A                                                       |
+| `DELETE` | `/api/v1/families/<famid>/documents/`  | N/A                                                       |
+
+* Sous-entité /documents/ :
+
+| Action   | URL                                        | Action effectuée                                          |
+| :-     : | :                                         :| :                                                       : |
+| `GET`    | `/api/v1/families/<famid>/documents/<id>`  | [Retourne le document `id`][get_doc]                      |
+| `POST`   | `/api/v1/families/<famid>/documents/<id>`  | N/A                                                       |
+| `PUT`    | `/api/v1/families/<famid>/documents/<id>`  | [Met à jour le document `id`][update_doc]                 |
+| `DELETE` | `/api/v1/families/<famid>/documents/<id>`  | [Supprime le document `id`][delete_doc]                   |
 
 
 <!-- links -->
@@ -35,3 +52,7 @@ La collection familles implémentent les méthodes suivantes :
 [doc_family]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:e01bf76d-481b-41fd-ac64-167a68d34c55.html#core-ref:e263d44b-8357-4450-87bf-11cef8bafb24
 [get_family]: #rest:6b195156-0cda-47c8-9a9a-04ec13562c9a
 [create_document]: #rest:e769b476-0033-407c-b453-4e8466e09975
+[get_doc]: #rest:1d7b939f-d5fc-4b57-b33f-d216913efc22
+[update_doc]: #rest:db2cb01a-7325-4f78-8cec-ceac9858caf2
+[delete_doc]: #rest:3358b3bd-bdf6-44ef-b1d7-438f8eb21067
+

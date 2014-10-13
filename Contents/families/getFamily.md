@@ -97,10 +97,10 @@ Cas d'erreur de privilège
 
 Le document peut être retourné avec plus ou moins d'information.
 
-* GET /documents/1234.json?fields=document.properties
-* GET /documents/1234.json?fields=document.properties.id,document.properties.title,document.attributes
-* GET /documents/1234.json?fields=document.properties.id,document.properties.title,document.attributes.my_exemple
-* GET /documents/1234.json?fields=document.properties.id,document.properties.title,document.attributes,family.structure
+* GET /api/v1/families/1234.json?fields=document.properties
+* GET /api/v1/families/1234.json?fields=document.properties.id,document.properties.title,document.attributes
+* GET /api/v1/families/1234.json?fields=document.properties.id,document.properties.title,document.attributes.my_exemple
+* GET /api/v1/families/1234.json?fields=document.properties.id,document.properties.title,document.attributes,family.structure
 
 Par défaut : `fields=document.properties`
 

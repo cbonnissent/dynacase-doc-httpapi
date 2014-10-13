@@ -1,14 +1,10 @@
-# Consultation d'un document  {#rest:1d7b939f-d5fc-4b57-b33f-d216913efc22}
+# Consultation d'un document supprimé  {#rest:52be10c1-9f46-456b-a22f-24909386567f}
 
-## URL {#rest:0e462204-b355-4e5a-81f2-4cf75cef3162}
+## URL {#rest:074c3c3f-e25e-418b-9030-a6d77f986731}
 
-    GET /api/v1/families/<famName>/documents/<id>
+Récupération d'un document du trash.
 
-Récupération d'un document de la famille `<famName>` ayant l'identifiant `<id>`.
-
-ou
-
-    GET /api/v1/documents/<id>
+    GET /api/v1/trash/<id>
 
 Récupération du document `<id>`.
 
@@ -16,28 +12,22 @@ L'extension ".json" peut être ajoutée pour expliciter le format de sortie.
 
 Exemple :
 
-    GET /api/v1/documents/1234.json
-
-Note : la différence entre la ressources `families` et `documents` est que
-l'identifiant doit être dans la famille indiquée pour être modifié sinon une
-erreur 404 (ressource non trouvée) est retournée.
+    GET /api/v1/trash/1234.json
 
 L'identifiant du document peut être son nom logique, son identifiant numérique.
 
 L'identifiant numérique permet de référencer une révision précise du document.
 Le nom logique fait toujours référence à la dernière révision du document.
 
-Note : Un document "supprimé" peut être récupéré via l'url [trash][trash].
-
-## Content {#rest:eac550a1-85ef-47d2-a28d-38f4604f4662}
+## Content {#rest:4f2315f1-9696-4843-804d-ff8f135193f0}
 
 Le contenu de la requête est vide.
 
-## Structure de retour {#rest:c56944fc-8676-4114-aa60-e2ce4a63ef44}
+## Structure de retour {#rest:1e75875d-514f-477b-84ac-f9e45027aa16}
 
 Le retour est une donnée JSON.
 
-### En cas de réussite : {#rest:38df8680-739a-4120-872c-9e7bf7879029}
+### En cas de réussite : {#rest:1a845c54-6c3a-4d61-9996-43a5979b7819}
 
 La partie `data` contient 3 champs :
 
@@ -75,7 +65,7 @@ Exemple :
         "exceptionMessage" : ""
     }
 
-### En cas d'échec {#rest:d136a95c-04f0-4822-aef4-f2e32c1d2694}
+### En cas d'échec {#rest:0de77a4f-f138-432f-b8a4-c3ec8d5b982c}
 
 Les raisons d'échecs spécifiques à cette requête sont 
 
@@ -107,7 +97,7 @@ Cas d'erreur de document non trouvé
         "exceptionMessage" : "Document \"1200\" not found"
     }
 
-## Résultat partiel {#rest:789802cd-80ee-4b1d-92a2-eaa49da90046}
+## Résultat partiel {#rest:e641eb3e-8540-47bf-b124-ba1be648d39f}
 
 Le document peut être retourné avec plus ou moins d'information.
 
@@ -125,5 +115,3 @@ Par défaut : `fields=document.properties,document.attributes`
 | `document.attributes`              | Récupère les valeurs et les valeurs affichable des attributs |                                                                                                                               |
 | `document.attributes.<id>`         | Récupère la valeur d'un attribut particulier                 |                                                                                                                               |
 | `document.family.structure`        | Récupère la structure de la famille                          |                                                                                                                               |
-
-[trash]: #rest:52be10c1-9f46-456b-a22f-24909386567

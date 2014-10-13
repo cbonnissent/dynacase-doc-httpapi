@@ -23,10 +23,10 @@ La collection documents implémentent les éléments suivants :
 
 | Action   | URL                       | Action effectuée                            |
 | :-     : | :                        :| :                                   :       |
-| `GET`    | `/api/v1/documents/<id>`  | [Retourne le document `id`][get_doc]                   |
+| `GET`    | `/api/v1/documents/<id>`  | [Retourne le document `id`][get_doc]        |
 | `POST`   | `/api/v1/documents/<id>`  | N/A                                         |
-| `PUT`    | `/api/v1/documents/<id>`  | [Met à jour le document `id`][update_doc]                 |
-| `DELETE` | `/api/v1/documents/<id>`  | [Supprime le document `id`][delete_doc]                   |
+| `PUT`    | `/api/v1/documents/<id>`  | [Met à jour le document `id`][update_doc]   |
+| `DELETE` | `/api/v1/documents/<id>`  | [Supprime le document `id`][delete_doc]     |
 
 
 <!-- links -->

@@ -2,14 +2,14 @@
 
 ## URL {#rest:ea0fbaaf-b3aa-4307-9a92-eed7359c323e}
 
-    POST /api/v1/families/<famName>
+    POST /api/v1/families/<famName>/documents/
 
 
 Création d'un document de la famille `<famName>`
 
 Exemple :
 
-    POST /api/v1/families/my_cookbook
+    POST /api/v1/families/my_cookbook/documents/
 
 
 Note : le nom de la famille est insensible à la casse.

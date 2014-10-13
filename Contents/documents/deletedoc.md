@@ -2,7 +2,7 @@
 
 ## URL {#rest:f992edec-ca5c-4fa1-b829-f88d9e17347d}
 
-    DELETE /api/v1/families/<famName>/<id>
+    DELETE /api/v1/families/<famName>/documents/<id>
 
 Suppression d'un document de la famille `<famName>` ayant l'identifiant `<id>`
 
