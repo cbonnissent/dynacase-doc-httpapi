@@ -27,9 +27,6 @@ L'identifiant du document peut être son nom logique, son identifiant numérique
 
 L'identifiant numérique permet de référencer une révision précise du document.
 
-<span class="flag fixme">Dans le code il est prévu de toujours renvoyer la dernière révision.
-Si on renvoi la révision stricte, il faut pouvoir indiquer comment avoir la dernière révision
-</span>
 
 Le nom logique fait toujours référence à la dernière révision du document.
 
