@@ -45,3 +45,5 @@ book:
         subtoc : 2
       - level:  2
         content: "extension/modif.md"
+      - level:   1
+        content:  "logger/logger.md"
