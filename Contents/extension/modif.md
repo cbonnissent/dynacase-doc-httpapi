@@ -16,9 +16,22 @@ Les classes de CRUD étendent la classe `\Dcp\HttpApi\V1\Crud` et doivent implé
 
 La classe fournit aussi deux autres méthodes que vous pouvez surcharger :
 
-* `setParameters` : cette méthode reçoit les paramètres extraits par le routeur de l'url d'appel (voir [enregistrement CRUD][save_CRUD]),
-ces paramètres sont ensuite mis à disposition dans le tableau `parameters`,
+* `setUrlParameters` : cette méthode reçoit les paramètres extraits par le routeur de l'url d'appel (voir [enregistrement CRUD][save_CRUD]),
+ces paramètres sont ensuite mis à disposition dans le tableau `urlParameters` de la classe,
+* `setContentParameters` : cette méthode reçoit les paramètres extraits par le routeur du contenu de la requête,
+ces paramètres sont ensuite mis à disposition dans le tableau `contentParameters` de la classe,
 * `execute` : cette méthode est celle qui est exécutée par le routeur une fois la classe CRUD identifiée.
+
+<span class="flag inline nota-bene"></span> L'extraction des `contentParameters` varie suivant le type de requête :
+
+* `GET` : le `contentParameters` est le contenu du `$_GET`,
+* `POST` : le `contentParameters` est :
+ * si le `header` `content-type` est `application/json` : le contenu est le `php://input` dont le json est décodé,
+ * si le `header` `content-type` est `x-www-form-urlencoded` ou `form-data` : le contenu est le `$_POST`,
+* `PUT` :  le `contentParameters` est :
+ * si le `header` `content-type` est `application/json` : le contenu est le `php://input` dont le json est décodé,
+ * si le `header` `content-type` est `x-www-form-urlencoded` ou `form-data` : le contenu est le `php://input` form décodé,
+* `DELETE` :  le `contentParameters` est un array vide.
 
 ## Enregistrement CRUD {#rest:7466f89c-87de-4dbe-89af-fdc2db37b9a4}
 
