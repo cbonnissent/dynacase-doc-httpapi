@@ -4,49 +4,46 @@ book:
     version: "4"
     author: "Anakeen Labs &lt;labs@anakeen.com&gt;"
     edition: "1"
-    chapters: 
-#
-# ---------------------- PRESENTATION -------------------------
-#
-
-        - level:  "1"
-          content: "intro.md"
-#
-        - level:  "1"
-          content: "resume.md"
-          subtoc:   2
-# 
-        - level:  "2"
-          content: "documents/introduction.md"
-          subtoc:   1
-        - level:  "3"
-          content: "documents/create.md"
-        - level:  "3"
-          content: "documents/save.md"
-        - level:  "3"
-          content: "documents/get.md"
-        - level:  "3"
-          content: "documents/delete.md"
-# 
-        - level:  "2"
-          content: "families/introduction.md"
-#
-        - level:  "2"
-          content: "files/introduction.md"
-          subtoc:   1
-        - level:  "3"
-          content: "files/create.md"
-        - level:  "3"
-          content: "files/save.md"
-        - level:  "3"
-          content: "files/get.md"
-        - level:  "3"
-          content: "files/delete.md"
-# 
-#    appendixes:
-#        - number:   "A1"
-#          content:  "appendix-1.md"
-#        - number:   "A2"
-#          content:  "test.md"
-
-
+    chapters:
+      - level:  1
+        content: "intro.md"
+      - level:  1
+        content: "resume.md"
+      - level:   1
+        content:  "families/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "families/getFamily.md"
+      - level:  2
+        content: "families/createdoc.md"
+      - level:   1
+        content:  "documents/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "documents/getdoc.md"
+      - level:  2
+        content: "documents/savedoc.md"
+      - level:  2
+        content: "documents/deletedoc.md"
+      - level:   1
+        content:  "files/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "files/create.md"
+      - level:   1
+        content:  "trash/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "trash/getTrash.md"
+      - level:   1
+        content:  "enum/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "enum/get_enum.md"
+      - level:   1
+        content:  "extension/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "extension/modif.md"
+      - level:   1
+        content:  "logger/logger.md"
