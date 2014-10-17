@@ -41,6 +41,11 @@ book:
       - level:  2
         content: "enum/get_enum.md"
       - level:   1
+        content:  "history/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "history/get_history.md"
+      - level:   1
         content:  "extension/introduction.md"
         subtoc : 2
       - level:  2
