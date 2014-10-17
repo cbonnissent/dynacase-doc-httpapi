@@ -2,15 +2,16 @@
 
 ## URL {#rest:0e462204-b355-4e5a-81f2-4cf75cef3162}
 
-    GET /api/v1/families/<famName>/documents/<id>
+    GET /api/v1/families/<famName>/documents/<documentId>
 
-Récupération d'un document de la famille `<famName>` ayant l'identifiant `<id>`.
+Récupération d'un document de la famille `<famName>` ayant l'identifiant
+`<documentId>`. 
 
 ou
 
-    GET /api/v1/documents/<id>
+    GET /api/v1/documents/<documentId>
 
-Récupération du document `<id>`.
+Récupération du document `<documentId>`.
 
 L'extension ".json" peut être ajoutée pour expliciter le format de sortie.
 
@@ -25,6 +26,11 @@ erreur 404 (ressource non trouvée) est retournée.
 L'identifiant du document peut être son nom logique, son identifiant numérique.
 
 L'identifiant numérique permet de référencer une révision précise du document.
+
+<span class="flag fixme">Dans le code il est prévu de toujours renvoyer la dernière révision.
+Si on renvoi la révision stricte, il faut pouvoir indiquer comment avoir la dernière révision
+</span>
+
 Le nom logique fait toujours référence à la dernière révision du document.
 
 Note : Un document "supprimé" peut être récupéré via l'url [trash][trash].
