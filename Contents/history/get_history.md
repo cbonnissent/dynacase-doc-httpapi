@@ -1,4 +1,5 @@
-# Consultation des messages historique {#rest:9ae75dac-8eb5-4fa9-a608-7313b90fe33c}
+# Consultation des messages d'historique {#rest:9ae75dac-8eb5-4fa9-a608-7313b90fe33c}
+
 ## URL  {#rest:24535176-2898-4d2b-8d54-57caf7efc7f1}
 
     GET /api/v1/documents/<documentId>/history/
@@ -12,8 +13,6 @@ ou
 
 Récupération de l'historique d'un document de la famille `<famName>` ayant
 l'identifiant `<documentId>`.
-
-
 
 ## Content  {#rest:a3c6ab8a-a46f-4afc-8f9d-7066d7d141c1}
 

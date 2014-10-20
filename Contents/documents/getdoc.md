@@ -129,4 +129,17 @@ Par défaut : `fields=document.properties,document.attributes`
 | `document.attributes.<id>`         | Récupère la valeur d'un attribut particulier                 |                                                                                                                               |
 | `document.family.structure`        | Récupère la structure de la famille                          |                                                                                                                               |
 
+## Cache {#rest:}
+
+Dans le cadre du [cache][cache], le `Etag` est calculé à l'aide des éléments suivants :
+
+* date de dernière modification,
+* identifiant de l'utilisateur,
+* identifiant des droits portés sur le document (vecteur de droits),
+* langue sélectionnée.
+
+L'ensemble de ces éléments sont concaténés et ensuite le [sha1][sha1] de cette concaténation consitue le `Etag`.
+
 [trash]: #rest:52be10c1-9f46-456b-a22f-24909386567
+[cache]: #rest:804f8d68-acfa-4a35-bb41-27b2a27c14dc
+[sha1]: https://fr.wikipedia.org/wiki/SHA-1

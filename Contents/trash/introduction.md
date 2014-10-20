@@ -1,14 +1,14 @@
-# Documents supprimés {#rest:7fe0e66a-c3ce-4315-aff6-fa345eae31da}
+# Document : Supprimé {#rest:d65c99b2-7f57-478a-9f76-bcc33aa6bea8}
 
 Cette collection décrit les [documents][doc_document] de Dynacase supprimés. 
 
-## URL {#rest:0d3d4576-b7d3-4480-9b00-03d6d20704fa}
+## URL {#rest:bcc4ab0b-a9d3-43c4-adc2-2ceb7ab2689e}
 
 L'url d'accès est : `/api/v1/trash`
 
-## Méthodes {#rest:18b84a9c-9226-4367-870c-2f0737151239}
+## Méthodes {#rest:b23f5636-f2e4-4b5d-99d1-0ca90a03ca9c}
 
-La collection trash implémentent les éléments suivants :
+La collection trash implémente les éléments suivants :
 
 * Collection : Il n'y a pas d'accès possible directement auprès de la collection documents :
 

@@ -8,7 +8,7 @@ L'url d'accès est : `/api/v1/families`
 
 ## Méthodes {#rest:de906276-e0d0-47ce-a8ff-1b282a7a89bf}
 
-La collection familles implémentent les méthodes suivantes :
+La collection familles implémente les méthodes suivantes :
 
 * Collection : Il n'y a pas d'accès possible directement auprès de la collection famille :
 

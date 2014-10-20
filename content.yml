@@ -10,13 +10,6 @@ book:
       - level:  1
         content: "resume.md"
       - level:   1
-        content:  "families/introduction.md"
-        subtoc : 2
-      - level:  2
-        content: "families/getFamily.md"
-      - level:  2
-        content: "families/createdoc.md"
-      - level:   1
         content:  "documents/introduction.md"
         subtoc : 2
       - level:  2
@@ -26,26 +19,32 @@ book:
       - level:  2
         content: "documents/deletedoc.md"
       - level:   1
-        content:  "files/introduction.md"
+        content:  "history/introduction.md"
         subtoc : 2
       - level:  2
-        content: "files/create.md"
+        content: "history/get_history.md"
       - level:   1
         content:  "trash/introduction.md"
         subtoc : 2
       - level:  2
         content: "trash/getTrash.md"
+        subtoc : 2
+      - level:   1
+        content:  "families/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "families/getFamily.md"
+      - level:  2
+        content: "families/createdoc.md"
       - level:   1
         content:  "enum/introduction.md"
-        subtoc : 2
       - level:  2
         content: "enum/get_enum.md"
       - level:   1
-        content:  "history/introduction.md"
+        content:  "files/introduction.md"
         subtoc : 2
       - level:  2
-        content: "history/get_history.md"
-      - level:  2
+        content: "files/create.md"
       - level:   1
         content:  "advanced/introduction.md"
         subtoc : 2

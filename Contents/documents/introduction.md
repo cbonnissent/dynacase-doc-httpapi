@@ -1,4 +1,4 @@
-# Documents {#rest:7fe0e66a-c3ce-4315-aff6-fa345eae31da}
+# Document {#rest:7fe0e66a-c3ce-4315-aff6-fa345eae31da}
 
 Cette collection décrit les [documents][doc_document] de Dynacase. 
 
@@ -8,7 +8,7 @@ L'url d'accès est : `/api/v1/documents`
 
 ## Méthodes {#rest:18b84a9c-9226-4367-870c-2f0737151239}
 
-La collection documents implémentent les éléments suivants :
+La collection documents implémente les éléments suivants :
 
 * Collection : Il n'y a pas d'accès possible directement auprès de la collection documents :
 

@@ -22,7 +22,8 @@ La classe fournit aussi deux autres méthodes que vous pouvez surcharger :
 ces paramètres sont ensuite mis à disposition dans le tableau `urlParameters` de la classe,
 * `setContentParameters` : cette méthode reçoit les paramètres extraits par le routeur du contenu de la requête,
 ces paramètres sont ensuite mis à disposition dans le tableau `contentParameters` de la classe,
-* `execute` : cette méthode est celle qui est exécutée par le routeur une fois la classe CRUD identifiée.
+* `execute` : cette méthode est celle qui est exécutée par le routeur une fois la classe CRUD identifiée,
+* `getEtagInfo` : cette méthode est utilisée pour calculer un etag dans le cadre de la gestion du [cache][cache].
 
 <span class="flag inline nota-bene"></span> L'extraction des `contentParameters` varie suivant le type de requête :
 
@@ -95,3 +96,4 @@ Il est à noter que si vous ajoutez une route à égalité avec une route `syste
 alors c'est la route `custom` qui est sélectionnée.
 
 [save_CRUD]: #rest:651043a1-f290-466e-977f-d39a195a1195
+[cache]: #rest:804f8d68-acfa-4a35-bb41-27b2a27c14dc
