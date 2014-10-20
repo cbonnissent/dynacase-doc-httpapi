@@ -45,10 +45,11 @@ book:
         subtoc : 2
       - level:  2
         content: "history/get_history.md"
+      - level:  2
       - level:   1
-        content:  "extension/introduction.md"
+        content:  "advanced/introduction.md"
         subtoc : 2
       - level:  2
-        content: "extension/modif.md"
+        content: "advanced/extension/modif.md"
       - level:   2
-        content:  "extension/logger.md"
+        content:  "advanced/logger/logger.md"

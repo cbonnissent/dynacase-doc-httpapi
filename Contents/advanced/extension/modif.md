@@ -1,5 +1,7 @@
 # Extension de l'API REST {#rest:50aff82b-8921-42ff-81b1-69a1a0103d98}
 
+Il est possible à un module d'étendre l'API REST pour ajouter de nouvelles entités ou surcharger les entités existantes.
+
 L'extension de l'API REST passe par deux éléments : 
 
 * une classe de CRUD : celle-ci fournit les 4 méthodes du CRUD et retourne les valeurs.
