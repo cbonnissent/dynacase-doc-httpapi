@@ -24,6 +24,13 @@ book:
       - level:  2
         content: "history/get_history.md"
       - level:   1
+        content:  "revision/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "revision/list_revision.md"
+      - level:  2
+        content: "revision/get_revision.md"
+      - level:   1
         content:  "trash/introduction.md"
         subtoc : 2
       - level:  2
@@ -52,3 +59,5 @@ book:
         content: "advanced/extension/modif.md"
       - level:   2
         content:  "advanced/logger/logger.md"
+      - level:   2
+        content:  "advanced/cache/cache.md"

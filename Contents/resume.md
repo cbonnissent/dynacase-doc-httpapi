@@ -15,9 +15,19 @@
 | DELETE | /api/v1/documents/&lt;docid&gt;                         | Oui                                  | [Mise à la poubelle d'un document][DELDOC]                 |
 |        |                                                         |                                      |                                                            |
 | GET    | /api/v1/documents/&lt;docid&gt;/history                 | Oui                                  | [Récupération des messages d'historique][get_histo]        |
-| PUT    | /api/v1/documents/&lt;docid&gt;/history                 | N/A                                  | N/A (Modification d'un message d'historique)               |
+| PUT    | /api/v1/documents/&lt;docid&gt;/history                 | N/A                                  | N/A                                                        |
 | POST   | /api/v1/documents/&lt;docid&gt;/history                 | <span class="apiTodo">Not yet</span> | Ajout d'un message d'historique                            |
-| DELETE | /api/v1/documents/&lt;docid&gt;/history                 | N/A                                  | N/A (suppression d'un message d'historique)                |
+| DELETE | /api/v1/documents/&lt;docid&gt;/history                 | N/A                                  | N/A                                                        |
+|        |                                                         |                                      |                                                            |
+| GET    | /api/v1/documents/&lt;docid&gt;/revisions/              | Oui                                  | [Liste des révisions d'un document][list_revision]         |
+| PUT    | /api/v1/documents/&lt;docid&gt;/revisions/              | N/A                                  | N/A                                                        |
+| POST   | /api/v1/documents/&lt;docid&gt;/revisions/              | N/A                                  | N/A                                                        |
+| DELETE | /api/v1/documents/&lt;docid&gt;/revisions/              | N/A                                  | N/A                                                        |
+|        |                                                         |                                      |                                                            |
+| GET    | /api/v1/documents/&lt;docid&gt;/revisions/<revisionNumber>| Oui                                  | [Révision `<revisionNumber>`][get_revision]              |
+| PUT    | /api/v1/documents/&lt;docid&gt;/revisions/              | N/A                                  | N/A                                                        |
+| POST   | /api/v1/documents/&lt;docid&gt;/revisions/              | N/A                                  | N/A                                                        |
+| DELETE | /api/v1/documents/&lt;docid&gt;/revisions/              | N/A                                  | N/A                                                        |
 |        |                                                         |                                      |                                                            |
 | GET    | /api/v1/families/                                       | <span class="apiTodo">Not yet</span> | Liste des familles                                         |
 | PUT    | /api/v1/families/                                       | N/A                                  | N/A                                                        |
@@ -75,3 +85,5 @@ pour une implémentation future mais non présentes dans la version courante de 
 [trash_doc]: #rest:52be10c1-9f46-456b-a22f-24909386567f
 [get_enum]: #rest:bb13e401-1859-4c73-b299-70b801ed7eb0
 [get_histo]: #rest:9ae75dac-8eb5-4fa9-a608-7313b90fe33c
+[list_revision]: #rest:2dd5afbe-1d3d-4830-8241-c93077d88430
+[get_revision]: #rest:eb7b6954-0945-4f02-8e10-16e69729c529

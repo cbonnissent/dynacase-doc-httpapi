@@ -1,6 +1,6 @@
 # Document : Historique {#rest:01d9b18d-a597-411d-8d8f-a5172b81f60b}
 
-Cette collection décrit les messages de l'historique des documents
+Cette sous-collection décrit les messages de l'historique des documents
 
 ## URL {#rest:670071f5-008d-42e8-bde3-0bcee337ae50}
 

@@ -141,35 +141,34 @@ Exemple :
 Cas d'erreur en cas de document non trouvé
 
     [javascript]
-    data: null
-    exceptionMessage: "Document "135214" not found"
-    headers: []
-    messages: 
-     [{
-        code: "API0200"
-        contentHtml: ""
-        contentText: "Document "135214" not found"
-        data: null
-        type: "error"
-        uri: ""
-      },{
-        type:message, contentText:You can consult ?app=HTTPAPI_V1 to have info on the API,…}
-        code: ""
-        contentHtml: "You can consult <a href="?app=HTTPAPI_V1">the REST page</a> to have info on the API"
-        contentText: "You can consult ?app=HTTPAPI_V1 to have info on the API"
-        data: null
-        type: "message"
-        uri: ""
-     }]
-    success: false
-
-
-
+    {
+        "success": false,
+        "messages": [
+            {
+                "type": "error",
+                "contentText": "Document \"3802\" not found",
+                "contentHtml": "",
+                "code": "API0200",
+                "uri": "",
+                "data": null
+            },
+            {
+                "type": "message",
+                "contentText": "You can consult http://dynacase.dev:8081/index.php?app=HTTPAPI_V1 to have info on the API",
+                "contentHtml": "You can consult <a href=\"http://dynacase.dev:8081/index.php?app=HTTPAPI_V1\">the REST page</a> to have info on the API",
+                "code": "",
+                "uri": "",
+                "data": null
+            }
+        ],
+        "data": null,
+        "exceptionMessage": "Document \"3802\" not found"
+    }
 
 
 ## Filtres  {#rest:a882873e-dcb1-4866-a7dc-2de45a15aa00}
 
-### slice
+### slice {#rest:83a97e3c-cd8b-4fdf-8332-c35f54674cde}
 
 indique le nombre de révision maximum à retourner. 
 
@@ -180,7 +179,7 @@ Exemple : les 10 dernières révisions
 
     GET api/v1/document/1234/history/?slice=10
 
-## offset
+## offset {#rest:cf027228-a908-419e-8e21-13c246281ecc}
 
 Index à partir duquel, les révisions sont retournées.
 
@@ -188,7 +187,7 @@ Exemple: Les révisions de 7 à 10.
 
     GET api/v1/document/1234/history/?slice=2&offset=7
 
-## revision
+## revision {#rest:64f4d573-1b08-4bc7-aad0-d7183d488d42}
 
 Retourner l'historique d'une révision précise.
 
