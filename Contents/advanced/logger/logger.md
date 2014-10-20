@@ -70,7 +70,7 @@ paramètre applicatif `CUSTOM_LOGGER`.
 Celui doit contenir un array json listant les classes de log que vous souhaitez ajouter, celle-ci seront initialisées
 lors d'une requête auprès de l'API et les messages seront envoyés si besoin.
 
-Par exemple, par enregistrer la classe ci-dessus, il faut ajouter le JSON suivant :
+Par exemple, pour enregistrer la classe ci-dessus, il faut ajouter le JSON suivant :
 
     [javascript]
     ["\\Dcp\\HttpApi\\V1\\Logger\\ErrorLog"]
