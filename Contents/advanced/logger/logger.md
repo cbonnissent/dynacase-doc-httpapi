@@ -6,16 +6,15 @@ erreur PHP, erreur documentaire, etc.)
 ## Système de log par défaut {#rest:21b1b002-97fb-4159-bb52-b89f9b973aae}
 
 Par défaut le système de log utilise [la classe de log][core_log] de Dynacase et les logs sont enregistrés à chaque 
-erreur et envoyé dans syslog.
+erreur et envoyés dans syslog.
 
 ## Ajout d'un système de log tiers {#rest:40296f2c-7ba1-4aae-8dd8-2c72b6c4eced}
 
-Il est possible d'ajouter un système de log tiers (mail, outil de supervision, etc.) Il y a deux étapes à suivre pour
-ce faire :
+Il est possible d'ajouter un système de log tiers (mail, outil de supervision, etc.) Il y a deux étapes à suivre  :
 
 ### Création d'une classe de Log {#rest:94138d08-9c26-4d55-8637-f281620f36da}
 
-Il faut tout d'abord créer une classe qui hérite de classe abstraite de log de l'API `\Dcp\HttpApi\V1\Logger\Logger`.
+Il faut réer une classe qui hérite de classe abstraite de log de l'API `\Dcp\HttpApi\V1\Logger\Logger`.
 
 Ci-dessous un exemple avec une classe (fournit en standard par l'API mais non activée par défaut) qui log les erreurs
 dans error.log de Apache.

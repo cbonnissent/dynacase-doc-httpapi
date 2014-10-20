@@ -16,7 +16,7 @@ Les classes de CRUD étendent la classe `\Dcp\HttpApi\V1\Crud` et doivent implé
 * `update` : mise à jour d'une entité,
 * `delete` : suppression d'une entité.
 
-La classe fournit aussi deux autres méthodes que vous pouvez surcharger :
+La classe fournit aussi quelques autres méthodes que vous pouvez surcharger :
 
 * `setUrlParameters` : cette méthode reçoit les paramètres extraits par le routeur de l'url d'appel (voir [enregistrement CRUD][save_CRUD]),
 ces paramètres sont ensuite mis à disposition dans le tableau `urlParameters` de la classe,
@@ -92,8 +92,8 @@ qui est sélectionnée,
 * `description` (optionnel) : chaîne de caractères non traduites décrivant la ressource (cette clef est utilisée dans la page par défaut de l'API),
 * `canonicalURL` (optionnel) : URL d'accès à la ressources (cette clef est utilisée dans la page par défaut de l'API).
 
-Il est à noter que si vous ajoutez une route à égalité avec une route `system` (liste ci-dessus) (regexp positive et order égal),
-alors c'est la route `custom` qui est sélectionnée.
+<span class="flag inline nota-bene"></span> Si vous ajoutez une route à égalité avec une route `system` (regexp positive et order égal),
+alors c'est la route `custom` qui est sélectionnée. Cela vous permet de surcharger les routes systèmes.
 
 [save_CRUD]: #rest:651043a1-f290-466e-977f-d39a195a1195
 [cache]: #rest:804f8d68-acfa-4a35-bb41-27b2a27c14dc
