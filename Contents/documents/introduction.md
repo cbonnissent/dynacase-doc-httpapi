@@ -12,12 +12,12 @@ La collection documents implémente les éléments suivants :
 
 * Collection : Il n'y a pas d'accès possible directement auprès de la collection documents :
 
-| Action   | URL                     | Action effectuée   |
-| :-     : | :                      :| :                : |
-| `GET`    | `/api/v1/documents`     | N/A                |
-| `POST`   | `/api/v1/documents`     | N/A                |
-| `PUT`    | `/api/v1/documents`     | N/A                |
-| `DELETE` | `/api/v1/documents`     | N/A                |
+| Action   | URL                     | Action effectuée                                                       |
+| :-     : | :                      :| :                                                                    : |
+| `GET`    | `/api/v1/documents`     | Retourne la liste des documents (pas encore implémenté)                |
+| `POST`   | `/api/v1/documents`     | N/A                                                                    |
+| `PUT`    | `/api/v1/documents`     | N/A                                                                    |
+| `DELETE` | `/api/v1/documents`     | N/A                                                                    |
 
 * Entité :
 

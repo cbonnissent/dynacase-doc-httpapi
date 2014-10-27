@@ -10,14 +10,14 @@ L'url d'accès est : `/api/v1/families/<famName>/enumerates/`
 
 La sous-collection enumerates implémente les éléments suivants :
 
-* Collection : Il n'y a pas d'accès possible directement auprès de la collection documents :
+* Collection : Il n'y a pas d'accès possible directement auprès de la collection `documents` :
 
-| Action   | URL                                               | Action effectuée                            |
-| :-     : | :                                                :| :                                         : |
-| `GET`    | `/api/v1/families/<famName>/enumerates/`          | Liste des attributs énumérés                |
-| `POST`   | `/api/v1/families/<famName>/enumerates/`          | N/A                                         |
-| `PUT`    | `/api/v1/families/<famName>/enumerates/`          | N/A                                         |
-| `DELETE` | `/api/v1/families/<famName>/enumerates/`          | N/A                                         |
+| Action   | URL                                               | Action effectuée                                                   |
+| :-     : | :                                                :| :                                                                : |
+| `GET`    | `/api/v1/families/<famName>/enumerates/`          | Liste des attributs énumérés (pas encore implémenté)               |
+| `POST`   | `/api/v1/families/<famName>/enumerates/`          | N/A                                                                |
+| `PUT`    | `/api/v1/families/<famName>/enumerates/`          | N/A                                                                |
+| `DELETE` | `/api/v1/families/<famName>/enumerates/`          | N/A                                                                |
 
 * Entité :
 

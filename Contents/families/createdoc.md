@@ -12,8 +12,7 @@ Exemple :
     POST /api/v1/families/my_cookbook/documents/
 
 
-Note : le nom de la famille est insensible à la casse.
-
+<span class="flag inline nota-bene"></span> Le nom de la famille est insensible à la casse.
 
 ## Content {#rest:09cc3928-048c-4724-bd92-2fe099d37244}
 
@@ -58,7 +57,7 @@ Chaque variable (POST) est le nom de l'attribut (casse insensible).
 
 Le type de la requête est `application/x-www-form-urlencoded`.
 
-Note : Ce format peut être utilisé directement depuis un formulaire HTML.
+<span class="flag inline nota-bene"></span> Ce format peut être utilisé directement depuis un formulaire HTML.
 
 Cette forme permet aussi d'enregistrer des fichiers dans le document.
 

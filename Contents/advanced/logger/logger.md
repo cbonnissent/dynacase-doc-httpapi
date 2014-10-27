@@ -16,7 +16,7 @@ Il est possible d'ajouter un système de log tiers (mail, outil de supervision, 
 
 Il faut réer une classe qui hérite de classe abstraite de log de l'API `\Dcp\HttpApi\V1\Logger\Logger`.
 
-Ci-dessous un exemple avec une classe (fournit en standard par l'API mais non activée par défaut) qui log les erreurs
+Ci-dessous un exemple avec une classe (fournie en standard par l'API mais non activée par défaut) qui log les erreurs
 dans error.log de Apache.
 
     [php]

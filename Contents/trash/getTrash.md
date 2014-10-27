@@ -4,9 +4,9 @@
 
 Récupération d'un document du trash.
 
-    GET /api/v1/trash/<id>
+    GET /api/v1/trash/<documentId>
 
-Récupération du document `<id>`.
+Récupération de la dernière révision du document supprimé ayant pour id `<documentId>`.
 
 L'extension ".json" peut être ajoutée pour expliciter le format de sortie.
 
@@ -15,9 +15,6 @@ Exemple :
     GET /api/v1/trash/1234.json
 
 L'identifiant du document peut être son nom logique, son identifiant numérique.
-
-L'identifiant numérique permet de référencer une révision précise du document.
-Le nom logique fait toujours référence à la dernière révision du document.
 
 ## Content {#rest:4f2315f1-9696-4843-804d-ff8f135193f0}
 
@@ -101,16 +98,16 @@ Cas d'erreur de document non trouvé
 
 Le document peut être retourné avec plus ou moins d'information.
 
-* GET /documents/1234.json?fields=document.properties
-* GET /documents/1234.json?fields=document.properties.id,document.properties.title,document.attributes
-* GET /documents/1234.json?fields=document.properties.id,document.properties.title,document.attributes.my_exemple
-* GET /documents/1234.json?fields=document.properties.id,document.properties.title,document.attributes,family.structure
+* GET /api/v1/trash/1234.json?fields=document.properties
+* GET /api/v1/trash/1234.json?fields=document.properties.id,document.properties.title,document.attributes
+* GET /api/v1/trash/1234.json?fields=document.properties.id,document.properties.title,document.attributes.my_exemple
+* GET /api/v1/trash/1234.json?fields=document.properties.id,document.properties.title,document.attributes,family.structure
 
 Par défaut : `fields=document.properties,document.attributes`
 
 |           fields                   |                        Signification                         |                                                           Remarques                                                           |
 | ---------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| `document.properties`              | Récupère l'ensemble des propriétés "visible"                 | "state", "fromname", "id", "postitid", "initid", "locked", "revision", "wid", "cvid", "profid", "fromid", "owner", "domainid" |
+| `document.properties`              | Récupère l'ensemble des propriétés "visibles"                | "state", "fromname", "id", "postitid", "initid", "locked", "revision", "wid", "cvid", "profid", "fromid", "owner", "domainid" |
 | `document.properties.<prop>`       | Récupère la propriété indiquée                               |                                                                                                                               |
 | `document.attributes`              | Récupère les valeurs et les valeurs affichable des attributs |                                                                                                                               |
 | `document.attributes.<id>`         | Récupère la valeur d'un attribut particulier                 |                                                                                                                               |

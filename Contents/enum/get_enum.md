@@ -18,11 +18,11 @@ Le retour est une donnée JSON.
 
 La partie `data` contient 3 champs :
 
-1.  `document.data.uri` : URI d'accès à la ressource modifiée;
+1.  `document.data.uri` : URI d'accès à la ressource;
 1.  `document.data.label` : label de l'attribut traduit dans la langue de l'utilisateur;
-1.  `document.data.filter` : filtre appliqués à la recherche,
+1.  `document.data.filter` : filtre appliqués à la recherche;
 1.  `document.data.enumItems` : tableau d'objets `key`, `label` (traduit dans la langue de l'utilisateur) et filtrés 
-suivant les paramètres de filter,
+suivant les paramètres de filter.
 
 Exemple :
 

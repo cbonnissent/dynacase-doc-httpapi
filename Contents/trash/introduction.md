@@ -23,7 +23,7 @@ La collection trash implémente les éléments suivants :
 
 | Action   | URL                       | Action effectuée                            |
 | :-     : | :                        :| :                                   :       |
-| `GET`    | `/api/v1/trash/<id>`      | [Retourne le document `id`][get_enum]        |
+| `GET`    | `/api/v1/trash/<id>`      | [Retourne le document `id`][trash_doc]      |
 | `POST`   | `/api/v1/trash/<id>`      | N/A                                         |
 | `PUT`    | `/api/v1/trash/<id>`      | N/A                                         |
 | `DELETE` | `/api/v1/trash/<id>`      | N/A                                         |

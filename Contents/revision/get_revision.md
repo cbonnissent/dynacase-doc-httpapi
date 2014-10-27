@@ -4,7 +4,7 @@
 
     GET /api/v1/documents/<documentId>/revisions/<revisionNumber>
 
-Récupération de la révision `<revisionNumber>` du document `<documentId>`.
+Récupération de la révision `<revisionNumber>` de la dernière révision d'un document ayant l'id `<documentId>`.
 
 L'extension ".json" peut être ajoutée pour expliciter le format de sortie.
 
@@ -13,10 +13,6 @@ Exemple :
     GET /api/v1/documents/1234/revisions/0.json
 
 L'identifiant du document peut être son nom logique, son identifiant numérique.
-
-Note : Une révision d'un document "supprimé" peut être récupéré via l'url [trash][trash] en suivant le même mécanisme.
-
-    GET /api/v1/trash/1234/revisions/0.json
 
 ## Content {#rest:b0150fea-005b-4c7e-92d3-79ee9a07f5a4}
 
@@ -121,16 +117,16 @@ Cas d'erreur de document non trouvé
 
 Le document peut être retourné avec plus ou moins d'information.
 
-* GET /documents/1234.json?fields=document.properties
-* GET /documents/1234.json?fields=document.properties.id,document.properties.title,document.attributes
-* GET /documents/1234.json?fields=document.properties.id,document.properties.title,document.attributes.my_exemple
-* GET /documents/1234.json?fields=document.properties.id,document.properties.title,document.attributes,family.structure
+* GET /documents/1234/revisions/0.json?fields=document.properties
+* GET /documents/1234/revisions/0.json?fields=document.properties.id,document.properties.title,document.attributes
+* GET /documents/1234/revisions/0.json?fields=document.properties.id,document.properties.title,document.attributes.my_exemple
+* GET /documents/1234/revisions/0.json?fields=document.properties.id,document.properties.title,document.attributes,family.structure
 
 Par défaut : `fields=document.properties,document.attributes`
 
 |           fields                   |                        Signification                         |                                                           Remarques                                                           |
 | ---------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| `document.properties`              | Récupère l'ensemble des propriétés "visible"                 | "state", "fromname", "id", "postitid", "initid", "locked", "revision", "wid", "cvid", "profid", "fromid", "owner", "domainid" |
+| `document.properties`              | Récupère l'ensemble des propriétés "visibles"                | "state", "fromname", "id", "postitid", "initid", "locked", "revision", "wid", "cvid", "profid", "fromid", "owner", "domainid" |
 | `document.properties.<prop>`       | Récupère la propriété indiquée                               |                                                                                                                               |
 | `document.attributes`              | Récupère les valeurs et les valeurs affichable des attributs |                                                                                                                               |
 | `document.attributes.<id>`         | Récupère la valeur d'un attribut particulier                 |                                                                                                                               |
@@ -140,12 +136,30 @@ Par défaut : `fields=document.properties,document.attributes`
 
 Dans le cadre du [cache][cache], le `Etag` est calculé à l'aide des éléments suivants :
 
+* id de la révision,
 * date de dernière modification,
 * identifiant de l'utilisateur,
 * identifiant des droits portés sur le document (vecteur de droits),
 * langue sélectionnée.
 
 L'ensemble de ces éléments sont concaténés et ensuite le [sha1][sha1] de cette concaténation consitue le `Etag`.
+
+## Autres URL d'accès {#rest:1bbf4922-a12f-4cc4-8aa0-16853148ac14}
+
+Vous pouvez aussi accéder à cette ressources via :
+
+    GET /api/v1/families/<famName>/documents/<documentId>/revisions/<revisionNumber>
+
+Récupération de la révision `<revisionNumber>` de la dernière révision d'un document de la famille `<famName>` ayant
+l'identifiant `<documentId>`.
+
+<span class="flag inline nota-bene"></span> La différence entre les collection `families` et `documents` est que pour
+la collection `/api/v1/families/<famName>/documents/<documentId>/revisions/<revisionNumber>` l'identifiant doit être dans la famille indiquée pour être retourné sinon une
+erreur 404 (ressource non trouvée) est retournée.
+
+<span class="flag inline nota-bene"></span> L'historique d'un document "supprimé" peut être récupéré via l'url 
+
+    GET /api/v1/families/<famName>/documents/<documentId>/revisions/<revisionNumber>
 
 [trash]: #rest:52be10c1-9f46-456b-a22f-24909386567
 [cache]: #rest:804f8d68-acfa-4a35-bb41-27b2a27c14dc

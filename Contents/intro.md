@@ -28,8 +28,7 @@ notre cas, c'est l'`id` d'un document, le `vaultid` d'un fichier, etc.
 La structure est conforme au standard REST.
 
 Les actions du [CRUD][wikipedia_crud] sont implémentées et associées sur les méthodes de HTTP, suivant la liste
-d'équivalence suivante :  
-  
+d'équivalence suivante :
 
 | Action   | Méthode HTTP  | URL                 | Action effectuée                                                           |
 | :-     : | :      : | :                      : |                                                                          : |
@@ -62,7 +61,7 @@ Le type de retour attendu (format) est précisé soit :
 
 * dans le header HTTP : `accept`.
 
-Actuellement, seul le type `json` est géré.
+Actuellement, seul le type `json` est géré. Celui-ci est renvoyé dans le corps de la requête HTTP.
 
 Le type exprimé dans l'URL est prioritaire à celui du header HTTP.
 
@@ -86,9 +85,37 @@ Exemples :
  * Consultation du document `212` : `GET` : `/api/v1/documents/212`
  * Suppression du document `IUSER_JEAN_REMI` : `DELETE` : `/api/v1/documents/IUSER_JEAN_REMI`
 
+#### Compatibilité {#rest:}
+
+Certains clients ne permettant pas d'effectuer des requêtes autre que `GET` et `POST`, un fonctionnement en mode
+ compatiblité est possible. Pour ce faire, il faut :
+ 
+ * 
+
 ### Réponse {#rest:d886bec2-e0f8-48ed-b7e3-b13dd5375cd8}
 
 L'API répond via plusieurs éléments, le content du retour et les headers HTTP.
+
+#### Contenu {#rest:2d4427f0-f2ec-493b-b443-343b525f76f2}
+
+Dans le cas d'un retour JSON, la structure retournée contient les éléments suivants :
+
+    [javascript]
+    {
+        "success" : true,       // false ou true
+        "messages" : [{
+            "type" : "warning", // type de message error, userMessage, warning, notice, notification
+            "contentText" : "once upon a time",
+            "contentHtml" : "",
+            "code" : "",        // code identifiant la catégorie du message
+            "uri" : "",         // url d'accès à la page web correspondant à l'erreur
+            "data" : { }        // données supplémentaires
+            }],
+        "data" : {}             // données demandées par la requête
+        
+    }
+    
+Ce retour est envoyé quelque soit le résultat de la requête, y compris en cas d'erreur.
 
 #### Code de retour http {#rest:7e10161c-0412-4927-8e73-09795e58b571}
 
@@ -124,6 +151,7 @@ Exemple de retour :
         }
     }
 
+Dans l'enveloppe retournée, le booléen **success** est à **true**.
 
 ##### Les retours d'erreur {#rest:e56e8fcd-13ab-456b-85d3-f9ce9b3c4123}
 
@@ -163,26 +191,8 @@ Exemple de retour, cas d'un 404 :
         "exceptionMessage" : "Document \"22222\" not found"
     }
 
-#### Contenu {#rest:2d4427f0-f2ec-493b-b443-343b525f76f2}
-
-Dans le cas d'un retour JSON, la structure retournée contient les éléments suivants :
-
-    [javascript]
-    {
-        "success" : true,       // false ou true
-        "messages" : [{
-            "type" : "warning", // type de message error, userMessage, warning, notice, notification
-            "contentText" : "once upon a time",
-            "contentHtml" : "",
-            "code" : "",        // code identifiant la catégorie du message
-            "uri" : "",         // url d'accès à la page web correspondant à l'erreur
-            "data" : { }        // données supplémentaires
-            }],
-        "data" : {}             // données demandées par la requête
-        
-    }
-    
-Ce retour est envoyé quelque soit le résultat de la requête, y compris en cas d'erreur.
+Dans l'enveloppe retournée, le booléen **success** est à **false** est un ensemble de messages explicitant l'erreur
+est ajouté dans le tableau `messages`.
 
 ### Version de l'API {#rest:4bd0efac-b454-4825-8efe-7dc85019a82c}
 
@@ -209,13 +219,16 @@ Cette mécanique est décrite dans la [documentation de core][authentification].
 L'accès aux entités est contrôlé par les entités elles-même mais l'utilisation
 de l'api est aussi contrôlée de manière générale par l'application "HTTPAPI".
 
-Cette application définit 4 droits (ACL) qui autorisent l'utilisation des méthodes sur les entités :
+Cette application définit 4 droits (ACL) qui autorisent l'utilisation des méthodes sur les entités/collections :
 
-*   `PUT` : modification d'entités;
-*   `POST` : création d'entités;
-*   `GET` : consultation d'entités;
-*   `DELETE` : suppression d'entités.
+*   `PUT`;
+*   `POST`;
+*   `GET`;
+*   `DELETE`.
 
+Ces droits s'appliquent de manière globale sur toute l'API quelque soit la ressource/collection concernée.
+
+Si un utilisateur ne possède pas le droits, il ne peut pas effectuer de demande de ce type.
 
 [wikipedia_rest]: https://en.wikipedia.org/wiki/Representational_state_transfer
 [wikipedia_crud]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete

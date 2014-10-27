@@ -1,17 +1,10 @@
 # Consultation d'un document  {#rest:1d7b939f-d5fc-4b57-b33f-d216913efc22}
 
-## URL {#rest:0e462204-b355-4e5a-81f2-4cf75cef3162}
-
-    GET /api/v1/families/<famName>/documents/<documentId>
-
-Récupération d'un document de la famille `<famName>` ayant l'identifiant
-`<documentId>`. 
-
-ou
+## URL canonique {#rest:0e462204-b355-4e5a-81f2-4cf75cef3162}
 
     GET /api/v1/documents/<documentId>
 
-Récupération du document `<documentId>`.
+Récupération de la dernière révision du document ayant l'identifiant `<documentId>`. 
 
 L'extension ".json" peut être ajoutée pour expliciter le format de sortie.
 
@@ -19,13 +12,15 @@ Exemple :
 
     GET /api/v1/documents/1234.json
 
-Note : la différence entre la ressources `families` et `documents` est que
-l'identifiant doit être dans la famille indiquée pour être modifié sinon une
-erreur 404 (ressource non trouvée) est retournée.
+<span class="flag inline nota-bene"></span> L'identifiant ajouté peut-être soit :
 
-L'identifiant du document peut être son nom logique ou son identifiant numérique.
+* `initid`, `id de révision`, `lastid` du document,
+* `name` : nom logique du document.
 
-Note : Un document "supprimé" peut être récupéré via l'url [trash][trash].
+Dans tous les cas le document retourné est le dernier de sa lignée documentaire.
+
+<span class="flag inline nota-bene"></span> Si vous souhaitez accéder à une révision précise du document, il faut utiliser
+la collection [`/api/v1/documents/<documentId>/revisions/`][revision].
 
 ## Content {#rest:eac550a1-85ef-47d2-a28d-38f4604f4662}
 
@@ -118,7 +113,7 @@ Par défaut : `fields=document.properties,document.attributes`
 
 |           fields                   |                        Signification                         |                                                           Remarques                                                           |
 | ---------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| `document.properties`              | Récupère l'ensemble des propriétés "visible"                 | "state", "fromname", "id", "postitid", "initid", "locked", "revision", "wid", "cvid", "profid", "fromid", "owner", "domainid" |
+| `document.properties`              | Récupère l'ensemble des propriétés "visibles"                | "state", "fromname", "id", "postitid", "initid", "locked", "revision", "wid", "cvid", "profid", "fromid", "owner", "domainid" |
 | `document.properties.<prop>`       | Récupère la propriété indiquée                               |                                                                                                                               |
 | `document.attributes`              | Récupère les valeurs et les valeurs affichable des attributs |                                                                                                                               |
 | `document.attributes.<id>`         | Récupère la valeur d'un attribut particulier                 |                                                                                                                               |
@@ -128,6 +123,7 @@ Par défaut : `fields=document.properties,document.attributes`
 
 Dans le cadre du [cache][cache], le `Etag` est calculé à l'aide des éléments suivants :
 
+* identifiant du document,
 * date de dernière modification,
 * identifiant de l'utilisateur,
 * identifiant des droits portés sur le document (vecteur de droits),
@@ -135,6 +131,26 @@ Dans le cadre du [cache][cache], le `Etag` est calculé à l'aide des éléments
 
 L'ensemble de ces éléments sont concaténés et ensuite le [sha1][sha1] de cette concaténation consitue le `Etag`.
 
+## Autres URL d'accès {#rest:19b1ec4a-ddf2-4d5f-b24e-a4b3fdec3d26}
+
+Vous pouvez aussi accéder à cette ressources via :
+
+    GET /api/v1/families/<famName>/documents/<documentId>
+
+Récupération de la dernière révision du document de la famille `<famName>` ayant l'identifiant `<documentId>`. 
+
+<span class="flag inline nota-bene"></span> La différence entre les collection `families` et `documents` est que pour
+la collection `families/<famName>/documents/` l'identifiant doit être dans la famille indiquée pour être retourné sinon une
+erreur 404 (ressource non trouvée) est retournée.
+
+<span class="flag inline nota-bene"></span> Un document "supprimé" peut être récupéré via l'url [trash][trash].
+
+<span class="flag inline nota-bene"></span> Les documents accédés via les collections `families/<famName>/documents/` et `trash` possèdent aussi les sous-collections :
+
+* `history`,
+* `revisions`.
+
 [trash]: #rest:52be10c1-9f46-456b-a22f-24909386567
 [cache]: #rest:804f8d68-acfa-4a35-bb41-27b2a27c14dc
 [sha1]: https://fr.wikipedia.org/wiki/SHA-1
+[revision]: #rest:eb7b6954-0945-4f02-8e10-16e69729c529

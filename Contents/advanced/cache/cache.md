@@ -16,7 +16,7 @@ Le fonctionnement est le suivant :
 
 Le cache n'est bien évidemment actif que pour les ressources accédées via la méthode `GET`.
 
-Le cache fait parti du standard HTTP et est implémenté en standard (sans modification à apporter) sur les principaux navigateurs.
+Le cache fait partie du standard HTTP et est implémenté en standard (sans modification à apporter) sur les principaux navigateurs.
 
 ##Désactivation du cache {#rest:dfde9829-d6d7-492f-b608-60b023b783ae}
 

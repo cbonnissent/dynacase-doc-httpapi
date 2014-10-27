@@ -8,10 +8,6 @@ Récupération de la liste des révisions du document `<documentId>`.
 
 L'identifiant du document peut être son nom logique, son identifiant numérique.
 
-Note : Une révision d'un document "supprimé" peut être récupéré via l'url [trash][trash] en suivant le même mécanisme.
-
-    GET /api/v1/trash/1234/revisions/
-
 ## Content {#rest:91384551-3ae9-4d97-8c70-0c81ab64bdfa}
 
 Le contenu de la requête est vide.
@@ -85,12 +81,31 @@ Cas d'erreur de document non trouvé
 
 Dans le cadre du [cache][cache], le `Etag` est calculé à l'aide des éléments suivants :
 
+* identifiant de la dernière révision du document,
 * date de dernière modification du document,
 * identifiant de l'utilisateur,
 * identifiant des droits portés sur le document (vecteur de droits),
 * langue sélectionnée.
 
 L'ensemble de ces éléments sont concaténés et ensuite le [sha1][sha1] de cette concaténation consitue le `Etag`.
+
+
+## Autres URL d'accès {#rest:1bbf4922-a12f-4cc4-8aa0-16853148ac14}
+
+Vous pouvez aussi accéder à cette ressources via :
+
+    GET /api/v1/families/<famName>/documents/<documentId>/revisions/
+
+Récupération de la liste des révisions de la dernière révision d'un document de la famille `<famName>` ayant
+l'identifiant `<documentId>`.
+
+<span class="flag inline nota-bene"></span> La différence entre les collection `families` et `documents` est que pour
+la collection `/api/v1/families/<famName>/documents/<documentId>/revisions/<revisionNumber>` l'identifiant doit être dans la famille indiquée pour être retourné sinon une
+erreur 404 (ressource non trouvée) est retournée.
+
+<span class="flag inline nota-bene"></span> L'historique d'un document "supprimé" peut être récupéré via l'url 
+
+    GET /api/v1/families/<famName>/documents/<documentId>/revisions/
 
 [trash]: #rest:52be10c1-9f46-456b-a22f-24909386567
 [cache]: #rest:804f8d68-acfa-4a35-bb41-27b2a27c14dc
