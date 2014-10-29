@@ -42,17 +42,22 @@
 | GET    | */api/v1/families/&lt;family&gt;/documents/*                          | Future version                       | Liste des documents de cette famille                       |
 | PUT    | */api/v1/families/&lt;family&gt;/documents/*                          | Future version                       | Modification en masse de documents de cette famille        |
 | POST   | */api/v1/families/&lt;family&gt;/documents/*                          | Oui                                  | [Création d'un document de cette famille][POSTDOC]         |
-| DELETE | */api/v1/families/&lt;family&gt;/documents/*                          | Future version                       | Mise à la poubelle en masse de documents de cette famille  |
+| DELETE | */api/v1/families/&lt;family&gt;/documents/*                          | Future version                       | Mise à la poubelle en masse des documents de cette famille |
 |        |                                                                       |                                      |                                                            |
 | GET    | **/api/v1/families/&lt;family&gt;/documents/&lt;docid&gt;**           | Oui                                  | [Récupération d'un document de la famille][GETDOC]         |
 | PUT    | **/api/v1/families/&lt;family&gt;/documents/&lt;docid&gt;**           | Oui                                  | [Mise à jour d'un document de la famille][PUTDOC]          |
 | POST   | **/api/v1/families/&lt;family&gt;/documents/&lt;docid&gt;**           | N/A                                  | N/A (Création d'un document avec un identifiant donné)     |
 | DELETE | **/api/v1/families/&lt;family&gt;/documents/&lt;docid&gt;**           | Oui                                  | [Suppression d'un document de la famille][DELDOC]          |
 |        |                                                                       |                                      |                                                            |
+| GET    | */api/v1/families/&lt;family&gt;/enumerates/*                         | Oui                                  | [Récupération de la liste des énumérés][get_enum_list]     |
+| PUT    | */api/v1/families/&lt;family&gt;/enumerates/*                         | N/A                                  | N/A                                                        |
+| POST   | */api/v1/families/&lt;family&gt;/enumerates/*                         | N/A                                  | N/A                                                        |
+| DELETE | */api/v1/families/&lt;family&gt;/enumerates/*                         | N/A                                  | N/A                                                        |
+|        |                                                                       |                                      |                                                            |
 | GET    | **/api/v1/families/&lt;family&gt;/enumerates/&lt;docid&gt;**          | Oui                                  | [Récupération de la liste des valeurs][get_enum]           |
 | PUT    | **/api/v1/families/&lt;family&gt;/enumerates/&lt;docid&gt;**          | Future version                       | Modification d'une valeur de la liste des énumérés         |
 | POST   | **/api/v1/families/&lt;family&gt;/enumerates/&lt;docid&gt;**          | Future version                       | Ajout d'une valeur à la liste d'énumérés                   |
-| DELETE | **/api/v1/families/&lt;family&gt;/enumerates/&lt;docid&gt;**          | Future version                       | Suppression définitivement d'un document mis à la poubelle |
+| DELETE | **/api/v1/families/&lt;family&gt;/enumerates/&lt;docid&gt;**          | Future version                       | Suppression d'un énuméré                                   |
 |        |                                                                       |                                      |                                                            |
 | GET    | */api/v1/files/*                                                      | N/A                                  | N/A                                                        |
 | PUT    | */api/v1/files/*                                                      | N/A                                  | N/A                                                        |
@@ -65,9 +70,9 @@
 | DELETE | */api/v1/trash/*                                                      | Future version                       | Supprime définitivement les documents de la poubelle       |
 |        |                                                                       |                                      |                                                            |
 | GET    | **/api/v1/trash/&lt;docid&gt;**                                       | Oui                                  | [Récupération d'un document mis à la poubelle][trash_doc]  |
-| PUT    | **/api/v1/trash/&lt;docid&gt;**                                       | N/A                                  | N/A (Création d'un document supprimé)                      |
-| POST   | **/api/v1/trash/&lt;docid&gt;**                                       | N/A                                  | N/A (Modification d'un document supprimé)                  |
-| DELETE | **/api/v1/trash/&lt;docid&gt;**                                       | Future version                       | Suppression définitivement d'un document mis à la poubelle |
+| PUT    | **/api/v1/trash/&lt;docid&gt;**                                       | N/A                                  | N/A                                                        |
+| POST   | **/api/v1/trash/&lt;docid&gt;**                                       | N/A                                  | N/A                                                        |
+| DELETE | **/api/v1/trash/&lt;docid&gt;**                                       | Future version                       | Suppression définitive d'un document mis à la poubelle     |
 |        |                                                                       |                                      |                                                            |
               
 
@@ -99,3 +104,4 @@ mais non présentes dans la version courante de l'API.
 [get_histo]: #rest:9ae75dac-8eb5-4fa9-a608-7313b90fe33c
 [list_revision]: #rest:2dd5afbe-1d3d-4830-8241-c93077d88430
 [get_revision]: #rest:eb7b6954-0945-4f02-8e10-16e69729c529
+[get_enum_list]: #rest:69fba1cf-5754-4189-ac07-c16f348e7fda
