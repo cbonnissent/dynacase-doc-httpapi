@@ -1,4 +1,4 @@
-# Consultation des valeurs possibles d'un énuméré  {#rest:bb13e401-1859-4c73-b299-70b801ed7eb0}
+# Valeurs possibles d'un attribut énuméré  {#rest:bb13e401-1859-4c73-b299-70b801ed7eb0}
 
 ## URL {#rest:e7530c89-82d0-4888-9d1e-3b354476928f}
 

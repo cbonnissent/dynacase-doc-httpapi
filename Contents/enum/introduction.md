@@ -10,11 +10,11 @@ L'url d'accès est : `/api/v1/families/<famName>/enumerates/`
 
 La sous-collection enumerates implémente les éléments suivants :
 
-* Collection : Il n'y a pas d'accès possible directement auprès de la collection `documents` :
+* Collection :
 
 | Action   | URL                                               | Action effectuée                                                   |
 | :-     : | :                                                :| :                                                                : |
-| `GET`    | `/api/v1/families/<famName>/enumerates/`          | Liste des attributs énumérés (pas encore implémenté)               |
+| `GET`    | `/api/v1/families/<famName>/enumerates/`          | [Liste des attributs énumérés][get_enum_list]                      |
 | `POST`   | `/api/v1/families/<famName>/enumerates/`          | N/A                                                                |
 | `PUT`    | `/api/v1/families/<famName>/enumerates/`          | N/A                                                                |
 | `DELETE` | `/api/v1/families/<famName>/enumerates/`          | N/A                                                                |
@@ -32,3 +32,4 @@ La sous-collection enumerates implémente les éléments suivants :
 <!-- links -->
 [doc_enum]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book//core-ref:eef3e3ec-2d50-41bd-98e1-cc978f0a5178.html#core-ref:eef3e3ec-2d50-41bd-98e1-cc978f0a5178
 [get_enum]: #rest:bb13e401-1859-4c73-b299-70b801ed7eb0
+[get_enum_list]: #rest:69fba1cf-5754-4189-ac07-c16f348e7fda
