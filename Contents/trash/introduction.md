@@ -10,7 +10,7 @@ L'url d'accès est : `/api/v1/trash`
 
 La collection trash implémente les éléments suivants :
 
-* Collection : Il n'y a pas d'accès possible directement auprès de la collection documents :
+* Collection : Il n'y a pas d'accès possible directement auprès de la collection :
 
 | Action   | URL                     | Action effectuée   |
 | :-     : | :                      :| :                : |

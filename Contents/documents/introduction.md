@@ -10,7 +10,7 @@ L'url d'accès est : `/api/v1/documents`
 
 La collection documents implémente les éléments suivants :
 
-* Collection : Il n'y a pas d'accès possible directement auprès de la collection documents :
+* Collection : 
 
 | Action   | URL                     | Action effectuée                                                       |
 | :-     : | :                      :| :                                                                    : |
