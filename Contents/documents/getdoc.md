@@ -38,9 +38,6 @@ La partie `data` contient 3 champs :
 1.  `document.properties` : liste des valeurs des propriétés
 1.  `document.attributes` : liste des valeurs des attributs
 
-Les attributs en visibilité "I" ne sont pas retournés. Leur existence n'est pas
-dévoilée ni dans les données ni dans la structure.
-
 Exemple :
 
     [javascript]
@@ -67,6 +64,12 @@ Exemple :
         },
         "exceptionMessage" : ""
     }
+
+<span class="flag inline nota-bene"></span> Les valeurs retournées correspondent aux valeur de la vue de consultation
+par défaut.
+
+<span class="flag inline nota-bene"></span> Les attributs en visibilité "I" dans la vue de consultation par défaut ne sont pas retournés. Leur existence n'est pas
+dévoilée ni dans les données ni dans la structure.
 
 ### En cas d'échec {#rest:d136a95c-04f0-4822-aef4-f2e32c1d2694}
 
