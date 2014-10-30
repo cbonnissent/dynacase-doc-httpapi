@@ -2,15 +2,9 @@
 
 ## URL {#rest:f992edec-ca5c-4fa1-b829-f88d9e17347d}
 
-    DELETE /api/v1/families/<famName>/documents/<id>
-
-Suppression d'un document de la famille `<famName>` ayant l'identifiant `<id>`
-
-ou
-
     DELETE /api/v1/documents/<id>
 
-Suppression du document `<id>`
+Suppression de la lignée documentaire dont un des membres a l'identifiant `<documentId>`. 
 
 L'extension ".json" peut être ajoutée pour expliciter le format de sortie.
 
@@ -18,11 +12,11 @@ Exemple :
 
     DELETE /api/v1/documents/1234.json
 
-La suppression donne l'ordre de mettre le document dans la poubelle.
+La suppression donne l'ordre de mettre le document dans la poubelle. 
+Dans ce cas, toute la lignée documentaire du document est mise à la poubelle.
 
-L'identifiant du document peut être son nom logique, son identifiant numérique.
-
-Toute la lignée documentaire du document est mise à la poubelle.
+L'identifiant du document peut être son nom logique, son identifiant numérique, ou celui de n'importe laquelle de ses
+révisions.
 
 La suppression "physique" (réelle suppression de la ligne en base de données) n'est pas possible.
 
@@ -101,4 +95,15 @@ Cas d'erreur de privilège
         "exceptionMessage" : "Document \"1057\" deleted"
     }
 
+## Autres URL d'accès {#rest:68c41d29-93e9-45a3-82c2-20858d2d3a04}
+
+Vous pouvez aussi accéder à cette ressources via :
+
+    DELETE /api/v1/families/<famName>/documents/<documentId>
+
+Suppression de la lignée documentaire de la famille `<famName>` dont un des membres a l'identifiant `<documentId>`. 
+
+<span class="flag inline nota-bene"></span> La différence entre les collection `families` et `documents` est que pour
+la collection `families/<famName>/documents/` l'identifiant doit être dans la famille indiquée pour être retourné sinon une
+erreur 404 (ressource non trouvée) est retournée.
 

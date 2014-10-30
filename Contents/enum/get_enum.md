@@ -1,8 +1,8 @@
-# Consultation des valeurs possibles d'un énuméré  {#rest:bb13e401-1859-4c73-b299-70b801ed7eb0}
+# Valeurs possibles d'un attribut énuméré  {#rest:bb13e401-1859-4c73-b299-70b801ed7eb0}
 
 ## URL {#rest:e7530c89-82d0-4888-9d1e-3b354476928f}
 
-    GET /api/v1/enums/<famName>/<attrid>/
+    GET /api/v1/families/<famName>/enumerates/<attrid>
 
 Récupération des valeurs de l'énuméré de l'attribut `attrid` et de la famille `famName`.
 
@@ -18,25 +18,37 @@ Le retour est une donnée JSON.
 
 La partie `data` contient 3 champs :
 
-1.  `document.data.uri` : URI d'accès à la ressource modifiée;
+1.  `document.data.uri` : URI d'accès à la ressource;
 1.  `document.data.label` : label de l'attribut traduit dans la langue de l'utilisateur;
-1.  `document.data.filter` : filtre appliqués à la recherche,
+1.  `document.data.filter` : filtre appliqués à la recherche;
 1.  `document.data.enumItems` : tableau d'objets `key`, `label` (traduit dans la langue de l'utilisateur) et filtrés 
-suivant les paramètres de filter,
+suivant les paramètres de filter.
 
 Exemple :
 
     [javascript]
-    {"success" :             true,
-        "messages" :         [],
-        "data" :             {
-            "uri" :       "enums\/ZOO_ANIMAL\/an_sexe",
-            "label" :     "sexe",
-            "filter" :    {"operator" : "contains", "keyword" : "Masc"},
-            "enumItems" : [{"key" : "M", "label" : "Masculin"}]
+    {
+        "success": true,
+        "messages": [],
+        "data": {
+            "uri": "api/v1/families/IUSER/enumerates/us_rolesorigin.json",
+            "label": "Origine",
+            "filter": {
+                "operator": "contains",
+                "keyword": ""
+            },
+            "enumItems": [
+                {
+                    "key": "internal",
+                    "label": "Affectation directe"
+                },
+                {
+                    "key": "group",
+                    "label": "Obtenu par"
+                }
+            ]
         },
-        "exceptionMessage" : "",
-        "headers" :          []
+        "exceptionMessage": ""
     }
 
 ### En cas d'échec {#rest:704f567e-eb1c-4800-bc03-e9076b2fb849}
@@ -66,16 +78,15 @@ Cas d'erreur de en cas d'attribut non énuméré
             }
         ],
         "data" :             null,
-        "exceptionMessage" : "Attribute \"an_tatouage\" is not an enum (type \"int\") in family \"ZOO_ANIMAL\"",
-        "headers" :          []
+        "exceptionMessage" : "Attribute \"an_tatouage\" is not an enum (type \"int\") in family \"ZOO_ANIMAL\""
     }
 
 ## Résultat partiel {#rest:2b3c2de1-4a64-4d07-98b5-ad89f148be3e}
 
 L'attribut peut être retourné avec plus ou moins d'items.
 
-* GET `/documents/1234.json?keyword=<keyword>`
-* GET `/documents/1234.json?operator=startswith&keyword=<keyword>`
+* GET `/api/v1/families/IUSER/enumerates/us_rolesorigin.json?keyword=<keyword>`
+* GET `/api/v1/families/IUSER/enumerates/us_rolesorigin.json?operator=startswith&keyword=<keyword>`
 
 Les paramètres sont :
 

@@ -4,13 +4,13 @@
 
     GET /api/v1/families/<famName>
 
-Récupération du document décrivant la famille `<famName>`.
+Récupération de l'entité décrivant la famille `<famName>`.
 
 Exemple :
 
     GET /api/v1/families/my_cookbook
 
-Note : le nom de la famille est insensible à la casse.
+<span class="flag inline nota-bene"></span> Le nom de la famille est insensible à la casse.
 
 ## Content {#rest:27aa08ee-2108-47d1-90ba-e7c4cf4f608f}
 
@@ -95,7 +95,7 @@ Cas d'erreur de privilège
 
 ## Résultat partiel {#rest:789802cd-80ee-4b1d-92a2-eaa49da90046}
 
-Le document peut être retourné avec plus ou moins d'information.
+L'entité peut être retournée avec plus ou moins d'information.
 
 * GET /api/v1/families/1234.json?fields=document.properties
 * GET /api/v1/families/1234.json?fields=document.properties.id,document.properties.title,document.attributes
@@ -106,6 +106,6 @@ Par défaut : `fields=document.properties`
 
 |           fields                   |                        Signification                         |                                                           Remarques                                                           |
 | ---------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| `document.properties`              | Récupère l'ensemble des propriétés "visible"                 | "state", "fromname", "id", "postitid", "initid", "locked", "revision", "wid", "cvid", "profid", "fromid", "owner", "domainid" |
+| `document.properties`              | Récupère l'ensemble des propriétés "visibles"                | "state", "fromname", "id", "postitid", "initid", "locked", "revision", "wid", "cvid", "profid", "fromid", "owner", "domainid" |
 | `document.properties.<prop>`       | Récupère la propriété indiquée                               |                                                                                                                               |
 | `family.structure`                 | Récupère la structure de la famille                          |                                                                                                                               |

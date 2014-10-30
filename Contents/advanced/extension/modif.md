@@ -1,5 +1,7 @@
 # Extension de l'API REST {#rest:50aff82b-8921-42ff-81b1-69a1a0103d98}
 
+Il est possible à un module d'étendre l'API REST pour ajouter de nouvelles entités ou surcharger les entités existantes.
+
 L'extension de l'API REST passe par deux éléments : 
 
 * une classe de CRUD : celle-ci fournit les 4 méthodes du CRUD et retourne les valeurs.
@@ -14,13 +16,14 @@ Les classes de CRUD étendent la classe `\Dcp\HttpApi\V1\Crud` et doivent implé
 * `update` : mise à jour d'une entité,
 * `delete` : suppression d'une entité.
 
-La classe fournit aussi deux autres méthodes que vous pouvez surcharger :
+La classe fournit aussi quelques autres méthodes que vous pouvez surcharger :
 
 * `setUrlParameters` : cette méthode reçoit les paramètres extraits par le routeur de l'url d'appel (voir [enregistrement CRUD][save_CRUD]),
 ces paramètres sont ensuite mis à disposition dans le tableau `urlParameters` de la classe,
 * `setContentParameters` : cette méthode reçoit les paramètres extraits par le routeur du contenu de la requête,
 ces paramètres sont ensuite mis à disposition dans le tableau `contentParameters` de la classe,
-* `execute` : cette méthode est celle qui est exécutée par le routeur une fois la classe CRUD identifiée.
+* `execute` : cette méthode est celle qui est exécutée par le routeur une fois la classe CRUD identifiée,
+* `getEtagInfo` : cette méthode est utilisée pour calculer un etag dans le cadre de la gestion du [cache][cache].
 
 <span class="flag inline nota-bene"></span> L'extraction des `contentParameters` varie suivant le type de requête :
 
@@ -89,7 +92,8 @@ qui est sélectionnée,
 * `description` (optionnel) : chaîne de caractères non traduites décrivant la ressource (cette clef est utilisée dans la page par défaut de l'API),
 * `canonicalURL` (optionnel) : URL d'accès à la ressources (cette clef est utilisée dans la page par défaut de l'API).
 
-Il est à noter que si vous ajoutez une route à égalité avec une route `system` (liste ci-dessus) (regexp positive et order égal),
-alors c'est la route `custom` qui est sélectionnée.
+<span class="flag inline nota-bene"></span> Si vous ajoutez une route à égalité avec une route `system` (regexp positive et order égal),
+alors c'est la route `custom` qui est sélectionnée. Cela vous permet de surcharger les routes systèmes.
 
 [save_CRUD]: #rest:651043a1-f290-466e-977f-d39a195a1195
+[cache]: #rest:804f8d68-acfa-4a35-bb41-27b2a27c14dc

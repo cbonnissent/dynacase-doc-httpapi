@@ -7,8 +7,8 @@ Création d'un fichier
 
     POST /api/v1/files/
 
-Ce fichier est temporairement stockée dans le vault. 
-S'il n'est pas associé à un document, celui-ci est supprimé au bout d'une période définie par le 
+Ce fichier est temporairement stocké dans le vault. 
+S'il n'est pas associé à un document, le fichier temporaire est supprimé au bout d'une période définie par le 
 paramètre `CORE_TMPDIR_MAXAGE` .
 
 ## Content {#rest:10b0d2f6-4475-4ed9-99af-226f3955f4c7}

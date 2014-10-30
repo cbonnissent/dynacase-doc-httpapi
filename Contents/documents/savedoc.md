@@ -2,15 +2,9 @@
 
 ## URL {#rest:bf50f601-f8ba-432d-91b1-e39f53fcf977}
 
-    PUT /api/v1/families/<famName>/documents/<id>
-
-Modification d'un document de la famille `<famName>` ayant l'identifiant `<id>`.
-
-ou
-
     PUT /api/v1/documents/<id>
 
-Modification du document <id>.
+Modification de la dernière révision document ayant l'identifiant `<documentId>`. 
 
 L'extension ".json" peut être ajoutée pour expliciter le format de sortie.
 
@@ -19,11 +13,7 @@ Exemple :
     PUT /api/v1/documents/1234.json
 
 
-Note : la différence entre la ressources `families` et `documents` est que
-l'identifiant doit être celui d'un document de la famille indiquée pour être modifié sinon une
-erreur 404 (ressource non trouvée) sera retournée.
-
-L'identifiant du document peut être son nom logique, son identifiant numérique.
+**Attention** : L'identifiant du document peut être son nom logique, son identifiant numérique.
 L'identifiant numérique peut référencer n'importe quelle révision du document. 
 Dans tous les cas, la modification porte sur la dernière révision du document.
 
@@ -140,6 +130,16 @@ Cas d'erreur de privilège
         "exceptionMessage" : "Document \"1057\" access deny : Pas de privil\u00e8ge edit pour le document Hello world [1057]"
     }
 
+## Autres URL d'accès {#rest:8c761d0c-1578-443f-8572-2c3b34894330}
 
+Vous pouvez aussi accéder à cette ressources via :
+
+    PUT /api/v1/families/<famName>/documents/<documentId>
+
+Modification de la dernière révision document de la famille `<famName>` ayant l'identifiant `<documentId>`. 
+
+<span class="flag inline nota-bene"></span> La différence entre les collection `families` et `documents` est que pour
+la collection `families/<famName>/documents/` l'identifiant doit être dans la famille indiquée pour être retourné sinon une
+erreur 404 (ressource non trouvée) est retournée.
 
 
