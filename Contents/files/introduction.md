@@ -1,10 +1,10 @@
-# Fichier {#rest:56503bcd-006a-432c-942b-70de3931ce06}
+# Fichier temporaires {#rest:56503bcd-006a-432c-942b-70de3931ce06}
 
 Cette collection décrit les fichiers temporaires de Dynacase. 
 
 ## URL {#rest:a559dc7c-150a-406e-a7e1-cac545ba4e6d}
 
-L'url d'accès est : `/api/v1/files`
+L'url d'accès est : `/api/v1/temporaryFiles/`
 
 ## Méthodes {#rest:0d4893fa-1bef-4389-9e5d-1ec76fbc3af1}
 
@@ -12,12 +12,12 @@ La collection files implémente les éléments suivants :
 
 * Collection :
 
-| Action   | URL                     | Action effectuée                                   |
-| :-     : | :                      :| :                                                : |
-| `GET`    | `/api/v1/files`         | N/A                                                |
-| `POST`   | `/api/v1/files`         | [Créer un nouveau fichier temporaire][create_file] |
-| `PUT`    | `/api/v1/files`         | N/A                                                |
-| `DELETE` | `/api/v1/files`         | N/A                                                |
+| Action   | URL                               | Action effectuée                                   |
+| :-     : | :                                :| :                                                : |
+| `GET`    | `/api/v1/temporaryFiles/`         | N/A                                                |
+| `POST`   | `/api/v1/temporaryFiles/`         | [Créer un nouveau fichier temporaire][create_file] |
+| `PUT`    | `/api/v1/temporaryFiles/`         | N/A                                                |
+| `DELETE` | `/api/v1/temporaryFiles/`         | N/A                                                |
 
 
 

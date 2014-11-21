@@ -14,7 +14,7 @@ La collection documents implémente les éléments suivants :
 
 | Action   | URL                     | Action effectuée                                                       |
 | :-     : | :                      :| :                                                                    : |
-| `GET`    | `/api/v1/documents`     | Retourne la liste des documents (pas encore implémenté)                |
+| `GET`    | `/api/v1/documents`     | [Retourne la liste des documents][get_documents]                       |
 | `POST`   | `/api/v1/documents`     | N/A                                                                    |
 | `PUT`    | `/api/v1/documents`     | N/A                                                                    |
 | `DELETE` | `/api/v1/documents`     | N/A                                                                    |
@@ -34,3 +34,4 @@ La collection documents implémente les éléments suivants :
 [get_doc]: #rest:1d7b939f-d5fc-4b57-b33f-d216913efc22
 [update_doc]: #rest:db2cb01a-7325-4f78-8cec-ceac9858caf2
 [delete_doc]: #rest:3358b3bd-bdf6-44ef-b1d7-438f8eb21067
+[get_documents]: #rest:2ee6dd78-5b5a-4e00-aba5-4cd85c8a1cdc

@@ -29,17 +29,17 @@ ces paramètres sont ensuite mis à disposition dans le tableau `contentParamete
 
 * `GET` : le `contentParameters` est le contenu du `$_GET`,
 * `POST` : le `contentParameters` est :
- * si le `header` `content-type` est `application/json` : le contenu est le `php://input` dont le json est décodé,
+ * si le `header` `content-type` est `application/json` : le contenu est le `php://input`,
  * si le `header` `content-type` est `x-www-form-urlencoded` ou `form-data` : le contenu est le `$_POST`,
 * `PUT` :  le `contentParameters` est :
- * si le `header` `content-type` est `application/json` : le contenu est le `php://input` dont le json est décodé,
+ * si le `header` `content-type` est `application/json` : le contenu est le `php://input`,
  * si le `header` `content-type` est `x-www-form-urlencoded` ou `form-data` : le contenu est le `php://input` form décodé,
 * `DELETE` :  le `contentParameters` est un array vide.
 
 ## Enregistrement CRUD {#rest:7466f89c-87de-4dbe-89af-fdc2db37b9a4}
 
-La nouvelle classe de CRUD doit ensuite être enregistrée auprès de l'application `HTTPAPI_V1`, ceci se fait via le
-paramètre applicatif `CUSTOM_CRUD_CLASS`.
+La nouvelle classe de CRUD doit ensuite être enregistrée auprès de l'application `HTTPAPI_V1`, ceci se fait via l'ajout
+d'un fichier `json` dans le répertoire `HTTAPI_V1/rules.d/`.
 
 Ce paramètre doit contenir un tableau encodé en JSON semblable à :
 
@@ -94,6 +94,11 @@ qui est sélectionnée,
 
 <span class="flag inline nota-bene"></span> Si vous ajoutez une route à égalité avec une route `system` (regexp positive et order égal),
 alors c'est la route `custom` qui est sélectionnée. Cela vous permet de surcharger les routes systèmes.
+
+Une fois le fichier ajouté sur le serveur, vous devez relancer la compilation des règles en exécuant l'action `INIT_RULES` de l'application `HTTAPI_V1`.
+
+* soit via l'url suivante connecté en admin : `?app=HTTPAPI_V1&action=INIT_RULES`,
+* soit via l'appel suivant (dans le info.xml, ou en wiff) `./wsh.php --app=HTTPAPI_V1 --action=INIT_RULES`.
 
 [save_CRUD]: #rest:651043a1-f290-466e-977f-d39a195a1195
 [cache]: #rest:804f8d68-acfa-4a35-bb41-27b2a27c14dc

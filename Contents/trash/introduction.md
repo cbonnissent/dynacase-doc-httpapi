@@ -12,12 +12,12 @@ La collection trash implémente les éléments suivants :
 
 * Collection : Il n'y a pas d'accès possible directement auprès de la collection :
 
-| Action   | URL                     | Action effectuée   |
-| :-     : | :                      :| :                : |
-| `GET`    | `/api/v1/trash`         | N/A                |
-| `POST`   | `/api/v1/trash`         | N/A                |
-| `PUT`    | `/api/v1/trash`         | N/A                |
-| `DELETE` | `/api/v1/trash`         | N/A                |
+| Action   | URL                     | Action effectuée                                          |
+| :-     : | :                      :| :                                                       : |
+| `GET`    | `/api/v1/trash`         | [Liste des documents supprimés][get_trash]                |
+| `POST`   | `/api/v1/trash`         | N/A                                                       |
+| `PUT`    | `/api/v1/trash`         | N/A                                                       |
+| `DELETE` | `/api/v1/trash`         | N/A                                                       |
 
 * Entité :
 
@@ -32,3 +32,4 @@ La collection trash implémente les éléments suivants :
 <!-- links -->
 [doc_document]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:e01bf76d-481b-41fd-ac64-167a68d34c55.html#core-ref:67929e29-abef-437c-88a3-7f43647c60ff
 [trash_doc]: #rest:52be10c1-9f46-456b-a22f-24909386567f
+[get_trash]: #rest:4052b9db-d36c-4535-809f-1fad107e8270

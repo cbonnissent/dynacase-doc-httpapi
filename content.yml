@@ -13,18 +13,13 @@ book:
         content:  "documents/introduction.md"
         subtoc : 2
       - level:  2
+        content: "documents/get_documents.md"
+      - level:  2
         content: "documents/getdoc.md"
       - level:  2
         content: "documents/savedoc.md"
       - level:  2
         content: "documents/deletedoc.md"
-      - level:   1
-        content:  "views/introduction.md"
-        subtoc : 2
-      - level:  2
-        content: "views/get_view_list.md"
-      - level:  2
-        content: "views/get_view.md"
       - level:   1
         content:  "revision/introduction.md"
         subtoc : 2
@@ -41,13 +36,30 @@ book:
         content:  "trash/introduction.md"
         subtoc : 2
       - level:  2
+        content: "trash/get_trash.md"
+      - level:  2
         content: "trash/getTrash.md"
+      - level:   1
+        content:  "search/introduction.md"
         subtoc : 2
+      - level:  2
+        content: "search/searches.md"
+      - level:  2
+        content: "search/get_search.md"
+      - level:   1
+        content:  "folder/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "folder/folders.md"
+      - level:  2
+        content: "folder/get_folder.md"
       - level:   1
         content:  "families/introduction.md"
         subtoc : 2
       - level:  2
         content: "families/getFamily.md"
+      - level:  2
+        content: "families/get_documents.md"
       - level:  2
         content: "families/createdoc.md"
       - level:   1
