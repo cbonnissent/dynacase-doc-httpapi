@@ -4,7 +4,7 @@
 
 |  Type  |                           URL                                         |               Implanté               |                       Signification                        |
 | ------ | --------------------------------------------------------------------  | ------------------------------------ | ---------------------------------------------------------- |
-| GET    | */api/v1/documents/*                                                  | Future version                       | Liste de documents                                         |
+| GET    | */api/v1/documents/*                                                  | Oui                                  | [Liste de documents][get_documents]                        |
 | PUT    | */api/v1/documents/*                                                  | N/A                                  | N/A                                                        |
 | POST   | */api/v1/documents/*                                                  | N/A                                  | N/A                                                        |
 | DELETE | */api/v1/documents/*                                                  | N/A                                  | N/A                                                        |
@@ -24,12 +24,12 @@
 | POST   | */api/v1/documents/&lt;docid&gt;/revisions/*                          | N/A                                  | N/A                                                        |
 | DELETE | */api/v1/documents/&lt;docid&gt;/revisions/*                          | N/A                                  | N/A                                                        |
 |        |                                                                       |                                      |                                                            |
-| GET    | **/api/v1/documents/&lt;docid&gt;/revisions/&lt;revisionNumber&gt;**  | Oui                                  | [Révision `<revisionNumber>`][get_revision]              |
+| GET    | **/api/v1/documents/&lt;docid&gt;/revisions/&lt;revisionNumber&gt;**  | Oui                                  | [Révision `<revisionNumber>`][get_revision]                |
 | PUT    | **/api/v1/documents/&lt;docid&gt;/revisions/&lt;revisionNumber&gt;**  | N/A                                  | N/A                                                        |
 | POST   | **/api/v1/documents/&lt;docid&gt;/revisions/&lt;revisionNumber&gt;**  | N/A                                  | N/A                                                        |
 | DELETE | **/api/v1/documents/&lt;docid&gt;/revisions/&lt;revisionNumber&gt;**  | N/A                                  | N/A                                                        |
 |        |                                                                       |                                      |                                                            |
-| GET    | */api/v1/families/*                                                   | Future version                       | Liste des familles                                         |
+| GET    | */api/v1/families/*                                                   | Oui                                  | Liste des familles                                         |
 | PUT    | */api/v1/families/*                                                   | N/A                                  | N/A                                                        |
 | POST   | */api/v1/families/*                                                   | Future version                       | Création d'une nouvelle famille                            |
 | DELETE | */api/v1/families/*                                                   | N/A                                  | N/A                                                        |
@@ -39,7 +39,7 @@
 | POST   | **/api/v1/families/&lt;family&gt;**                                   | N/A                                  | N/A                                                        |
 | DELETE | **/api/v1/families/&lt;family&gt;**                                   | Future version                       | Suppression de la famille et des documents associés        |
 |        |                                                                       |                                      |                                                            |
-| GET    | */api/v1/families/&lt;family&gt;/documents/*                          | Future version                       | Liste des documents de cette famille                       |
+| GET    | */api/v1/families/&lt;family&gt;/documents/*                          | Oui                                  | [Liste des documents de cette famille][fam_list_document]  |
 | PUT    | */api/v1/families/&lt;family&gt;/documents/*                          | Future version                       | Modification en masse de documents de cette famille        |
 | POST   | */api/v1/families/&lt;family&gt;/documents/*                          | Oui                                  | [Création d'un document de cette famille][POSTDOC]         |
 | DELETE | */api/v1/families/&lt;family&gt;/documents/*                          | Future version                       | Mise à la poubelle en masse des documents de cette famille |
@@ -59,12 +59,12 @@
 | POST   | **/api/v1/families/&lt;family&gt;/enumerates/&lt;docid&gt;**          | Future version                       | Ajout d'une valeur à la liste d'énumérés                   |
 | DELETE | **/api/v1/families/&lt;family&gt;/enumerates/&lt;docid&gt;**          | Future version                       | Suppression d'un énuméré                                   |
 |        |                                                                       |                                      |                                                            |
-| GET    | */api/v1/files/*                                                      | N/A                                  | N/A                                                        |
-| PUT    | */api/v1/files/*                                                      | N/A                                  | N/A                                                        |
-| POST   | */api/v1/files/*                                                      | Oui                                  | [Création d'un fichier temporaire][POSTFILE]               |
-| DELETE | */api/v1/files/*                                                      | Future version                       | Suppression d'un fichier temporaire                        |
+| GET    | */api/v1/temporaryFiles/*                                             | N/A                                  | N/A                                                        |
+| PUT    | */api/v1/temporaryFiles/*                                             | N/A                                  | N/A                                                        |
+| POST   | */api/v1/temporaryFiles/*                                             | Oui                                  | [Création d'un fichier temporaire][POSTFILE]               |
+| DELETE | */api/v1/temporaryFiles/*                                             | Future version                       | Suppression d'un fichier temporaire                        |
 |        |                                                                       |                                      |                                                            |
-| GET    | */api/v1/trash/*                                                      | Future version                       | Liste des documents de la poubelle                         |
+| GET    | */api/v1/trash/*                                                      | oui                                  | [Liste des documents de la poubelle][get_trash]            |
 | PUT    | */api/v1/trash/*                                                      | N/A                                  | N/A                                                        |
 | POST   | */api/v1/trash/*                                                      | N/A                                  | N/A                                                        |
 | DELETE | */api/v1/trash/*                                                      | Future version                       | Supprime définitivement les documents de la poubelle       |
@@ -74,7 +74,25 @@
 | POST   | **/api/v1/trash/&lt;docid&gt;**                                       | N/A                                  | N/A                                                        |
 | DELETE | **/api/v1/trash/&lt;docid&gt;**                                       | Future version                       | Suppression définitive d'un document mis à la poubelle     |
 |        |                                                                       |                                      |                                                            |
-              
+| GET    | */api/v1/folders/*                                                    | Oui                                  | [Liste de documents de type répertoire][folders_collection]|
+| PUT    | */api/v1/folders/*                                                    | N/A                                  | N/A                                                        |
+| POST   | */api/v1/folders/*                                                    | N/A                                  | N/A                                                        |
+| DELETE | */api/v1/folders/*                                                    | N/A                                  | N/A                                                        |
+|        |                                                                       |                                      |                                                            |
+| GET    | */api/v1/folders/&lt;folderId&gt;/*                                   | Oui                                  | [Contenu du répertoire folderId][folders_content]                             |
+| PUT    | */api/v1/folders/&lt;folderId&gt;/*                                   | N/A                                  | N/A                                                        |
+| POST   | */api/v1/folders/&lt;folderId&gt;/*                                   | Future version                       | Ajout d'un document au répertoire                          |
+| DELETE | */api/v1/folders/&lt;folderId&gt;/*                                   | Future version                       | Suppression d'un document du répertoire                    |
+|        |                                                                       |                                      |                                                            |
+| GET    | */api/v1/searches/*                                                   | Oui                                  | [Liste de documents de type recherche][searches_collection]|
+| PUT    | */api/v1/searches/*                                                   | N/A                                  | N/A                                                        |
+| POST   | */api/v1/searches/*                                                   | N/A                                  | N/A                                                        |
+| DELETE | */api/v1/searches/*                                                   | N/A                                  | N/A                                                        |
+|        |                                                                       |                                      |                                                            |
+| GET    | */api/v1/searches/&lt;searchId&gt;/*                                  | Oui                                  | [Contenu d'une recherche][searches_content]                |
+| PUT    | */api/v1/searches/&lt;searchId&gt;/*                                  | N/A                                  | N/A                                                        |
+| POST   | */api/v1/searches/&lt;searchId&gt;/*                                  | N/A                                  | N/A                                                        |
+| DELETE | */api/v1/searches/&lt;searchId&gt;/*                                  | N/A                                  | N/A                                                        |
 
 Légende :
 
@@ -85,7 +103,6 @@ Légende :
 
 * history,
 * revisions.
-
 
 <span class="flag inline nota-bene"></span> Les entrées en Future version sont prévues pour une implémentation future 
 mais non présentes dans la version courante de l'API.
@@ -105,3 +122,10 @@ mais non présentes dans la version courante de l'API.
 [list_revision]: #rest:2dd5afbe-1d3d-4830-8241-c93077d88430
 [get_revision]: #rest:eb7b6954-0945-4f02-8e10-16e69729c529
 [get_enum_list]: #rest:69fba1cf-5754-4189-ac07-c16f348e7fda
+[get_documents]: #rest:2ee6dd78-5b5a-4e00-aba5-4cd85c8a1cdc
+[get_trash]: #rest:4052b9db-d36c-4535-809f-1fad107e8270
+[searches_collection]: #rest:9b8f4a2b-3f56-4b21-a7b7-bb299b4ac7b3
+[searches_content]: #rest:b7fb15e0-6e51-4ace-8a5f-aec7d565e24d
+[folders_collection]: #rest:b3f83d12-4ea7-44e2-8509-1145d05003d6
+[folders_content]: #rest:f3e3869b-4dcf-40ee-9733-3f4b57e2386f
+[fam_list_document]: #rest:f21d3f3f-82ea-48a9-bb9e-ba986bae9b62

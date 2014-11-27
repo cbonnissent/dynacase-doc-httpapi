@@ -14,10 +14,10 @@ La collection familles implémente les méthodes suivantes :
 
 | Action   | URL                     | Action effectuée   |
 | :-     : | :                      :| :                : |
-| `GET`    | `/api/v1/families`      | N/A                |
-| `POST`   | `/api/v1/families`      | N/A                |
-| `PUT`    | `/api/v1/families`      | N/A                |
-| `DELETE` | `/api/v1/families`      | N/A                |
+| `GET`    | `/api/v1/families/`     | N/A                |
+| `POST`   | `/api/v1/families/`     | N/A                |
+| `PUT`    | `/api/v1/families/`     | N/A                |
+| `DELETE` | `/api/v1/families/`     | N/A                |
 
 * Entité :
 
@@ -32,7 +32,7 @@ La collection familles implémente les méthodes suivantes :
 
 | Action   | URL                                    | Action effectuée                                          |
 | :-     : | :                                     :| :                                                 :       |
-| `GET`    | `/api/v1/families/<famid>/documents/`  |                                                           |
+| `GET`    | `/api/v1/families/<famid>/documents/`  | [Liste des documents de la famille famid][fam_list_document]|
 | `POST`   | `/api/v1/families/<famid>/documents/`  | [Créé un document de la famille famid][create_document]   |
 | `PUT`    | `/api/v1/families/<famid>/documents/`  | N/A                                                       |
 | `DELETE` | `/api/v1/families/<famid>/documents/`  | N/A                                                       |
@@ -55,4 +55,5 @@ La collection familles implémente les méthodes suivantes :
 [get_doc]: #rest:1d7b939f-d5fc-4b57-b33f-d216913efc22
 [update_doc]: #rest:db2cb01a-7325-4f78-8cec-ceac9858caf2
 [delete_doc]: #rest:3358b3bd-bdf6-44ef-b1d7-438f8eb21067
+[fam_list_document]: #rest:f21d3f3f-82ea-48a9-bb9e-ba986bae9b62
 

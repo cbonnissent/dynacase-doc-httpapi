@@ -5,7 +5,7 @@
 Création d'un fichier
 :  
 
-    POST /api/v1/files/
+    POST /api/v1/temporaryFiles/
 
 Ce fichier est temporairement stocké dans le vault. 
 S'il n'est pas associé à un document, le fichier temporaire est supprimé au bout d'une période définie par le 
@@ -19,7 +19,7 @@ Le contenu de la requête contient une variable (type file) contenant le contenu
 du fichier
 
     -----------------------------70122309720638098951066485136 
-    Content-Disposition: form-data; name="fi_file"; filename="drakkar.jpeg" 
+    Content-Disposition: form-data; name="fi_file"; filename="my_file.jpeg" 
     Content-Type: image/jpeg
     ...
 
@@ -38,7 +38,7 @@ La partie `data` contient un objet `file` :
 
 
 1.  `file.uri` : uri d'accès à la nouvelle ressource
-1.  `file.reference` : référence pouvant être utilisant comme valeur <span class="flag fixme">Pourquoi pas file.id et identifiant de fichier ? </span>
+1.  `file.reference` : référence pouvant être utilisant comme valeur
      dans un attribut de type file ou  image. 
 1.  `file.size` : Taille du fichier en octets
 1.  `file.fileName` : Nom du fichier (basename)

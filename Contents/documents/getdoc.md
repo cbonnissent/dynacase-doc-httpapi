@@ -61,8 +61,7 @@ Exemple :
                     [...]
                 }
             }
-        },
-        "exceptionMessage" : ""
+        }
     }
 
 <span class="flag inline nota-bene"></span> Les valeurs retournées correspondent aux valeur de la vue de consultation
