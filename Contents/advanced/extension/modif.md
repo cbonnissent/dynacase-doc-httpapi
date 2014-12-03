@@ -1,6 +1,7 @@
 # Extension de l'API REST {#rest:50aff82b-8921-42ff-81b1-69a1a0103d98}
 
-Il est possible à un module d'étendre l'API REST pour ajouter de nouvelles entités ou surcharger les entités existantes.
+Il est possible à un module d'étendre l'API REST pour ajouter de nouvelles
+ressources ou surcharger les ressources existantes.
 
 L'extension de l'API REST passe par deux éléments : 
 
@@ -9,23 +10,32 @@ L'extension de l'API REST passe par deux éléments :
 
 ## Classe de CRUD {#rest:651043a1-f290-466e-977f-d39a195a1195}
 
-Les classes de CRUD étendent la classe `\Dcp\HttpApi\V1\Crud` et doivent implémenter les méthodes suivantes :
+Les classes de CRUD étendent la classe `\Dcp\HttpApi\V1\Crud` et doivent
+implémenter les méthodes suivantes :
 
-* `create` : création d'une entité,
-* `read` : récupération d'une entité,
-* `update` : mise à jour d'une entité,
-* `delete` : suppression d'une entité.
+* `create` : création d'une ressource,
+* `read` : récupération d'une ressource,
+* `update` : mise à jour d'une ressource,
+* `delete` : suppression d'une ressource.
 
-La classe fournit aussi quelques autres méthodes que vous pouvez surcharger :
+La classe fournit aussi quelques autres méthodes sur surchargeables :
 
-* `setUrlParameters` : cette méthode reçoit les paramètres extraits par le routeur de l'url d'appel (voir [enregistrement CRUD][save_CRUD]),
-ces paramètres sont ensuite mis à disposition dans le tableau `urlParameters` de la classe,
-* `setContentParameters` : cette méthode reçoit les paramètres extraits par le routeur du contenu de la requête,
-ces paramètres sont ensuite mis à disposition dans le tableau `contentParameters` de la classe,
-* `execute` : cette méthode est celle qui est exécutée par le routeur une fois la classe CRUD identifiée,
-* `getEtagInfo` : cette méthode est utilisée pour calculer un etag dans le cadre de la gestion du [cache][cache].
+* `setUrlParameters` : cette méthode reçoit les paramètres extraits par le
+routeur de l'url d'appel (voir [enregistrement CRUD][save_CRUD]), ces paramètres
+sont ensuite mis à disposition dans le tableau `urlParameters` de la classe,
 
-<span class="flag inline nota-bene"></span> L'extraction des `contentParameters` varie suivant le type de requête :
+* `setContentParameters` : cette méthode reçoit les paramètres extraits par le
+routeur du contenu de la requête, ces paramètres sont ensuite mis à disposition
+dans le tableau `contentParameters` de la classe,
+
+* `execute` : cette méthode est celle qui est exécutée par le routeur une fois
+la classe CRUD identifiée,
+
+* `getEtagInfo` : cette méthode est utilisée pour calculer un etag dans le cadre
+de la gestion du [cache][cache].
+
+<span class="flag inline nota-bene"></span> L'extraction des `contentParameters`
+ varie suivant le type de requête :
 
 * `GET` : le `contentParameters` est le contenu du `$_GET`,
 * `POST` : le `contentParameters` est :
@@ -38,8 +48,9 @@ ces paramètres sont ensuite mis à disposition dans le tableau `contentParamete
 
 ## Enregistrement CRUD {#rest:7466f89c-87de-4dbe-89af-fdc2db37b9a4}
 
-La nouvelle classe de CRUD doit ensuite être enregistrée auprès de l'application `HTTPAPI_V1`, ceci se fait via l'ajout
-d'un fichier `json` dans le répertoire `HTTAPI_V1/rules.d/`.
+La nouvelle classe de CRUD doit ensuite être enregistrée auprès de l'application
+`HTTPAPI_V1`, ceci se fait via l'ajout d'un fichier `json` dans le répertoire
+`HTTAPI_V1/rules.d/`.
 
 Ce paramètre doit contenir un tableau encodé en JSON semblable à :
 
@@ -84,18 +95,29 @@ Ce paramètre doit contenir un tableau encodé en JSON semblable à :
 
 Ce tableau contient des objets contenant chacun :
 
-* `regExp` : une expression régulière, celle-ci est exécutée sur l'URL d'appel (sans la partie `api/v1/`) si l'expression
-régulière est validée la route est considérée comme valide,
-* `order` : un ordre d'exécution si plusieurs route de même ordre sont valides, c'est celle ayant le order le plus élevé
-qui est sélectionnée,
-* `class` : identifiant d'une classe de type `CRUD` qui est exécutée si la route est sélectionnée,
-* `description` (optionnel) : chaîne de caractères non traduites décrivant la ressource (cette clef est utilisée dans la page par défaut de l'API),
-* `canonicalURL` (optionnel) : URL d'accès à la ressources (cette clef est utilisée dans la page par défaut de l'API).
+* `regExp` : une expression régulière, celle-ci est exécutée sur  l'URL d'appel
+(sans la partie `api/v1/`) si l'expression régulière est validée la route est
+considérée comme valide,
 
-<span class="flag inline nota-bene"></span> Si vous ajoutez une route à égalité avec une route `system` (regexp positive et order égal),
-alors c'est la route `custom` qui est sélectionnée. Cela vous permet de surcharger les routes systèmes.
+* `order` : un ordre d'exécution si plusieurs routes de même ordre sont valides,
+c'est celle ayant l'ordre le plus élevé qui est sélectionnée,
 
-Une fois le fichier ajouté sur le serveur, vous devez relancer la compilation des règles en exécuant l'action `INIT_RULES` de l'application `HTTAPI_V1`.
+* `class` : identifiant d'une classe de type `CRUD` qui est exécutée si la route
+ est sélectionnée,
+
+* `description` (optionnel) : chaîne de caractères non traduites décrivant la
+ressource (cette clef est utilisée dans la page par défaut de l'API),
+
+* `canonicalURL` (optionnel) : URL d'accès à la ressources (cette clef est
+utilisée dans la page par défaut de l'API).
+
+<span class="flag inline nota-bene"></span> Si une route à égalité est ajoutée
+avec une route `system` (regexp positive et order égal), alors c'est la route
+`custom` qui est sélectionnée. Cela permet de surcharger les routes
+systèmes.
+
+Une fois le fichier ajouté sur le serveur, la compilation des règles doit être
+réalisée en exécutant l'action `INIT_RULES` de l'application `HTTAPI_V1`.
 
 * soit via l'url suivante connecté en admin : `?app=HTTPAPI_V1&action=INIT_RULES`,
 * soit via l'appel suivant (dans le info.xml, ou en wiff) `./wsh.php --app=HTTPAPI_V1 --action=INIT_RULES`.

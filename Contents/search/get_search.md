@@ -2,7 +2,7 @@
 
 ## URL canonique {#rest:2e662769-63e0-42b5-acf4-fb26e039a775}
 
-    GET /api/v1/searches/<searchId>/
+    GET /api/v1/searches/<searchId>/documents/
 
 Récupération de la liste des documents trouvés par la recherche `<searchId>`.
 
@@ -20,6 +20,7 @@ La partie `data` contient :
 
 1.  `requestParameters` : contient un résumé des paramètres de la requête en cours (pagination et orderBy),
 1.  `uri` : URI d'accès de la collection,
+1.  `properties`: contient le titre de la recherche, et l'uri d'accès au document "recherche"
 1.  `documents` : un tableau de document (sous la même forme que les documents unitaires)
 
 Chaque document est un objet contenant les entrées suivantes :
@@ -38,26 +39,30 @@ Exemple :
             "requestParameters": {
                 "slice": 10,
                 "offset": 0,
-                "length": 10,
+                "length": 1,
                 "orderBy": "title asc, id desc"
             },
-            "uri": "/api/v1/trash/",
+            "uri": "http://www.example.net/api/v1/searches/5236/documents/",
+            "properties": {
+                "title": "Articles intéressants",
+                "uri": "http://localhost/tmp32/api/v1/document/5236.json"
+            },
             "documents": [
                 {
                     "properties": {
-                        "id": 1003,
-                        "title": "accord",
-                        "icon": "resizeimg.php?img=Images%2Fwask.png&size=24",
-                        "initid": 1003,
-                        "name": "WASK",
-                        "revision": 0
+                        "id": 26653,
+                        "title": "La culture des perles",
+                        "icon": "resizeimg.php?img=Images%2Farticle.png&size=24",
+                        "initid": 1425,
+                        "name": null,
+                        "revision": 1
                     },
-                    "uri": "/api/v1/trash/1003.json"
-                },
-                [...]
+                    "uri": "http://www.example.net/api/v1/documents/1425.json"
+                }
             ]
         }
     }
+
 
 <span class="flag inline nota-bene"></span> Les valeurs retournées correspondent aux valeurs de la vue de consultation
 par défaut.
@@ -66,10 +71,11 @@ par défaut.
 
 Les raisons d'échecs spécifiques à cette requête sont 
 
-|                     Raison                     | Status HTTP | Error Code |
-| ---------------------------------------------- | ----------- | ---------- |
-| Sens de l'orderBy inconnu                      |         400 | CRUD0501   |
-| Attribut ou propriété d'orderBy invalide       |         400 | CRUD0502   |
+|                              Raison                             | Status HTTP | Error Code |
+| --------------------------------------------------------------- | ----------- | ---------- |
+| Sens de l'orderBy inconnu                                       |         400 | CRUD0501   |
+| Attribut ou propriété d'orderBy invalide                        |         400 | CRUD0502   |
+| L'identifiant de la recherche ne correspond pas à une recherche |         400 | CRUD0503   |
 
 ## Résultat partiel {#rest:75a948b3-b1bb-43ec-bb3b-2e4a77671ef2}
 
@@ -100,21 +106,21 @@ Exemple :
 
 Les documents peuvent être retournés avec plus ou moins d'information.
 
-* GET /searches/<my_search>/?fields=document.properties
-* GET /searches/<my_search>/?fields=document.properties.id,document.properties.title
-* GET /searches/<my_search>/?fields=document.properties.id,document.properties.title
-* GET /searches/<my_search>/?fields=document.attributes
-* GET /searches/<my_search>/?fields=document.attributes.my_attribute
+* GET `/searches/<my_search>/documents/?fields=document.properties`
+* GET `/searches/<my_search>/documents/?fields=document.properties.id,document.properties.title`
+* GET `/searches/<my_search>/documents/?fields=document.properties.id,document.properties.title`
+* GET `/searches/<my_search>/documents/?fields=document.attributes`
+* GET `/searches/<my_search>/documents/?fields=document.attributes.my_attribute`
 
 Par défaut : `fields=document.properties`
 
-|           fields                   |                        Signification                         |                                                           Remarques                                                           |
-| ---------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| `document.properties`              | Récupère l'ensemble des propriétés par défaut                | "id", "title", "icon", "initid", "name"                                                                                       |
-| `document.properties.all`          | Récupère toutes les propriétés                               |                                                                                                                               |
-| `document.properties.<prop>`       | Récupère la propriété indiquée                               |                                                                                                                               |
-| `document.attributes`              | Ajoute tous les attributs de la famille référencée par la recherche  |  s'il n'y a pas de famille de référence alors aucun attribut n'est retourné                                           |
-| `document.attributes.my_attribute` | Ajoute l'attribut my_attribute                              |  si l'attribut n'existe pas dans un des documents il est retourné vide                                                        |
+|               fields               |                            Signification                            |                                 Remarques                                  |
+| ---------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `document.properties`              | Récupère l'ensemble des propriétés par défaut                       | "id", "title", "icon", "initid", "name", "revision"                        |
+| `document.properties.all`          | Récupère toutes les propriétés                                      |                                                                            |
+| `document.properties.<prop>`       | Récupère la propriété indiquée                                      |                                                                            |
+| `document.attributes`              | Ajoute tous les attributs de la famille référencée par la recherche | s'il n'y a pas de famille de référence alors aucun attribut n'est retourné |
+| `document.attributes.my_attribute` | Ajoute l'attribut my_attribute                                      | si l'attribut n'existe pas dans un des documents il est retourné vide      |
 
 ## Cache {#rest:716b4215-feec-4325-b54d-8969144cf224}
 

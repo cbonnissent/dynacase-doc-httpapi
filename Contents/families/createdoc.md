@@ -85,7 +85,6 @@ Exemple :
               "properties" : { 
                  "id" : 1256,
                  "title" : "Hello world",
-                 "locked" : 0,
                  ....
                }
               "attributes" : { 

@@ -31,6 +31,6 @@ La sous-collection `revisions` implémente les éléments suivants :
 
 <!-- links -->
 
-[doc_revision]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:1cdff481-42e0-4caf-baba-d2348d760ca5.html
+[doc_revision]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:1cdff481-42e0-4caf-baba-d2348d760ca5.html "Manuel de référence Dynacase Core"
 [get_revision]: #rest:eb7b6954-0945-4f02-8e10-16e69729c529
 [list_revision]: #rest:2dd5afbe-1d3d-4830-8241-c93077d88430

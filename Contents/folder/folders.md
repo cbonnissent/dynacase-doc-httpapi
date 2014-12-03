@@ -1,10 +1,10 @@
-# Liste des répertoires {#rest:b3f83d12-4ea7-44e2-8509-1145d05003d6}
+# Liste des dossiers {#rest:b3f83d12-4ea7-44e2-8509-1145d05003d6}
 
 ## URL canonique {#rest:4a76de69-324a-472b-afd3-ced155682c29}
 
     GET /api/v1/folders/
 
-Récupération de la liste des répertoires accessibles.
+Récupération de la liste des dossiers accessibles.
 
 ## Content {#rest:3d8f3937-b9af-47da-9b66-e57a518537d9}
 
@@ -24,8 +24,8 @@ La partie `data` contient :
 
 Chaque document est un objet contenant les entrées suivantes :
 
-1.  `properties` : liste des propriétés du document,
-1.  `uri` : URI d'accès du document.
+1.  `properties` : liste des propriétés du dossier,
+1.  `uri` : URI du contenu du dossier
 
 Exemple :
 
@@ -35,12 +35,15 @@ Exemple :
         "messages": [],
         "data": {
             "requestParameters": {
-                "slice": 1,
+                "slice": 10,
                 "offset": 0,
-                "length": 1,
+                "length": 10,
                 "orderBy": "title asc, id desc"
             },
-            "uri": "/api/v1/families/DIR/documents/",
+            "uri": "/api/v1/folders/",
+            "properties": {
+                "title": "The folders"
+            },
             "documents": [
                 {
                     "properties": {
@@ -51,9 +54,9 @@ Exemple :
                         "name": "GADMIN",
                         "revision": 0
                     },
-                    "uri": "/api/v1/documents/1011.json"
+                    "uri": "/api/v1/folders/1011/documents/"
                 }
-            ]
+            ], ...
         }
     }
 

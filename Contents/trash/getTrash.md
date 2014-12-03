@@ -32,8 +32,7 @@ La partie `data` contient 3 champs :
 1.  `document.properties` : liste des valeurs des propriétés
 1.  `document.attributes` : liste des valeurs des attributs
 
-Les attributs en visibilité "I" ne sont pas retournés. Leur existence n'est pas
-dévoilée ni dans les données ni dans la structure.
+Les attributs en visibilité "I" ne sont pas retournés. 
 
 Exemple :
 
@@ -44,22 +43,18 @@ Exemple :
             "document" : {
                 "uri" :        "api\/v1\/documents\/1057.json",
                 "properties" : {
-                    "title" :     "[123",
-                    "state" :     null,
+                    "title" :     "Aristote le Stagirite",
                     "name" :      null,
-                    "icon" :      "resizeimg.php?img=Images%2Fdoc.png&size=32",
-                    "fromname" :  "TEST_ALL_ELEMENT",
+                    "icon" :      "resizeimg.php?img=Images%2Fdoc.png&size=32"
                     [...]
                 },
                 "attributes" : {
-                    "test_all_element_title" :            {"value" : "[123", "displayValue" : "[123"},
-                    "test_all_element_account" :          {"value" : null, "displayValue" : null},
-                    "test_all_element_account_multiple" : [],
+                    "my_title" :            {"value" : "[123", "displayValue" : "[123"},
+                    "my_level" :          {"value" : 34, "displayValue" : "34"}
                     [...]
                 }
             }
-        },
-        "exceptionMessage" : ""
+        }
     }
 
 ### En cas d'échec {#rest:0de77a4f-f138-432f-b8a4-c3ec8d5b982c}
@@ -105,10 +100,10 @@ Le document peut être retourné avec plus ou moins d'information.
 
 Par défaut : `fields=document.properties,document.attributes`
 
-|           fields                   |                        Signification                         |                                                           Remarques                                                           |
-| ---------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| `document.properties`              | Récupère l'ensemble des propriétés "visibles"                | "state", "fromname", "id", "postitid", "initid", "locked", "revision", "wid", "cvid", "profid", "fromid", "owner", "domainid" |
-| `document.properties.<prop>`       | Récupère la propriété indiquée                               |                                                                                                                               |
-| `document.attributes`              | Récupère les valeurs et les valeurs affichable des attributs |                                                                                                                               |
-| `document.attributes.<id>`         | Récupère la valeur d'un attribut particulier                 |                                                                                                                               |
-| `document.family.structure`        | Récupère la structure de la famille                          |                                                                                                                               |
+|            fields            |                        Signification                         |                      Remarques                      |
+| ---------------------------- | ------------------------------------------------------------ | --------------------------------------------------- |
+| `document.properties`        | Récupère les propriétés données par défaut                   | "id", "title", "icon", "initid", "name", "revision" |
+| `document.properties.<prop>` | Récupère la propriété indiquée                               |                                                     |
+| `document.attributes`        | Récupère les valeurs et les valeurs affichable des attributs |                                                     |
+| `document.attributes.<id>`   | Récupère la valeur d'un attribut particulier                 |                                                     |
+| `document.family.structure`  | Récupère la structure de la famille                          |                                                     |

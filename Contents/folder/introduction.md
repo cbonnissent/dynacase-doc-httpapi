@@ -1,8 +1,8 @@
-# Répertoire {#rest:5dda257a-b6b2-4cef-ac04-6d42d59154a9}
+# Dossier {#rest:5dda257a-b6b2-4cef-ac04-6d42d59154a9}
 
-Cette collection décrit les répertoires de Dynacase. 
+Cette collection décrit les dossiers de Dynacase. 
 
-Un répertoire est un document permettant de stocker un ensemble de documents.
+Un dossier est un document permettant de stocker un ensemble de documents.
 
 ## URL {#rest:8b2a3860-c482-4f0e-8d15-04f495b67e72}
 
@@ -14,24 +14,24 @@ La collection searches implémente les éléments suivants :
 
 * Collection : Il n'y a pas d'accès possible directement auprès de la collection :
 
-| Action   | URL                         | Action effectuée                                          |
-| :-     : | :                          :| :                                                       : |
-| `GET`    | `/api/v1/folders/`          | [Liste des répertoires][folders_collection]               |
-| `POST`   | `/api/v1/folders/`          | N/A                                                       |
-| `PUT`    | `/api/v1/folders/`          | N/A                                                       |
-| `DELETE` | `/api/v1/folders/`          | N/A                                                       |
+| Action   | URL                          | Action effectuée                                          |
+| :-     : | :                          : | :                                                       : |
+| `GET`    | `/api/v1/folders/`           | [Liste des dossiers][folders_collection]                  |
+| `POST`   | `/api/v1/folders/`           | N/A                                                       |
+| `PUT`    | `/api/v1/folders/`           | N/A                                                       |
+| `DELETE` | `/api/v1/folders/`           | N/A                                                       |
 
 <span class="flag inline nota-bene"></span> Une recherche étant un document Dynacase, la création d'une nouvelle 
-répertoire passe par l'utilisation de l'entrée `families/DIR/documents/`.
+dossier passe par l'utilisation de l'entrée `families/DIR/documents/`.
 
-* Entité :
+* Ressource :
 
-| Action   | URL                            | Action effectuée                               |
-| :-     : | :                             :| :                                  :           |
-| `GET`    | `/api/v1/folders/<id>/`       | [Contenu de du répertoire `id`][folders_content]|
-| `POST`   | `/api/v1/folders/<id>/`       | N/A                                             |
-| `PUT`    | `/api/v1/folders/<id>/`       | N/A                                             |
-| `DELETE` | `/api/v1/folders/<id>/`       | N/A                                             |
+| Action   | URL                               | Action effectuée                           |
+| :-     : | :                             :   | :                                  :       |
+| `GET`    | `/api/v1/folders/<id>/documents/` | [Contenu du dossier `id`][folders_content] |
+| `POST`   | `/api/v1/folders/<id>/documents/` | N/A                                        |
+| `PUT`    | `/api/v1/folders/<id>/documents/` | N/A                                        |
+| `DELETE` | `/api/v1/folders/<id>/documents/` | N/A                                        |
 
 
 <!-- links -->

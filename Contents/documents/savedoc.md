@@ -42,7 +42,7 @@ Exemple :
     {
         "document": {
             "attributes": {
-                "test_all_element_title": {
+                "my_title": {
                     "value": "Hello world"
                 }
             }
@@ -89,7 +89,7 @@ Exemple :
                     [...]
                 },
                 "attributes" : {
-                    "test_all_element_title" :  {"value" : "Hello World", "displayValue" : "Hello World"},
+                    "my_title" :  {"value" : "Hello World", "displayValue" : "Hello World"},
                     [...]
                 }
             }
@@ -136,10 +136,12 @@ Vous pouvez aussi accéder à cette ressources via :
 
     PUT /api/v1/families/<famName>/documents/<documentId>
 
-Modification de la dernière révision document de la famille `<famName>` ayant l'identifiant `<documentId>`. 
+Modification de la dernière révision du document de la famille `<famName>` ayant
+l'identifiant `<documentId>`.
 
-<span class="flag inline nota-bene"></span> La différence entre les collection `families` et `documents` est que pour
-la collection `families/<famName>/documents/` l'identifiant doit être dans la famille indiquée pour être retourné sinon une
-erreur 404 (ressource non trouvée) est retournée.
+<span class="flag inline nota-bene"></span> La différence entre les collection
+`families` et `documents` est que pour la collection
+`families/<famName>/documents/` l'identifiant doit être dans la famille indiquée
+pour être retourné sinon une erreur 404 (ressource non trouvée) est retournée.
 
 

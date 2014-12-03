@@ -8,7 +8,7 @@ L'url d'accès est : `/api/v1/documents`
 
 ## Méthodes {#rest:18b84a9c-9226-4367-870c-2f0737151239}
 
-La collection documents implémente les éléments suivants :
+La collection *documents* implémente les éléments suivants :
 
 * Collection : 
 
@@ -19,13 +19,13 @@ La collection documents implémente les éléments suivants :
 | `PUT`    | `/api/v1/documents`     | N/A                                                                    |
 | `DELETE` | `/api/v1/documents`     | N/A                                                                    |
 
-* Entité :
+* Ressource :
 
 | Action   | URL                       | Action effectuée                            |
 | :-     : | :                        :| :                                   :       |
 | `GET`    | `/api/v1/documents/<id>`  | [Retourne le document `id`][get_doc]        |
 | `POST`   | `/api/v1/documents/<id>`  | N/A                                         |
-| `PUT`    | `/api/v1/documents/<id>`  | [Met à jour le document `id`][update_doc]   |
+| `PUT`    | `/api/v1/documents/<id>`  | [Modifie le document `id`][update_doc]   |
 | `DELETE` | `/api/v1/documents/<id>`  | [Supprime le document `id`][delete_doc]     |
 
 

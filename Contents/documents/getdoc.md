@@ -47,28 +47,30 @@ Exemple :
             "document" : {
                 "uri" :        "api\/v1\/documents\/1057.json",
                 "properties" : {
-                    "title" :     "[123",
+                    "title" :     "La culture des perles",
                     "state" :     null,
                     "name" :      null,
                     "icon" :      "resizeimg.php?img=Images%2Fdoc.png&size=32",
-                    "fromname" :  "TEST_ALL_ELEMENT",
+                    "fromname" :  "MY_ARTICLE",
                     [...]
                 },
                 "attributes" : {
-                    "test_all_element_title" :            {"value" : "[123", "displayValue" : "[123"},
-                    "test_all_element_account" :          {"value" : null, "displayValue" : null},
-                    "test_all_element_account_multiple" : [],
+                    "my_title" :            {"value" : "La culture des perles", "displayValue" : "La culture des perles"},
+                    "my_description" :          {"value" : "Sur les bords de la rivière...", "displayValue" : "Sur les bords de la rivière..."},
+                    "my_annexes" : [],
                     [...]
                 }
             }
         }
     }
 
-<span class="flag inline nota-bene"></span> Les valeurs retournées correspondent aux valeur de la vue de consultation
+<span class="flag inline nota-bene"></span> 
+Les valeurs retournées correspondent aux valeur de la vue de consultation
 par défaut.
 
-<span class="flag inline nota-bene"></span> Les attributs en visibilité "I" dans la vue de consultation par défaut ne sont pas retournés. Leur existence n'est pas
-dévoilée ni dans les données ni dans la structure.
+<span class="flag inline nota-bene"></span> Les attributs en visibilité "I" dans
+la vue de consultation par défaut ne sont pas retournés. Leur existence n'est
+pas dévoilée ni dans les données ni dans la structure.
 
 ### En cas d'échec {#rest:d136a95c-04f0-4822-aef4-f2e32c1d2694}
 
@@ -123,7 +125,8 @@ Par défaut : `fields=document.properties,document.attributes`
 
 ## Cache {#rest:02ea72c5-6bbf-4d63-ba31-2c3b33b68e51}
 
-Dans le cadre du [cache][cache], le `Etag` est calculé à l'aide des éléments suivants :
+Dans le cadre du [cache][cache], le `Etag` est calculé à l'aide des éléments
+suivants :
 
 * identifiant du document,
 * date de dernière modification,
@@ -131,23 +134,29 @@ Dans le cadre du [cache][cache], le `Etag` est calculé à l'aide des éléments
 * identifiant des droits portés sur le document (vecteur de droits),
 * langue sélectionnée.
 
-L'ensemble de ces éléments sont concaténés et ensuite le [sha1][sha1] de cette concaténation consitue le `Etag`.
+L'ensemble de ces éléments sont concaténés et ensuite le [sha1][sha1] de cette
+concaténation consitue le `Etag`.
 
 ## Autres URL d'accès {#rest:19b1ec4a-ddf2-4d5f-b24e-a4b3fdec3d26}
 
-Vous pouvez aussi accéder à cette ressources via :
+Vous pouvez aussi accéder à cette ressource via :
 
     GET /api/v1/families/<famName>/documents/<documentId>
 
-Récupération de la dernière révision du document de la famille `<famName>` ayant l'identifiant `<documentId>`. 
+Récupération de la dernière révision du document de la famille `<famName>` ayant
+l'identifiant `<documentId>`.
 
-<span class="flag inline nota-bene"></span> La différence entre les collection `families` et `documents` est que pour
-la collection `families/<famName>/documents/` l'identifiant doit être dans la famille indiquée pour être retourné sinon une
-erreur 404 (ressource non trouvée) est retournée.
+<span class="flag inline nota-bene"></span> La différence entre les collection
+`families` et `documents` est que pour la collection
+`families/<famName>/documents/` l'identifiant doit être dans la famille indiquée
+pour être retourné sinon une erreur 404 (ressource non trouvée) est retournée.
 
-<span class="flag inline nota-bene"></span> Un document "supprimé" peut être récupéré via l'url [trash][trash].
+<span class="flag inline nota-bene"></span> Un document "supprimé" peut être 
+récupéré via l'url [trash][trash].
 
-<span class="flag inline nota-bene"></span> Les documents accédés via les collections `families/<famName>/documents/` et `trash` possèdent aussi les sous-collections :
+<span class="flag inline nota-bene"></span> Les documents accédés via les
+collections `families/<famName>/documents/` et `trash` possèdent aussi les sous-
+collections :
 
 * `history`,
 * `revisions`.

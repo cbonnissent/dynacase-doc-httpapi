@@ -21,27 +21,27 @@ Le retour est une donnée JSON.
         "success": true,
         "messages": [],
         "data": {
-            "uri": "http://dynacase.dev:8081/api/v1/families/DIR/enumerates/",
+            "uri": "http://www.example.net/api/v1/families/DIR/enumerates/",
             "enumerates": [
                 {
                     "attributeId": "gui_isrss",
                     "label": "Utilisable comme flux RSS",
-                    "uri": "http://dynacase.dev:8081/api/v1/families/DIR/enumerates/gui_isrss.json"
+                    "uri": "http://www.example.net/api/v1/families/DIR/enumerates/gui_isrss.json"
                 },
                 {
                     "attributeId": "gui_sysrss",
                     "label": "Flux RSS système",
-                    "uri": "http://dynacase.dev:8081/api/v1/families/DIR/enumerates/gui_sysrss.json"
+                    "uri": "http://www.example.net/api/v1/families/DIR/enumerates/gui_sysrss.json"
                 },
                 {
                     "attributeId": "fld_allbut",
                     "label": "tout ou rien",
-                    "uri": "http://dynacase.dev:8081/api/v1/families/DIR/enumerates/fld_allbut.json"
+                    "uri": "http://www.example.net/api/v1/families/DIR/enumerates/fld_allbut.json"
                 },
                 {
                     "attributeId": "fld_subfam",
                     "label": "restriction sous famille",
-                    "uri": "http://dynacase.dev:8081/api/v1/families/DIR/enumerates/fld_subfam.json"
+                    "uri": "http://www.example.net/api/v1/families/DIR/enumerates/fld_subfam.json"
                 }
             ]
         }
@@ -75,8 +75,8 @@ Exemple :
             },
             {
                 "type": "message",
-                "contentText": "You can consult http://dynacase.dev:8081/index.php?app=HTTPAPI_V1 to have info on the API",
-                "contentHtml": "You can consult <a href=\"http://dynacase.dev:8081/index.php?app=HTTPAPI_V1\">the REST page</a> to have info on the API"
+                "contentText": "You can consult http://www.example.net/index.php?app=HTTPAPI_V1 to have info on the API",
+                "contentHtml": "You can consult <a href=\"http://www.example.net/index.php?app=HTTPAPI_V1\">the REST page</a> to have info on the API"
             }
         ],
         "data": null,

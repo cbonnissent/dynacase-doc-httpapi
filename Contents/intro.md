@@ -8,39 +8,39 @@ L'API HTTP a pour but d'offrir un accès standard aux données de Dynacase.
 L'architecture de cette api s'appuie sur une architecture [REST (Representational state transfer)][wikipedia_rest] 
 et permet de manipuler les **ressources** Dynacase suivantes :
 
-* Les documents;
-* Les familles;
-* Les fichiers.
+* les documents,
+* les familles,
+* les fichiers.
 
 ## Quelques notions de [REST][wikipedia_rest] {#rest:4135ea93-d7ec-4903-b4c1-acb08623dcd5}
 
 L'api présentée dans la suite du document est de type REST et utilise le vocabulaire propre à ces API, ce qui inclut :
 
-* `entité` : une entité est un type de donnée et son contenu, dans notre cas un document, la description d'un
-fichier, etc.;
+* `ressource` : une ressource est un type de donnée et son contenu, dans notre cas un document, la description d'un
+fichier, etc.,
 * `collection` : une collection est un type de ressource. Dans notre cas, la liste des documents, la liste des fichiers, etc. 
 La collection est utilisée pour référencer une ressource, créer une ressource, détruire une ressource,
-* `identifiant` : l'identifiant est la clef unique permettant de trouver une entité au sein d'une collection. Dans
+* `identifiant` : l'identifiant est la clef unique permettant de trouver une ressource au sein d'une collection. Dans
 notre cas, c'est l'`id` d'un document, le `vaultid` d'un fichier, etc.
 
 ## Structure de l'API {#rest:5883cb06-807a-4b58-8f60-88a0078fbbdd}
 
 La structure est conforme au standard REST.
 
-Les actions du [CRUD][wikipedia_crud] sont implémentées et associées sur les méthodes de HTTP, suivant la liste
+Les actions du [CRUD][wikipedia_crud] sont implémentées et associées aux méthodes de HTTP, suivant la liste
 d'équivalence suivante :
 
-| Action   | Méthode HTTP  | URL                 | Action effectuée                                                           |
-| :-     : | :      : | :                      : |                                                                          : |
-| `Create` | `POST`   | `/api/v1/<collection>`      | Créé une nouvelle entité dans la collection et répond avec l'entité        |
-| `Read`   | `GET`    | `/api/v1/<collection>`      | Lit le contenu de la collection  et répond avec une liste d'entités        |
-| `Read`   | `GET`    | `/api/v1/<collection>/<id>` | Lit l'entité `id` et répond avec l'entité                                  |
-| `Update` | `PUT`    | `/api/v1/<collection>`      | Remplace l'intégralité de la collection et répond avec une liste d'entités |
-| `Update` | `PUT`    | `/api/v1/<collection>/<id>` | Modifie l'entité `id` de la collection et répond avec l'entité             |
-| `Delete` | `DELETE` | `/api/v1/<collection>`      | Supprime l'intégralité de la collection et répond avec une liste d'entités |
-| `Delete` | `DELETE` | `/api/v1/<collection>/<id>` | Supprime l'entité `id` de la collection et répond avec l'entité            |
+| Action   | Méthode HTTP | URL                         | Action effectuée                                                               |
+| :-     : | :      :     | :                      :    | :                                                                              |
+| `Create` | `POST`       | `/api/v1/<collection>`      | Créé une nouvelle ressource dans la collection et répond avec la ressource     |
+| `Read`   | `GET`        | `/api/v1/<collection>`      | Lit le contenu de la collection  et répond avec une liste de ressources        |
+| `Read`   | `GET`        | `/api/v1/<collection>/<id>` | Lit la ressource `id` et répond avec la ressource                              |
+| `Update` | `PUT`        | `/api/v1/<collection>`      | Remplace l'intégralité de la collection et répond avec une liste de ressources |
+| `Update` | `PUT`        | `/api/v1/<collection>/<id>` | Modifie la ressource `id` de la collection et répond avec la ressource         |
+| `Delete` | `DELETE`     | `/api/v1/<collection>`      | Supprime l'intégralité de la collection et répond avec une liste de ressources |
+| `Delete` | `DELETE`     | `/api/v1/<collection>/<id>` | Supprime la ressource `id` de la collection et répond avec la ressource        |
 
-Les accès à l'API HTTP Dynacase se font par l'url `http[s]//<url_du_contexte>/api/v1/`.
+Les accès à l'API HTTP Dynacase se font par l'url `http[s]://<url_du_contexte>/api/v1/`.
 
 ### Encodage {#rest:3f228840-491e-4c4d-8d0a-2da3a3934179}
 
@@ -70,7 +70,7 @@ Le type exprimé dans l'URL est prioritaire à celui du header HTTP.
 Les données à enregistrer dans la ressource peuvent être envoyées sous 2 formes :
 
 1.  Sous la forme d'un objet JSON (application/json) transmis dans le corps de la requête HTTP,
-2.  Sous la forme de variable encodée (x-www-form-urlencoded) transmis dans le code de la requête HTTP.
+2.  Sous la forme de variables encodées (x-www-form-urlencoded) transmis dans le code de la requête HTTP.
 
 Les options de mise à jour sont envoyées via des variables sur l'URL.
 
@@ -87,18 +87,28 @@ Exemples :
 
 #### Compatibilité {#rest:}
 
-Certains clients ne permettant pas d'effectuer des requêtes autre que `GET` et `POST`, un fonctionnement en mode
- compatiblité est possible. Pour ce faire, il faut :
+Certains clients ne permettant pas d'effectuer des requêtes autre que `GET` et
+`POST`, un fonctionnement en mode  compatiblité est possible. Pour ce faire, il
+faut modifier le header HTTP en ajoutant `X-HTTP-Method-Override` :
  
- * 
+Simuler une méthode `PUT` : 
+
+* POST `X-HTTP-Method-Override: PUT` 
+
+Simuler une méthode `DELETE` : 
+
+* POST `X-HTTP-Method-Override: DELETE` 
+
 
 ### Réponse {#rest:d886bec2-e0f8-48ed-b7e3-b13dd5375cd8}
 
-L'API répond via plusieurs éléments, le content du retour et les headers HTTP.
+L'API répond via plusieurs éléments, le contenu (`content`) du retour et les
+entêtes (`headers`) HTTP.
 
 #### Contenu {#rest:2d4427f0-f2ec-493b-b443-343b525f76f2}
 
-Dans le cas d'un retour JSON, la structure retournée contient les éléments suivants :
+Dans le cas d'un retour JSON, la structure retournée contient les éléments
+suivants :
 
     [javascript]
     {
@@ -114,8 +124,9 @@ Dans le cas d'un retour JSON, la structure retournée contient les éléments su
         "data" : {}             // données demandées par la requête
         
     }
-    
-Ce retour est envoyé quelque soit le résultat de la requête, y compris en cas d'erreur.
+
+Ce retour est envoyé quelque soit le résultat de la requête, y compris en cas
+d'erreur.
 
 #### Code de retour http {#rest:7e10161c-0412-4927-8e73-09795e58b571}
 
@@ -203,34 +214,38 @@ La version de l'api doit être indiquée dans l'url :
 
     /api/v1/documents/1234.json
 
-La version de l'url est le chiffre indiqué après la lettre "v".
+La version de l'api est le chiffre indiqué après la lettre "v".
 
 ## Authentification {#rest:a7d043da-bea5-4338-9a83-c04abd484934}
 
 L'accès à l'api demande une authentification.
 
-L'utilisation de l'api à l'intérieur d'interface de Dynacase utilise la mécanique d'authentification "classique" 
-définie par Dynacase. 
+L'utilisation de l'api à l'intérieur d'interface de Dynacase utilise la
+mécanique d'authentification "classique" définie par Dynacase.
 
-Cette mécanique est décrite dans la [documentation de core][authentification].
+Cette mécanique est décrite dans le [manuel de référence de Dynacase
+Core][authentification].
 
 ## Droit d'accès {#rest:cc9f6059-0ad6-4372-b82a-d5a1ca3ef6f3}
 
-L'accès aux entités est contrôlé par les entités elles-même mais l'utilisation
+L'accès aux ressources est contrôlé par les ressources elles-même mais l'utilisation
 de l'api est aussi contrôlée de manière générale par l'application "HTTPAPI".
 
-Cette application définit 4 droits (ACL) qui autorisent l'utilisation des méthodes sur les entités/collections :
+Cette application définit 4 droits (ACL) qui autorisent l'utilisation des
+méthodes sur les ressources/collections :
 
 *   `PUT`;
 *   `POST`;
 *   `GET`;
 *   `DELETE`.
 
-Ces droits s'appliquent de manière globale sur toute l'API quelque soit la ressource/collection concernée.
+Ces droits s'appliquent de manière globale sur toute l'API quelque soit la
+ressource/collection concernée.
 
-Si un utilisateur ne possède pas le droits, il ne peut pas effectuer de demande de ce type.
+Si un utilisateur ne possède pas le droits, il ne peut pas effectuer de demande
+de ce type.
 
-[wikipedia_rest]: https://en.wikipedia.org/wiki/Representational_state_transfer
-[wikipedia_crud]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
-[authentification]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:b482b82b-ebe2-46e4-8051-c6e83d11a2ae.html
-[wikipedia_http]: https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP
+[wikipedia_rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Source Wikipédia"
+[wikipedia_crud]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete "Source Wikipédia"
+[authentification]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:b482b82b-ebe2-46e4-8051-c6e83d11a2ae.html "Mécanisme d'authentification"
+[wikipedia_http]: https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP "Source Wikipédia"

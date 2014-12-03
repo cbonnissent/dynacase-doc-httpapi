@@ -20,6 +20,7 @@ La partie `data` contient :
 
 1.  `requestParameters` : contient un résumé des paramètres de la requête en cours (pagination et orderBy),
 1.  `uri` : URI d'accès de la collection,
+1.  `properties` : Le titre de la recherche "The trash" (traduit)
 1.  `documents` : un tableau de document (sous la même forme que les documents unitaires)
 
 Chaque document est un objet contenant les entrées suivantes :
@@ -42,6 +43,9 @@ Exemple :
                 "orderBy": "title asc, id desc"
             },
             "uri": "/api/v1/trash/",
+            "properties": {
+                "title": "The trash"
+            },
             "documents": [
                 {
                     "properties": {

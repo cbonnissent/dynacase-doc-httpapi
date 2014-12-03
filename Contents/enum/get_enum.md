@@ -20,9 +20,11 @@ La partie `data` contient 3 champs :
 
 1.  `document.data.uri` : URI d'accès à la ressource;
 1.  `document.data.label` : label de l'attribut traduit dans la langue de l'utilisateur;
-1.  `document.data.filter` : filtre appliqués à la recherche;
-1.  `document.data.enumItems` : tableau d'objets `key`, `label` (traduit dans la langue de l'utilisateur) et filtrés 
-suivant les paramètres de filter.
+1.  `document.data.requestParameters` : filtre appliqués à la recherche;
+1.  `document.data.enumItems` : tableau d'objets :
+    1.  `key` : valeur de l'élément
+    1.  `label` : libellé (traduit dans la langue de l'utilisateur)
+
 
 Exemple :
 
@@ -31,24 +33,43 @@ Exemple :
         "success": true,
         "messages": [],
         "data": {
-            "uri": "api/v1/families/IUSER/enumerates/us_rolesorigin.json",
-            "label": "Origine",
-            "filter": {
+            "uri": "http://www.example.net/api/v1/families/my_article/enumerates/my_continent.json",
+            "label": "Continents",
+            "requestParameters": {
                 "operator": "contains",
                 "keyword": ""
             },
             "enumItems": [
                 {
-                    "key": "internal",
-                    "label": "Affectation directe"
+                    "key": "Asia",
+                    "label": "Asie"
                 },
                 {
-                    "key": "group",
-                    "label": "Obtenu par"
+                    "key": "Europa",
+                    "label": "Europe"
+                },
+                {
+                    "key": "Africa",
+                    "label": "Afrique"
+                },
+                {
+                    "key": "SouthAmerica",
+                    "label": "Amérique du sud"
+                },
+                {
+                    "key": "NorthAmerica",
+                    "label": "Amérique du nord"
+                },
+                {
+                    "key": "Oceania",
+                    "label": "Océanie"
+                },
+                {
+                    "key": "Antartica",
+                    "label": "Antartique"
                 }
             ]
-        },
-        "exceptionMessage": ""
+        }
     }
 
 ### En cas d'échec {#rest:704f567e-eb1c-4800-bc03-e9076b2fb849}
@@ -92,5 +113,5 @@ Les paramètres sont :
 
 * `keyword` : celui-ci correspond au label,
 * `operator` : celui-ci correspond à l'opérateur appliqué, deux choix sont possibles :
- * `startswith` : le label commence par le `keyword`,
- * `contains` : le label contient le `keyword`.
+* `startswith` : le label commence par le `keyword`,
+* `contains` : le label contient le `keyword`.
