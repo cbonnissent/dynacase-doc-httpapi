@@ -20,6 +20,7 @@ La partie `data` contient :
 
 1.  `requestParameters` : contient un résumé des paramètres de la requête en cours (pagination et orderBy),
 1.  `uri` : URI d'accès de la collection,
+1.  `properties` : titre de la recherche (composée à partie du titre de la famille)
 1.  `documents` : un tableau de document (sous la même forme que les documents unitaires)
 
 Chaque document est un objet contenant les entrées suivantes :
@@ -42,11 +43,14 @@ Exemple :
                 "orderBy": "title asc, id desc"
             },
             "uri": "/api/v1/families/TEXT/documents/",
+            "properties": {
+                "title": "Texte Documents"
+            },
             "documents": [
                 {
                     "properties": {
                         "id": 1054,
-                        "title": "Mon premier document texte",
+                        "title": "La vie des fourmis",
                         "icon": "resizeimg.php?img=Images%2Ftext.gif&size=24",
                         "initid": 1054,
                         "name": null,
@@ -57,7 +61,7 @@ Exemple :
                 {
                     "properties": {
                         "id": 1053,
-                        "title": "Mon premier document texte",
+                        "title": "Les grands philosophes",
                         "icon": "resizeimg.php?img=Images%2Ftext.gif&size=24",
                         "initid": 1053,
                         "name": null,
@@ -110,18 +114,18 @@ Exemple :
 
 Les documents peuvent être retournés avec plus ou moins d'information.
 
-* GET families/<famName>/documents/?fields=document.properties
-* GET families/<famName>/documents/?fields=document.properties.id,document.properties.title
+* GET `families/<famName>/documents/?fields=document.properties`
+* GET `families/<famName>/documents/?fields=document.properties.id,document.properties.title`
 
 Par défaut : `fields=document.properties`
 
-|           fields                   |                        Signification                         |                                                           Remarques                                                           |
-| ---------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| `document.properties`              | Récupère l'ensemble des propriétés par défaut                | "id", "title", "icon", "initid", "name"                                                                                       |
-| `document.properties.all`          | Récupère toutes les propriétés                               |                                                                                                                               |
-| `document.properties.<prop>`       | Récupère la propriété indiquée                               |                                                                                                                               |
-| `document.attributes.my_attribute` | Ajoute l'attribut my_attribute                               |  si l'attribut n'existe pas dans un des documents il est retourné vide                                                        |
-| `document.attributes`              | Ajoute tous les attributs                                    |                                                                                                                               |
+|               fields               |               Signification                |                               Remarques                               |
+| ---------------------------------- | ------------------------------------------ | --------------------------------------------------------------------- |
+| `document.properties`              | Récupère les propriétés données par défaut | "id", "title", "icon", "initid", "name", "revision"                   |
+| `document.properties.all`          | Récupère toutes les propriétés             |                                                                       |
+| `document.properties.<prop>`       | Récupère la propriété indiquée             |                                                                       |
+| `document.attributes.my_attribute` | Ajoute l'attribut my_attribute             | si l'attribut n'existe pas dans un des documents il est retourné vide |
+| `document.attributes`              | Ajoute tous les attributs                  |                                                                       |
 
 ## Cache {#rest:6128563b-6ad9-4bf0-941d-df876c017e4a}
 

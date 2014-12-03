@@ -1,12 +1,12 @@
-# Document : Supprimé {#rest:d65c99b2-7f57-478a-9f76-bcc33aa6bea8}
+# Document : Supprimé  {#rest:d7788d16-384b-4d5f-816a-4fe2b4deeeed}
 
 Cette collection décrit les [documents][doc_document] de Dynacase supprimés. 
 
-## URL {#rest:bcc4ab0b-a9d3-43c4-adc2-2ceb7ab2689e}
+## URL  {#rest:ddd114c7-5c75-4edc-8a72-8d83c30064f3}
 
 L'url d'accès est : `/api/v1/trash`
 
-## Méthodes {#rest:b23f5636-f2e4-4b5d-99d1-0ca90a03ca9c}
+## Méthodes  {#rest:4a56e248-efc9-4d5c-a27a-994c55ba425e}
 
 La collection trash implémente les éléments suivants :
 
@@ -19,7 +19,7 @@ La collection trash implémente les éléments suivants :
 | `PUT`    | `/api/v1/trash`         | N/A                                                       |
 | `DELETE` | `/api/v1/trash`         | N/A                                                       |
 
-* Entité :
+* Ressource :
 
 | Action   | URL                       | Action effectuée                            |
 | :-     : | :                        :| :                                   :       |

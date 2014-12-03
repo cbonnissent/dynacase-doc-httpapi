@@ -22,14 +22,14 @@ La collection searches implémente les éléments suivants :
 <span class="flag inline nota-bene"></span> Une recherche étant un document Dynacase, la création d'une nouvelle 
 recherche passe par l'utilisation de l'entrée `families/SEARCH/documents/`. De plus, il existe différents [type de recherches][core_search]. 
 
-* Entité :
+* Ressource :
 
-| Action   | URL                            | Action effectuée                               |
-| :-     : | :                            :| :                                   :           |
-| `GET`    | `/api/v1/searches/<id>/`      | [Contenu de la recherche `id`][searches_content]|
-| `POST`   | `/api/v1/searches/<id>/`      | N/A                                             |
-| `PUT`    | `/api/v1/searches/<id>/`      | N/A                                             |
-| `DELETE` | `/api/v1/searches/<id>/`      | N/A                                             |
+| Action   | URL                                | Action effectuée                                 |
+| :-     : | :                            :     | :                                   :            |
+| `GET`    | `/api/v1/searches/<id>/documents/` | [Contenu de la recherche `id`][searches_content] |
+| `POST`   | `/api/v1/searches/<id>/documents/` | N/A                                              |
+| `PUT`    | `/api/v1/searches/<id>/documents/` | N/A                                              |
+| `DELETE` | `/api/v1/searches/<id>/documents/` | N/A                                              |
 
 
 <!-- links -->

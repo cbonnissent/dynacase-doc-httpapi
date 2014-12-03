@@ -19,7 +19,7 @@ La sous-collection enumerates implémente les éléments suivants :
 | `PUT`    | `/api/v1/families/<famName>/enumerates/`          | N/A                                                                |
 | `DELETE` | `/api/v1/families/<famName>/enumerates/`          | N/A                                                                |
 
-* Entité :
+* Ressource :
 
 | Action   | URL                                                    | Action effectuée                                              |
 | :-     : | :                                                     :| :                                                           : |

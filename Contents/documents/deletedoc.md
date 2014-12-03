@@ -30,13 +30,11 @@ Le retour est une donnée JSON.
 
 ### En cas de réussite : {#rest:305ab52d-2313-4594-b524-736875acd1b6}
 
-La partie `data` contient 1 champ :
-
 La partie `data` contient 3 champs :
 
 1.  `document.uri` : uri d'accès à la ressource supprimée;
-1.  `document.properties` : liste des valeurs des propriétés du document supprimé;
-2.  `document.attributes` : liste des valeurs des attributs du document supprimé.
+2.  `document.properties` : liste des valeurs des propriétés du document supprimé;
+3.  `document.attributes` : liste des valeurs des attributs du document supprimé.
 
 Les attributs en visibilité "I" ne sont pas retournés. Leur existence n'est pas
 dévoilée ni dans les données ni dans la structure.
@@ -53,11 +51,11 @@ Exemple :
             "document" : {
                 "uri" :        "api\/v1\/trash\/1057.json",
                 "properties" : {
-                    "title" :     "[123",
+                    "title" :     "La vie des escargots",
                     [...]
                 },
                 "attributes" : {
-                    "test_all_element_title" : {"value" : "[123", "displayValue" : "[123"},
+                    "my_title" : {"value" : "La vie des escargots", "displayValue" : "La vie des escargots"},
                     [...]
                 }
             }
@@ -101,9 +99,11 @@ Vous pouvez aussi accéder à cette ressources via :
 
     DELETE /api/v1/families/<famName>/documents/<documentId>
 
-Suppression de la lignée documentaire de la famille `<famName>` dont un des membres a l'identifiant `<documentId>`. 
+Suppression de la lignée documentaire de la famille `<famName>` dont un des
+membres a l'identifiant `<documentId>`.
 
-<span class="flag inline nota-bene"></span> La différence entre les collection `families` et `documents` est que pour
-la collection `families/<famName>/documents/` l'identifiant doit être dans la famille indiquée pour être retourné sinon une
-erreur 404 (ressource non trouvée) est retournée.
+<span class="flag inline nota-bene"></span> La différence entre les collection
+`families` et `documents` est que pour la collection
+`families/<famName>/documents/` l'identifiant doit être dans la famille indiquée
+pour être retourné sinon une erreur 404 (ressource non trouvée) est retournée.
 

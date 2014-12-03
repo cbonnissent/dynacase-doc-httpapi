@@ -59,7 +59,8 @@ Exemple :
         }
     }
 
-<span class="flag inline nota-bene"></span> Les valeurs retournées correspondent aux valeurs de la vue de consultation
+<span class="flag inline nota-bene"></span> Les valeurs retournées 
+correspondent aux valeurs de la vue de consultation
 par défaut.
 
 ### En cas d'échec {#rest:467331a9-cb91-4301-ab66-3f960f6f5e6e}
@@ -75,7 +76,7 @@ Les raisons d'échecs spécifiques à cette requête sont
 
 ### Pagination et tri {#rest:678398f5-d979-482e-ab16-b30c02fc1bf5}
 
-La liste des documents peut être paginée et ordonnée.
+La liste des documents est paginée et ordonnée.
 
 Les mots clefs GET sont les suivants :
 
@@ -86,10 +87,11 @@ Les mots clefs GET sont les suivants :
   * il indique le nombre maximum de documents à retourner, sa valeur est un entier ou le mot clef `all`,
   * sa valeur par défaut est celle du paramètre applicatif `COLLECTION_DEFAULT_SLICE` de l'application `HTTPAPI_V1` (10),
 * **offset** :
-  * indique le nombre d'éléments à exclure avant de retourner la collection.
+  * indique de passer ce nombre de document avant de renvoyer les documents restants.
   * valeur par défaut : 0
 
-<span class="flag inline nota-bene"></span> Les paramètres appliqués sont résumés dans le retour de la collection 
+<span class="flag inline nota-bene"></span> Les paramètres appliqués sont résumés 
+dans le retour de la collection 
 `requestParameter`.
 
 Exemple : 
@@ -105,12 +107,18 @@ Les documents peuvent être retournés avec plus ou moins d'information.
 
 Par défaut : `fields=document.properties`
 
-|           fields                   |                        Signification                         |                                                           Remarques                                                           |
-| ---------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| `document.properties`              | Récupère l'ensemble des propriétés par défaut                | "id", "title", "icon", "initid", "name"                                                                                       |
-| `document.properties.all`          | Récupère toutes les propriétés                               |                                                                                                                               |
-| `document.properties.<prop>`       | Récupère la propriété indiquée                               |                                                                                                                               |
-| `document.attributes.my_attribute` | Ajoute l'attribut my_attribute                               |  si l'attribut n'existe pas dans un des documents il est retourné vide                                                        |
+|               fields               |                 Signification                 |                               Remarques                               |
+| ---------------------------------- | --------------------------------------------- | --------------------------------------------------------------------- |
+| `document.properties`              | Récupère l'ensemble des propriétés par défaut | "id", "title", "icon", "initid", "name"                               |
+| `document.properties.all`          | Récupère toutes les propriétés                |                                                                       |
+| `document.properties.<prop>`       | Récupère la propriété indiquée                |                                                                       |
+| `document.attributes.my_attribute` | Ajoute l'attribut my_attribute                | si l'attribut n'existe pas dans un des documents il est retourné vide |
+| `requestParameters.slice`          | Nombre maximum de document demandé            |                                                                       |
+| `requestParameters.offset`         | Nombre de premiers document à ignorer         |                                                                       |
+| `requestParameters.orderBy`        | Tri demandé                                   |                                                                       |
+| `requestParameters.length`         | Nombre de document effectivement retourné     |                                                                       |
+
+
 
 ## Cache {#rest:804900bb-7935-4264-bdfe-1d747eba5f39}
 

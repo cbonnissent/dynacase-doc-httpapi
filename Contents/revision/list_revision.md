@@ -18,35 +18,71 @@ Le retour est une donnée JSON.
 
 ### En cas de réussite : {#rest:e5b9222e-c8ef-433b-91fc-45efc59575a3}
 
-La partie `data` contient une liste de documents révisés contenant par entrée :
+La partie `data` contient :
 
-1.  `title` : le titre de la révision;
-1.  `uri` : l'uri d'accès de la révision;
-1.  `documentId` : l'identifiant ou nom logique de la révision.
+1.  `requestParameters` : contient un résumé des paramètres de la requête en cours (pagination et orderBy),
+1.  `uri` : URI d'accès de la collection,
+1.  `revisions` : un tableau de révision (sous la même forme que les documents unitaires)
+
+Chaque révision est un objet contenant les entrées suivantes :
+
+1.  `properties` : liste des propriétés de la révision,
+1.  `attributes` : liste des attributs du document révisé (facultatif),
+1.  `uri` : URI d'accès du document.
 
 Exemple :
 
     [javascript]
-    {"success" :             true,
-        "messages" :         [],
-        "data" :             [
-            {
-                "title" :      "AU_231pp",
-                "documentId" : 1537,
-                "uri" :        "http:\/\/dynacase.dev:8081\/api\/v1\/documents\/1505\/revisions\/2.json"
+    {
+        "success": true,
+        "messages": [],
+        "data": {
+            "requestParameters": {
+                "slice": 10,
+                "offset": 0,
+                "length": 2,
+                "orderBy": "revision desc, id desc"
             },
-            {
-                "title" :      "AU_231pp",
-                "documentId" : 1506,
-                "uri" :        "http:\/\/dynacase.dev:8081\/api\/v1\/documents\/1505\/revisions\/1.json"
-            },
-            {
-                "title" :      "AU_231",
-                "documentId" : 1505,
-                "uri" :        "http:\/\/dynacase.dev:8081\/api\/v1\/documents\/1505\/revisions\/0.json"
-            }
-        ],
-        "exceptionMessage" : ""
+            "uri": "http://www.example.net/api/v1/documents/1427/revisions/",
+            "revisions": [
+                {
+                    "properties": {
+                        "id": 13511,
+                        "title": "Éléonore d'aquitaine",
+                        "icon": "resizeimg.php?img=Images%2Farticle.png&size=24",
+                        "initid": 1427,
+                        "name": null,
+                        "status": "alive",
+                        "revision": 1
+                    },
+                    "attributes": {
+                        "an_nom": {
+                            "value": "Éléonore d'aquitaine",
+                            "displayValue": "Éléonore d'aquitaine"
+                        },...
+                    },
+                    "uri": "http://www.example.net/api/v1/documents/1427/revisions/1.json"
+                },
+                {
+                    "properties": {
+                        "id": 1427,
+                        "title": "Éléonore",
+                        "icon": "resizeimg.php?img=Images%2Farticle.png&size=24",
+                        "initid": 1427,
+                        "name": null,
+                        "status": "fixed",
+                        "revision": 0
+                    },
+                    "attributes": {
+                        "an_nom": {
+                            "value": "Éléonore",
+                            "displayValue": "Éléonore"
+                        },...
+                    },
+                    "uri": "http://www.example.net/api/v1/documents/1427/revisions/0.json"
+                }
+            ]
+        }
     }
 
 ### En cas d'échec {#rest:5bfa051d-e3a4-4263-8589-f392a1257e2d}
@@ -87,7 +123,8 @@ Dans le cadre du [cache][cache], le `Etag` est calculé à l'aide des éléments
 * identifiant des droits portés sur le document (vecteur de droits),
 * langue sélectionnée.
 
-L'ensemble de ces éléments sont concaténés et ensuite le [sha1][sha1] de cette concaténation consitue le `Etag`.
+L'ensemble de ces éléments sont concaténés et ensuite le [sha1][sha1] de cette
+concaténation consitue le `Etag`.
 
 
 ## Autres URL d'accès {#rest:1bbf4922-a12f-4cc4-8aa0-16853148ac14}
@@ -96,16 +133,19 @@ Vous pouvez aussi accéder à cette ressources via :
 
     GET /api/v1/families/<famName>/documents/<documentId>/revisions/
 
-Récupération de la liste des révisions de la dernière révision d'un document de la famille `<famName>` ayant
-l'identifiant `<documentId>`.
+Récupération de la liste des révisions de la dernière révision d'un document de
+la famille `<famName>` ayant l'identifiant `<documentId>`.
 
-<span class="flag inline nota-bene"></span> La différence entre les collection `families` et `documents` est que pour
-la collection `/api/v1/families/<famName>/documents/<documentId>/revisions/<revisionNumber>` l'identifiant doit être dans la famille indiquée pour être retourné sinon une
+<span class="flag inline nota-bene"></span> La différence entre les collection
+`families` et `documents` est que pour la collection
+`/api/v1/families/<famName>/documents/<documentId>/revisions/`
+l'identifiant doit être dans la famille indiquée pour être retourné sinon une
 erreur 404 (ressource non trouvée) est retournée.
 
-<span class="flag inline nota-bene"></span> L'historique d'un document "supprimé" peut être récupéré via l'url 
+<span class="flag inline nota-bene"></span> Les révisions d'un document
+"supprimé" pevent être récupérés via l'url
 
-    GET /api/v1/families/<famName>/documents/<documentId>/revisions/
+    GET /api/v1/trash/<documentId>/revisions/
 
 [trash]: #rest:52be10c1-9f46-456b-a22f-24909386567
 [cache]: #rest:804f8d68-acfa-4a35-bb41-27b2a27c14dc

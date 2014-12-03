@@ -19,7 +19,7 @@ La collection familles implémente les méthodes suivantes :
 | `PUT`    | `/api/v1/families/`     | N/A                |
 | `DELETE` | `/api/v1/families/`     | N/A                |
 
-* Entité :
+* Ressource :
 
 | Action   | URL                         | Action effectuée                                          |
 | :-     : | :                          :| :                                                 :       |
@@ -28,7 +28,7 @@ La collection familles implémente les méthodes suivantes :
 | `PUT`    | `/api/v1/families/<famid>`  | N/A                                                       |
 | `DELETE` | `/api/v1/families/<famid>`  | N/A                                                       |
 
-* Sous-entité /documents/ :
+* Sous-ressource /documents/ :
 
 | Action   | URL                                    | Action effectuée                                          |
 | :-     : | :                                     :| :                                                 :       |
@@ -37,7 +37,7 @@ La collection familles implémente les méthodes suivantes :
 | `PUT`    | `/api/v1/families/<famid>/documents/`  | N/A                                                       |
 | `DELETE` | `/api/v1/families/<famid>/documents/`  | N/A                                                       |
 
-* Sous-entité /documents/ :
+* Sous-ressource /documents/ :
 
 | Action   | URL                                        | Action effectuée                                          |
 | :-     : | :                                         :| :                                                       : |
