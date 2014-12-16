@@ -12,7 +12,7 @@ et permet de manipuler les **ressources** Dynacase suivantes :
 * les familles,
 * les fichiers.
 
-## Quelques notions de [REST][wikipedia_rest] {#rest:4135ea93-d7ec-4903-b4c1-acb08623dcd5}
+## Quelques notions de REST {#rest:4135ea93-d7ec-4903-b4c1-acb08623dcd5}
 
 L'api présentée dans la suite du document est de type REST et utilise le vocabulaire propre à ces API, ce qui inclut :
 
