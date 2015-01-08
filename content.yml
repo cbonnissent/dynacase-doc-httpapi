@@ -74,6 +74,19 @@ book:
       - level:  2
         content: "files/create.md"
       - level:   1
+        content:  "usertags/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "usertags/listUserTags.md"
+      - level:  2
+        content: "usertags/getUserTag.md"
+      - level:  2
+        content: "usertags/createUserTag.md"
+      - level:  2
+        content: "usertags/updateUserTag.md"
+      - level:  2
+        content: "usertags/deleteUserTag.md"
+      - level:   1
         content:  "advanced/introduction.md"
         subtoc : 2
       - level:  2

@@ -1,4 +1,4 @@
-# Document {#rest:7fe0e66a-c3ce-4315-aff6-fa345eae31da}
+# Documents {#rest:7fe0e66a-c3ce-4315-aff6-fa345eae31da}
 
 Cette collection décrit les [documents][doc_document] de Dynacase. 
 
@@ -21,12 +21,12 @@ La collection *documents* implémente les éléments suivants :
 
 * Ressource :
 
-| Action   | URL                       | Action effectuée                            |
-| :-     : | :                        :| :                                   :       |
-| `GET`    | `/api/v1/documents/<id>`  | [Retourne le document `id`][get_doc]        |
-| `POST`   | `/api/v1/documents/<id>`  | N/A                                         |
-| `PUT`    | `/api/v1/documents/<id>`  | [Modifie le document `id`][update_doc]   |
-| `DELETE` | `/api/v1/documents/<id>`  | [Supprime le document `id`][delete_doc]     |
+| Action   | URL                        | Action effectuée                         |
+| :-     : | :                        : | :                                      : |
+| `GET`    | `/api/v1/documents/<id>`   | [Retourne le document `id`][get_doc]     |
+| `POST`   | `/api/v1/documents/<id>`   | N/A                                      |
+| `PUT`    | `/api/v1/documents/<id>`   | [Modifie le document `id`][update_doc]   |
+| `DELETE` | `/api/v1/documents/<id>`   | [Supprime le document `id`][delete_doc]  |
 
 
 <!-- links -->
