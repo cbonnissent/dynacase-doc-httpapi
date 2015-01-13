@@ -28,7 +28,7 @@ La partie `data` contient :
 
 Chaque tag utilisateur est un objet contenant les entrées suivantes :
 
-1.  `id` : identifiant du tag (les identifiants sont sensible à la casse),
+1.  `id` : identifiant du tag (les identifiants sont sensibles à la casse),
 1.  `date` : date de pose du tag,
 1.  `value` : valeur du tag,
 1.  `uri` : URI d'accès au tag.
@@ -115,7 +115,7 @@ Les mots clefs GET sont les suivants :
     Si sa valeur est inférieur ou égale à 0, toutes les valeurs sont retournés,
   * sa valeur par défaut '-1',
 * **offset** :
-  * indique de passer ce nombre de document avant de renvoyer les documents restants.
+  * indique de passer ce nombre de tags avant de renvoyer les tags restants.
   * valeur par défaut : 0
 
 <span class="flag inline nota-bene"></span> Les paramètres appliqués sont résumés 

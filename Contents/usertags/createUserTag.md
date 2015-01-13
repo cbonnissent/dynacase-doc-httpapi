@@ -29,7 +29,7 @@ Le retour est une donnée JSON.
 La partie `data` contient 2 champs :
 
 1.  `uri` : URI préférentielle d'accès à la ressource;
-1.  `document.properties` : liste des valeurs des propriétés;
+1.  `userTag` : liste des valeurs des propriétés;
 
 Exemple :
 

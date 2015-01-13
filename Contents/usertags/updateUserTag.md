@@ -15,10 +15,10 @@ Exemple :
 ## Content  {#rest:edf3bccd-44da-4589-8d1a-ac6597f10fb1}
 
 
-Le contenu contient la valeur du tag.
-Si elle est vide la valeur sera égale à la chaîne vide.
+Le contenu contient la valeur du tag.  
+Si il est vide la valeur est égale à la chaîne vide.
 
-Si le contenu est une structure json, la valeur retournée sera une structure.
+Si le contenu est une structure JSON, la valeur retournée est une structure.
 
 ## Structure de retour  {#rest:bf7517bd-d1bd-499f-9beb-0e8a401396de}
 
@@ -29,7 +29,7 @@ Le retour est une donnée JSON.
 La partie `data` contient 2 champs :
 
 1.  `uri` : URI préférentielle d'accès à la ressource;
-1.  `document.properties` : liste des valeurs des propriétés;
+1.  `userTag` : liste des valeurs du tag;
 
 Exemple :
 
