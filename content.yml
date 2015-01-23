@@ -1,9 +1,9 @@
 book:
-    title: "API HTTP"
-    module: "Core"
-    version: "4"
+    title: "Manuel de référence"
+    module: "Core Api HTTP"
+    version: "1"
     author: "Anakeen Labs &lt;labs@anakeen.com&gt;"
-    edition: "1"
+    edition: "Beta"
     chapters:
       - level:  1
         content: "intro.md"
