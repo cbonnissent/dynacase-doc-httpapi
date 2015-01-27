@@ -1,6 +1,6 @@
 book:
-    title: "Manuel de référence"
-    module: "Core Api HTTP"
+    title: "API HTTP : Manuel de référence"
+    module: "Core"
     version: "1"
     author: "Anakeen Labs &lt;labs@anakeen.com&gt;"
     edition: "Beta"
