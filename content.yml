@@ -87,6 +87,21 @@ book:
       - level:  2
         content: "usertags/deleteUserTag.md"
       - level:   1
+        content:  "workflows/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "workflows/getState.md"
+      - level:  2
+        content: "workflows/createState.md"
+      - level:  2
+        content: "workflows/getStateList.md"
+      - level:  2
+        content: "workflows/getTransition.md"
+      - level:  2
+        content: "workflows/createTransition.md"
+      - level:  2
+        content: "workflows/getTransitionList.md"
+      - level:   1
         content:  "advanced/introduction.md"
         subtoc : 2
       - level:  2
