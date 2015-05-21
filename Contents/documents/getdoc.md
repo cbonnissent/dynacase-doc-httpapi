@@ -45,7 +45,7 @@ Exemple :
         "messages" :         [],
         "data" :             {
             "document" : {
-                "uri" :        "api\/v1\/documents\/1057.json",
+                "uri" :        "api/v1/documents\/1057.json",
                 "properties" : {
                     "title" :     "La culture des perles",
                     "state" :     null,

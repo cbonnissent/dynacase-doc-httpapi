@@ -115,24 +115,24 @@
 | POST   | **/api/v1/documents/&lt;docid&gt;/usertags/&lt;tagIdentifier&gt;**            | Oui            | [Création d'un tag utilisateur `<tagIdentifier>`][post_usertag]      |
 | DELETE | **/api/v1/documents/&lt;docid&gt;/usertags/&lt;tagIdentifier&gt;**            | Oui            | [Suppression d'un tag utilisateur `<tagIdentifier>`][delete_usertag] |
 |        |                                                                               |                |                                                                      |
-| GET    | */api/v1/documents/&lt;docid&gt;/workflows/states/*                           | Oui            | [Liste des états possibles d'un document]                            |
+| GET    | */api/v1/documents/&lt;docid&gt;/workflows/states/*                           | Oui            | [Liste des états possibles d'un document][get_states]                |
 | PUT    | */api/v1/documents/&lt;docid&gt;/workflows/states/*                           | N/A            | N/A                                                                  |
 | POST   | */api/v1/documents/&lt;docid&gt;/workflows/states/*                           | N/A            | N/A                                                                  |
 | DELETE | */api/v1/documents/&lt;docid&gt;/workflows/states/*                           | N/A            | N/A                                                                  |
 |        |                                                                               |                |                                                                      |
-| GET    | **/api/v1/documents/&lt;docid&gt;/workflows/states/&lt;state&gt;**            | Oui            | [Caractéristiques de l'état]                                         |
+| GET    | **/api/v1/documents/&lt;docid&gt;/workflows/states/&lt;state&gt;**            | Oui            | [Caractéristiques de l'état][get_state]                              |
 | PUT    | **/api/v1/documents/&lt;docid&gt;/workflows/states/&lt;state&gt;**            | N/A            | N/A                                                                  |
-| POST   | **/api/v1/documents/&lt;docid&gt;/workflows/states/&lt;state&gt;**            | Oui            | [Changement d'état d'un document `<state>`]                          |
+| POST   | **/api/v1/documents/&lt;docid&gt;/workflows/states/&lt;state&gt;**            | Oui            | [Changement d'état d'un document `<state>`][create_state]            |
 | DELETE | **/api/v1/documents/&lt;docid&gt;/workflows/states/&lt;state&gt;**            | N/A            | N/A                                                                  |
 |        |                                                                               |                |                                                                      |
-| GET    | */api/v1/documents/&lt;docid&gt;/workflows/transitions/*                      | Oui            | [Liste des transitions possibles d'un document]                      |
+| GET    | */api/v1/documents/&lt;docid&gt;/workflows/transitions/*                      | Oui            | [Liste des transitions possibles d'un document][get_transitions]     |
 | PUT    | */api/v1/documents/&lt;docid&gt;/workflows/transitions/*                      | N/A            | N/A                                                                  |
 | POST   | */api/v1/documents/&lt;docid&gt;/workflows/transitions/*                      | N/A            | N/A                                                                  |
 | DELETE | */api/v1/documents/&lt;docid&gt;/workflows/transitions/*                      | N/A            | N/A                                                                  |
 |        |                                                                               |                |                                                                      |
-| GET    | **/api/v1/documents/&lt;docid&gt;/workflows/transitions/&lt;transitions&gt;** | Oui            | [Caractéristiques de la transition]                                  |
+| GET    | **/api/v1/documents/&lt;docid&gt;/workflows/transitions/&lt;transitions&gt;** | Oui            | [Caractéristiques de la transition][get_transition]                  |
 | PUT    | **/api/v1/documents/&lt;docid&gt;/workflows/transitions/&lt;transitions&gt;** | N/A            | N/A                                                                  |
-| POST   | **/api/v1/documents/&lt;docid&gt;/workflows/transitions/&lt;transitions&gt;** | Oui            | Passage d'une transition                                             |
+| POST   | **/api/v1/documents/&lt;docid&gt;/workflows/transitions/&lt;transitions&gt;** | Oui            | [Passage d'une transition][create_transition]                        |
 | DELETE | **/api/v1/documents/&lt;docid&gt;/workflows/transitions/&lt;transitions&gt;** | N/A            | N/A                                                                  |
 |        |                                                                               |                |                                                                      |
 
@@ -186,3 +186,9 @@ mais non présentes dans la version courante de l'API.
 [folders_collection]: #rest:b3f83d12-4ea7-44e2-8509-1145d05003d6
 [folders_content]: #rest:f3e3869b-4dcf-40ee-9733-3f4b57e2386f
 [fam_list_document]: #rest:f21d3f3f-82ea-48a9-bb9e-ba986bae9b62
+[get_states]:       #rest:af743cfe-c089-4706-a5fb-a131f68020d2
+[get_transitions]:  #rest:a91dc2b7-3248-452a-b51e-3f660d7d3cf2
+[get_state]:        #rest:89142988-9b2b-42f6-af33-f68749c7af35
+[create_state]:     #rest:f3d33034-af23-48c6-b535-e609266e5bc5
+[get_transition]:   #rest:d370f800-2a17-4589-90ae-d505b5f71c71
+[create_transition]:#rest:697b7714-d986-4ae5-8020-a5602cfbe7d5
