@@ -34,8 +34,8 @@ La partie `data` contient :
 1.  `uri` : URI préférentielle d'accès à la ressource;
 1.  `states` : Liste des états
     1.  `id` : identifiant de l'état,
-    1.  `label` : intitulé de l'état (localisé en fonction de la langue de l'utilisateur) 
-    1.  `activity` : intitulé de l'activité (localisé en fonction de la langue de l'utilisateur) 
+    1.  `label` : intitulé de l'état (localisé en fonction de la langue de l'utilisateur)
+    1.  `activity` : intitulé de l'activité (localisé en fonction de la langue de l'utilisateur)
     1.  `displayValue` : intitulé calculé en fonction des valeurs de "activity" et "label"
     1.  `color` : code couleur (#RRGGBB) associé à l'état
     1.  `uri` : URI d'accès à l'état
@@ -72,13 +72,13 @@ Exemple :
 
 ### En cas d'échec   {#rest:fbf45270-2026-4504-80d2-14314ec9278f}
 
-Les raisons d'échecs spécifiques à cette requête sont 
+Les raisons d'échecs spécifiques à cette requête sont
 
 |            Raison           |       Status HTTP        | Error Code |
 | --------------------------- | ------------------------ | ---------- |
 | Pas de cycle de vie associé | 404 No workflow detected | CRUD0227   |
 
-Exemple : 
+Exemple :
 
 
     [javascript]
@@ -96,4 +96,4 @@ Exemple :
     }
 
 <!-- links -->
-[m0]:   http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:b8824399-f17d-4007-adde-8a7433939273.html#core-ref:391f603e-b23a-44e8-aa14-47b4ab1fd03b "Méthode m0"
+[m0]:   ../../../dynacase-doc-core-reference/website/book/core-ref:b8824399-f17d-4007-adde-8a7433939273.html#core-ref:391f603e-b23a-44e8-aa14-47b4ab1fd03b "Méthode m0"
