@@ -1,9 +1,9 @@
 book:
-    title: "API HTTP : Manuel de référence"
+    title: "Manuel de référence de l'API HTTP"
     module: "Core"
-    version: "1"
+    version: "1.0"
     author: "Anakeen Labs &lt;labs@anakeen.com&gt;"
-    edition: "Beta"
+    edition: "1"
     chapters:
       - level:  1
         content: "intro.md"
