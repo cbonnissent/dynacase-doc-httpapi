@@ -1,6 +1,6 @@
 # Recherche {#rest:d65c99b2-7f57-478a-9f76-bcc33aa6bea8}
 
-Cette collection décrit les recherches de Dynacase. 
+Cette collection décrit les recherches de Dynacase.
 
 ## URL {#rest:bcc4ab0b-a9d3-43c4-adc2-2ceb7ab2689e}
 
@@ -19,8 +19,8 @@ La collection searches implémente les éléments suivants :
 | `PUT`    | `/api/v1/searches/`         | N/A                                                       |
 | `DELETE` | `/api/v1/searches/`         | N/A                                                       |
 
-<span class="flag inline nota-bene"></span> Une recherche étant un document Dynacase, la création d'une nouvelle 
-recherche passe par l'utilisation de l'entrée `families/SEARCH/documents/`. De plus, il existe différents [type de recherches][core_search]. 
+<span class="flag inline nota-bene"></span> Une recherche étant un document Dynacase, la création d'une nouvelle
+recherche passe par l'utilisation de l'entrée `families/SEARCH/documents/`. De plus, il existe différents [type de recherches][core_search].
 
 * Ressource :
 
@@ -33,6 +33,6 @@ recherche passe par l'utilisation de l'entrée `families/SEARCH/documents/`. De 
 
 
 <!-- links -->
-[core_search]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book//core-ref:bda916b0-e564-40fd-b195-c62bbab7b8be.html
+[core_search]: ../../../dynacase-doc-core-reference/website/book//core-ref:bda916b0-e564-40fd-b195-c62bbab7b8be.html
 [searches_collection]: #rest:9b8f4a2b-3f56-4b21-a7b7-bb299b4ac7b3
 [searches_content]: #rest:b7fb15e0-6e51-4ace-8a5f-aec7d565e24d

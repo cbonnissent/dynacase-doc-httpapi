@@ -1,6 +1,6 @@
 # Famille {#rest:359e9f87-73d0-4c23-b6ef-dcae9b4019b4}
 
-Cette collection décrit les [familles][doc_family] de Dynacase. 
+Cette collection décrit les [familles][doc_family] de Dynacase.
 
 ## URL {#rest:91be7285-5982-4ae7-b2ec-a94de22e173d}
 
@@ -49,11 +49,10 @@ La collection familles implémente les méthodes suivantes :
 
 <!-- links -->
 
-[doc_family]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:e01bf76d-481b-41fd-ac64-167a68d34c55.html#core-ref:e263d44b-8357-4450-87bf-11cef8bafb24
+[doc_family]: ../../../dynacase-doc-core-reference/website/book/core-ref:e01bf76d-481b-41fd-ac64-167a68d34c55.html#core-ref:e263d44b-8357-4450-87bf-11cef8bafb24
 [get_family]: #rest:6b195156-0cda-47c8-9a9a-04ec13562c9a
 [create_document]: #rest:e769b476-0033-407c-b453-4e8466e09975
 [get_doc]: #rest:1d7b939f-d5fc-4b57-b33f-d216913efc22
 [update_doc]: #rest:db2cb01a-7325-4f78-8cec-ceac9858caf2
 [delete_doc]: #rest:3358b3bd-bdf6-44ef-b1d7-438f8eb21067
 [fam_list_document]: #rest:f21d3f3f-82ea-48a9-bb9e-ba986bae9b62
-

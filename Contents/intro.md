@@ -5,7 +5,7 @@
 
 L'API HTTP a pour but d'offrir un accès standard aux données de Dynacase.
 
-L'architecture de cette api s'appuie sur une architecture [REST (Representational state transfer)][wikipedia_rest] 
+L'architecture de cette api s'appuie sur une architecture [REST (Representational state transfer)][wikipedia_rest]
 et permet de manipuler les **ressources** Dynacase suivantes :
 
 * les documents,
@@ -18,7 +18,7 @@ L'api présentée dans la suite du document est de type REST et utilise le vocab
 
 * `ressource` : une ressource est un type de donnée et son contenu, dans notre cas un document, la description d'un
 fichier, etc.,
-* `collection` : une collection est un type de ressource. Dans notre cas, la liste des documents, la liste des fichiers, etc. 
+* `collection` : une collection est un type de ressource. Dans notre cas, la liste des documents, la liste des fichiers, etc.
 La collection est utilisée pour référencer une ressource, créer une ressource, détruire une ressource,
 * `identifiant` : l'identifiant est la clef unique permettant de trouver une ressource au sein d'une collection. Dans
 notre cas, c'est l'`id` d'un document, le `vaultid` d'un fichier, etc.
@@ -90,14 +90,14 @@ Exemples :
 Certains clients ne permettant pas d'effectuer des requêtes autre que `GET` et
 `POST`, un fonctionnement en mode  compatiblité est possible. Pour ce faire, il
 faut modifier le header HTTP en ajoutant `X-HTTP-Method-Override` :
- 
-Simuler une méthode `PUT` : 
 
-* POST `X-HTTP-Method-Override: PUT` 
+Simuler une méthode `PUT` :
 
-Simuler une méthode `DELETE` : 
+* POST `X-HTTP-Method-Override: PUT`
 
-* POST `X-HTTP-Method-Override: DELETE` 
+Simuler une méthode `DELETE` :
+
+* POST `X-HTTP-Method-Override: DELETE`
 
 
 ### Réponse {#rest:d886bec2-e0f8-48ed-b7e3-b13dd5375cd8}
@@ -122,7 +122,7 @@ suivants :
             "data" : { }        // données supplémentaires
             }],
         "data" : {}             // données demandées par la requête
-        
+
     }
 
 Ce retour est envoyé quelque soit le résultat de la requête, y compris en cas
@@ -138,7 +138,7 @@ Si l'action demandée a été exécutée, le code HTTP 2xx est retourné.
 
 **200**
 :  Ressource trouvée
-  
+
 **201**
 :  Ressource créé
 
@@ -208,7 +208,7 @@ est ajouté dans le tableau `messages`.
 ### Version de l'API {#rest:4bd0efac-b454-4825-8efe-7dc85019a82c}
 
 Il est nécessaire de préciser la version de l'API pour s'assurer de l'immuabilité
-des retours et des entrées. 
+des retours et des entrées.
 
 La version de l'api doit être indiquée dans l'url :
 
@@ -247,5 +247,5 @@ de ce type.
 
 [wikipedia_rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Source Wikipédia"
 [wikipedia_crud]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete "Source Wikipédia"
-[authentification]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:b482b82b-ebe2-46e4-8051-c6e83d11a2ae.html "Mécanisme d'authentification"
+[authentification]: ../../../dynacase-doc-core-reference/website/book/core-ref:b482b82b-ebe2-46e4-8051-c6e83d11a2ae.html "Mécanisme d'authentification"
 [wikipedia_http]: https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP "Source Wikipédia"

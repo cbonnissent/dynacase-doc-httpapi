@@ -12,7 +12,7 @@ L'url d'accès est : `/api/v1/documents/<docid>/workflows/`
 
 La collection *documents* implémente les éléments suivants :
 
-* Collection : 
+* Collection :
 
 | Action   | URL                                               | Action effectuée                                                              |
 | :-     : | :                      :                          | :                                                                    :        |
@@ -41,7 +41,7 @@ La collection *documents* implémente les éléments suivants :
 
 
 <!-- links -->
-[workflow]:         http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:55a53d99-0c24-48d8-8cb9-1caa171f2e9a.html "Définition des Workflows"
+[workflow]:         ../../../dynacase-doc-core-reference/website/book/core-ref:55a53d99-0c24-48d8-8cb9-1caa171f2e9a.html "Définition des Workflows"
 [get_states]:       #rest:af743cfe-c089-4706-a5fb-a131f68020d2
 [get_transitions]:  #rest:a91dc2b7-3248-452a-b51e-3f660d7d3cf2
 [get_state]:        #rest:89142988-9b2b-42f6-af33-f68749c7af35
