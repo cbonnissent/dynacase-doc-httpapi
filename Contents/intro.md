@@ -61,12 +61,15 @@ Le type de retour attendu (format) est précisé soit :
 
 * dans le header HTTP : `accept`.
 
-Actuellement, seul le type `json` est géré. Celui-ci est renvoyé dans le corps de la requête HTTP.
+Actuellement, seul le type `json` est géré. Celui-ci est renvoyé dans le corps
+de la requête HTTP.
 
 Le type exprimé dans l'URL est prioritaire à celui du header HTTP.
 
-Pour supporter certains navigateurs ne possédant pas les objets XMLHttpRequest v2, il est possible d'ajouter
-le paramètres GET `alt=html` et d'avoir ainsi le rendu json dans un textarea au sein d'une page web. <span class="flag from release">1.0.1</span>
+Pour supporter certains navigateurs ne possédant pas les objets XMLHttpRequest
+v2, il est possible d'ajouter le paramètre GET `alt=html` et d'avoir ainsi le
+retour de la donnée `json` dans un textarea au sein d'une page web. <span
+class="flag from release">1.0.1</span>
 
 #### PUT (Mise à jour), POST (Création) {#rest:24701246-e383-4f76-b431-09f56d34b6d3}
 
