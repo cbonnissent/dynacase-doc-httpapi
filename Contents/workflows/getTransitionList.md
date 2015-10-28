@@ -29,7 +29,7 @@ La partie `data` contient :
 1.  `transitions` : Liste de transition
     1.  `uri` : identifiant de l'état de départ
     1.  `label` : libellé de la transition (localisé en fonction de la langue de l'utilisateur)
-    1.  `valid` : indique si la transition existe depuis l'étape courant  
+    1.  `valid` : indique si la transition existe depuis l'étape courante  
     Cela ne vérifie pas si l'utilisateur courant peut passer la transition
 
 Exemple :

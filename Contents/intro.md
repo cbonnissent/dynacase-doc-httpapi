@@ -65,6 +65,9 @@ Actuellement, seul le type `json` est géré. Celui-ci est renvoyé dans le corp
 
 Le type exprimé dans l'URL est prioritaire à celui du header HTTP.
 
+Pour supporter certains navigateurs ne possédant pas les objets XMLHttpRequest v2, il est possible d'ajouter
+le paramètres GET `alt=html` et d'avoir ainsi le rendu json dans un textarea au sein d'une page web. <span class="flag from release">1.0.1</span>
+
 #### PUT (Mise à jour), POST (Création) {#rest:24701246-e383-4f76-b431-09f56d34b6d3}
 
 Les données à enregistrer dans la ressource peuvent être envoyées sous 2 formes :
