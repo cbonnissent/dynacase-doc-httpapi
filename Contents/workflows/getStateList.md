@@ -44,7 +44,7 @@ La partie `data` contient :
         1.  `uri` : uri de la transition
         1.  `label` : libellé de la transition
         1.  `error` : message de la méthode [m0][m0]
-        1.  `autorized` : indique si l'utilisateur possède le droit d'effectuer la transition <span class="flag from release">1.0.1</span>
+        1.  `authorized` : indique si l'utilisateur possède le droit d'effectuer la transition <span class="flag from release">1.0.1</span>
 
 Exemple :
 
