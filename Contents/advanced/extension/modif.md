@@ -50,7 +50,7 @@ de la gestion du [cache][cache].
 
 La nouvelle classe de CRUD doit ensuite être enregistrée auprès de l'application
 `HTTPAPI_V1`, ceci se fait via l'ajout d'un fichier `json` dans le répertoire
-`HTTAPI_V1/rules.d/`.
+`HTTPAPI_V1/rules.d/`.
 
 Ce paramètre doit contenir un tableau encodé en JSON semblable à :
 

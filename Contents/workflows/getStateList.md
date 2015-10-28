@@ -40,9 +40,11 @@ La partie `data` contient :
     1.  `color` : code couleur (#RRGGBB) associé à l'état
     1.  `uri` : URI d'accès à l'état
     1.  `transition` : transition qui emmène à cet étape ("null" si pas de transition possible)
+        1.  `id` : identifiant de la transition <span class="flag from release">1.0.1</span>
         1.  `uri` : uri de la transition
         1.  `label` : libellé de la transition
         1.  `error` : message de la méthode [m0][m0]
+        1.  `autorized` : indique si l'utilisateur possède le droit d'effectuer la transition <span class="flag from release">1.0.1</span>
 
 Exemple :
 
@@ -61,9 +63,11 @@ Exemple :
                     "color": "#A8E5FF",
                     "uri": "./api/v1/documents/61120/workflows/states/my_transmited",
                     "transition": {
+                        "id" : "my_Ttransmited",
                         "uri": "./api/v1/documents/61120/workflows/transitions/my_Ttransmited",
                         "label": "Transmettre le dossier",
-                        "error": ""
+                        "error": "",
+                        "authorized" : true
                     }
                 }
             ]
