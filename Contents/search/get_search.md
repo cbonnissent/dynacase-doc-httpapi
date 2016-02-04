@@ -122,6 +122,10 @@ Par défaut : `fields=document.properties`
 | `document.attributes`              | Ajoute tous les attributs de la famille référencée par la recherche | s'il n'y a pas de famille de référence alors aucun attribut n'est retourné |
 | `document.attributes.my_attribute` | Ajoute l'attribut my_attribute                                      | si l'attribut n'existe pas dans un des documents il est retourné vide      |
 
+La liste des propriétés est documentée dans la [documentation de format collection][properties].
+
 ## Cache {#rest:716b4215-feec-4325-b54d-8969144cf224}
 
 La collection n'a pas de cache.
+
+[properties]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:74ce9ce4-8e4e-42ee-a0df-415eb6897a81.html#core-ref:9ebcbfd6-d094-45ee-a993-9b221fb4d893

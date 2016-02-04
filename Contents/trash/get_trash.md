@@ -116,6 +116,10 @@ Par défaut : `fields=document.properties`
 | `document.properties.<prop>`       | Récupère la propriété indiquée                               |                                                                                                                               |
 | `document.attributes.my_attribute` | Ajoute l'attribut my_attribute                               |  si l'attribut n'existe pas dans un des documents il est retourné vide                                                        |
 
+La liste des propriétés est documentée dans la [documentation de format collection][properties].
+
 ## Cache {#rest:478d16f8-cf1f-4195-9a3e-02d1d64889c6}
 
 La collection n'a pas de cache.
+
+[properties]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:74ce9ce4-8e4e-42ee-a0df-415eb6897a81.html#core-ref:9ebcbfd6-d094-45ee-a993-9b221fb4d893

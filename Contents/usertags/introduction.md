@@ -1,4 +1,4 @@
-# Tags utilisateurs sur les documents {#rest:a401a687-cf26-49bf-b454-abd9a118ded4}
+# Document : Tags utilisateurs {#rest:a401a687-cf26-49bf-b454-abd9a118ded4}
 
 Cette ressource décrit les tags utilisateur des documents.  Un tag est un mot-
 clef auquel une valeur est éventuellement associée. Ce tag est associé à

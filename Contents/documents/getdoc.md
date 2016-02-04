@@ -123,6 +123,8 @@ Par défaut : `fields=document.properties,document.attributes`
 | `document.attributes.<id>`         | Récupère la valeur d'un attribut particulier                 |                                                                                                                               |
 | `document.family.structure`        | Récupère la structure de la famille                          |                                                                                                                               |
 
+La liste des propriétés est documentée dans la [documentation de format collection][properties].
+
 ## Cache {#rest:02ea72c5-6bbf-4d63-ba31-2c3b33b68e51}
 
 Dans le cadre du [cache][cache], le `Etag` est calculé à l'aide des éléments
@@ -165,3 +167,4 @@ collections :
 [cache]: #rest:804f8d68-acfa-4a35-bb41-27b2a27c14dc
 [sha1]: https://fr.wikipedia.org/wiki/SHA-1
 [revision]: #rest:eb7b6954-0945-4f02-8e10-16e69729c529
+[properties]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:74ce9ce4-8e4e-42ee-a0df-415eb6897a81.html#core-ref:9ebcbfd6-d094-45ee-a993-9b221fb4d893

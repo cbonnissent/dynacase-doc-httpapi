@@ -36,12 +36,44 @@ book:
       - level:  2
         content: "history/get_history.md"
       - level:   1
+        content:  "workflows/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "workflows/getState.md"
+      - level:  2
+        content: "workflows/createState.md"
+      - level:  2
+        content: "workflows/getStateList.md"
+      - level:  2
+        content: "workflows/getTransition.md"
+      - level:  2
+        content: "workflows/createTransition.md"
+      - level:  2
+        content: "workflows/getTransitionList.md"
+      - level:   1
         content:  "trash/introduction.md"
         subtoc : 2
       - level:  2
         content: "trash/get_trash.md"
       - level:  2
         content: "trash/getTrash.md"
+      - level:  2
+        content: "trash/restore_doc.md"
+        flags:
+          new : "nouveauté"
+      - level:   1
+        content:  "usertags/introduction.md"
+        subtoc : 2
+      - level:  2
+        content: "usertags/listUserTags.md"
+      - level:  2
+        content: "usertags/getUserTag.md"
+      - level:  2
+        content: "usertags/createUserTag.md"
+      - level:  2
+        content: "usertags/updateUserTag.md"
+      - level:  2
+        content: "usertags/deleteUserTag.md"
       - level:   1
         content:  "search/introduction.md"
         subtoc : 2
@@ -76,34 +108,6 @@ book:
         subtoc : 2
       - level:  2
         content: "files/create.md"
-      - level:   1
-        content:  "usertags/introduction.md"
-        subtoc : 2
-      - level:  2
-        content: "usertags/listUserTags.md"
-      - level:  2
-        content: "usertags/getUserTag.md"
-      - level:  2
-        content: "usertags/createUserTag.md"
-      - level:  2
-        content: "usertags/updateUserTag.md"
-      - level:  2
-        content: "usertags/deleteUserTag.md"
-      - level:   1
-        content:  "workflows/introduction.md"
-        subtoc : 2
-      - level:  2
-        content: "workflows/getState.md"
-      - level:  2
-        content: "workflows/createState.md"
-      - level:  2
-        content: "workflows/getStateList.md"
-      - level:  2
-        content: "workflows/getTransition.md"
-      - level:  2
-        content: "workflows/createTransition.md"
-      - level:  2
-        content: "workflows/getTransitionList.md"
       - level:   1
         content:  "advanced/introduction.md"
         subtoc : 2

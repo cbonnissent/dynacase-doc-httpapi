@@ -14,10 +14,10 @@ La collection *documents* implémente les éléments suivants :
 
 | Action   | URL                     | Action effectuée                                                       |
 | :-     : | :                      :| :                                                                    : |
-| `GET`    | `/api/v1/documents`     | [Retourne la liste des documents][get_documents]                       |
-| `POST`   | `/api/v1/documents`     | N/A                                                                    |
-| `PUT`    | `/api/v1/documents`     | N/A                                                                    |
-| `DELETE` | `/api/v1/documents`     | N/A                                                                    |
+| `GET`    | `/api/v1/documents/`     | [Retourne la liste des documents][get_documents]                       |
+| `POST`   | `/api/v1/documents/`     | N/A                                                                    |
+| `PUT`    | `/api/v1/documents/`     | N/A                                                                    |
+| `DELETE` | `/api/v1/documents/`     | N/A                                                                    |
 
 * Ressource :
 

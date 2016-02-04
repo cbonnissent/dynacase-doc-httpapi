@@ -1,5 +1,4 @@
-# Ressources du cycle de vie {#rest:96956bd0-4151-48df-9007-c007f4572767}
-
+# Document : Cycle de vie {#rest:96956bd0-4151-48df-9007-c007f4572767}
 
 Cette collection décrit les états et transitions du [cycle de vie][workflow]
 associé à un document.
@@ -16,11 +15,11 @@ La collection *documents* implémente les éléments suivants :
 
 | Action   | URL                                               | Action effectuée                                                              |
 | :-     : | :                      :                          | :                                                                    :        |
-| `GET`    | `/api/v1/documents/<docid>/workflows/states`      | [Retourne la liste des états][get_states] pour le document `docid`            |
+| `GET`    | `/api/v1/documents/<docid>/workflows/states/`      | [Retourne la liste des états][get_states] pour le document `docid`            |
 | `POST`   |                                                   | N/A                                                                           |
 | `PUT`    |                                                   | N/A                                                                           |
 | `DELETE` |                                                   | N/A                                                                           |
-| `GET`    | `/api/v1/documents/<docid>/workflows/transitions` | [Retourne la liste des transitions][get_transitions] pour le document `docid` |
+| `GET`    | `/api/v1/documents/<docid>/workflows/transitions/` | [Retourne la liste des transitions][get_transitions] pour le document `docid` |
 | `POST`   |                                                   | N/A                                                                           |
 | `PUT`    |                                                   | N/A                                                                           |
 | `DELETE` |                                                   | N/A                                                                           |
