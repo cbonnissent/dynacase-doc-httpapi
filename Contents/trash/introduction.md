@@ -25,7 +25,7 @@ La collection trash implémente les éléments suivants :
 | :-     : | :                        :| :                                   :       |
 | `GET`    | `/api/v1/trash/<id>`      | [Retourne le document `id`][trash_doc]      |
 | `POST`   | `/api/v1/trash/<id>`      | N/A                                         |
-| `PUT`    | `/api/v1/trash/<id>`      | N/A                                         |
+| `PUT`    | `/api/v1/trash/<id>`      | [Restauration du document `id`][restore_doc]|
 | `DELETE` | `/api/v1/trash/<id>`      | N/A                                         |
 
 
@@ -33,3 +33,4 @@ La collection trash implémente les éléments suivants :
 [doc_document]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:e01bf76d-481b-41fd-ac64-167a68d34c55.html#core-ref:67929e29-abef-437c-88a3-7f43647c60ff
 [trash_doc]: #rest:52be10c1-9f46-456b-a22f-24909386567f
 [get_trash]: #rest:4052b9db-d36c-4535-809f-1fad107e8270
+[restore_doc]: #rest:21652c32-5695-4cc0-9b71-f4a2b5f33125

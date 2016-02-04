@@ -42,6 +42,10 @@ book:
         content: "trash/get_trash.md"
       - level:  2
         content: "trash/getTrash.md"
+      - level:  2
+        content: "trash/restore_doc.md"
+        flags:
+          new : "nouveauté"
       - level:   1
         content:  "search/introduction.md"
         subtoc : 2
