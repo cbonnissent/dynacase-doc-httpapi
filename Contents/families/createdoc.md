@@ -101,6 +101,8 @@ Exemple :
       }
     }
 
+La liste des propriétés est documentée dans la [documentation de format collection][properties].
+
 ### En cas d'échec {#rest:481851fe-c39f-424f-b13f-9756db981ad9}
 
 Les raisons d'échecs spécifiques à cette requête sont 
@@ -114,6 +116,6 @@ Les raisons d'échecs spécifiques à cette requête sont
 | Famille inconnue                                              |         404 | API0206    |
 
 
-
+[properties]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:74ce9ce4-8e4e-42ee-a0df-415eb6897a81.html#core-ref:9ebcbfd6-d094-45ee-a993-9b221fb4d893
 
 

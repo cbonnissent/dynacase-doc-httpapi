@@ -63,6 +63,8 @@ Exemple :
         "exceptionMessage" : ""
     }
 
+La liste des propriétés est documentée dans la [documentation de format collection][properties].
+
 ### En cas d'échec {#rest:0e94bbdd-2051-436e-af38-fe718a1e87ee}
 
 Les raisons d'échecs spécifiques à cette requête sont 
@@ -107,3 +109,4 @@ membres a l'identifiant `<documentId>`.
 `families/<famName>/documents/` l'identifiant doit être dans la famille indiquée
 pour être retourné sinon une erreur 404 (ressource non trouvée) est retournée.
 
+[properties]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:74ce9ce4-8e4e-42ee-a0df-415eb6897a81.html#core-ref:9ebcbfd6-d094-45ee-a993-9b221fb4d893

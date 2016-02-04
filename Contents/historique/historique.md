@@ -8,6 +8,7 @@ l'api HTTP.
 |                                  Modifications                                   |                    Chapitre                   |                    Version                     |
 | :------------------------------------------------------------------------------- | :-------------------------------------------- | :--------------------------------------------- |
 | Restauration de document                                                         | [Restauration][restore_doc]                   | <span class="flag update">Mise à jour</span>   |
+| Ajout des liens vers les propriétés                                              | Tous les chapitres sur les ressources documents | <span class="flag update">Mise à jour</span> |
 
 
 ## Édition 2 {#rest:67c3551d-d99a-43c9-b837-5d93439bff8e}

@@ -118,8 +118,10 @@ Par défaut : `fields=document.properties`
 | `requestParameters.orderBy`        | Tri demandé                                   |                                                                       |
 | `requestParameters.length`         | Nombre de document effectivement retourné     |                                                                       |
 
-
+La liste des propriétés est documentée dans la [documentation de format collection][properties].
 
 ## Cache {#rest:804900bb-7935-4264-bdfe-1d747eba5f39}
 
 La collection n'a pas de cache.
+
+[properties]: http://docs.anakeen.com/dynacase/3.2/dynacase-doc-core-reference/website/book/core-ref:74ce9ce4-8e4e-42ee-a0df-415eb6897a81.html#core-ref:9ebcbfd6-d094-45ee-a993-9b221fb4d893
