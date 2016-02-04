@@ -1,5 +1,4 @@
-# Ressources du cycle de vie {#rest:96956bd0-4151-48df-9007-c007f4572767}
-
+# Document : Cycle de vie {#rest:96956bd0-4151-48df-9007-c007f4572767}
 
 Cette collection décrit les états et transitions du [cycle de vie][workflow]
 associé à un document.
