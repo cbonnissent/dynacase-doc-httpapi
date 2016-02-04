@@ -14,10 +14,10 @@ La collection trash implémente les éléments suivants :
 
 | Action   | URL                     | Action effectuée                                          |
 | :-     : | :                      :| :                                                       : |
-| `GET`    | `/api/v1/trash`         | [Liste des documents supprimés][get_trash]                |
-| `POST`   | `/api/v1/trash`         | N/A                                                       |
-| `PUT`    | `/api/v1/trash`         | N/A                                                       |
-| `DELETE` | `/api/v1/trash`         | N/A                                                       |
+| `GET`    | `/api/v1/trash/`         | [Liste des documents supprimés][get_trash]                |
+| `POST`   | `/api/v1/trash/`         | N/A                                                       |
+| `PUT`    | `/api/v1/trash/`         | N/A                                                       |
+| `DELETE` | `/api/v1/trash/`         | N/A                                                       |
 
 * Ressource :
 
